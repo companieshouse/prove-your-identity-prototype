@@ -10,23 +10,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-
-  {{ govukBreadcrumbs({
-    items: [
-      {
-        text: "Home",
-        href: "#"
-      },
-      {
-        text: "Section",
-        href: "#"
-      },
-      {
-        text: "Subsection"
-      }
-    ]
-  }) }}
-
+  {% include "includes/phase-banner.html" %}
 {% endblock %}
 
 {% block content %}
@@ -35,22 +19,20 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-        {{ serviceName }}
+        Prove your identity
       </h1>
 
       <p>Use this service to:</p>
 
       <ul class="govuk-list govuk-list--bullet">
-        <li>do something</li>
-        <li>update your name, address or other details</li>
-        <li>do something else</li>
+        <li>prove your identity to Companies House</li>
       </ul>
 
-      <p>Registering takes around 5 minutes.</p>
+      <p>Registering takes around xx minutes.</p>
 
       {{ govukButton({
         text: "Start now",
-        href: "passport",
+        href: "sign-in",
         isStartButton: true
       }) }}
 
@@ -59,15 +41,11 @@
       </h2>
 
       <p>
-        You can also <a href="#">register by post</a>.
+        You can also register your identity through an ACSP...
       </p>
 
       <p>
         The online service is also <a href="#">available in Welsh (ar gael yn Gymraeg)</a>.
-      </p>
-
-      <p>
-        You can’t register for this service if you’re in the UK illegally.
       </p>
 
     </div>

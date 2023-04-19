@@ -46,7 +46,7 @@ router.post('/v1/sign-in', function (req, res) {
     })
   } else {
     // User inputted value so move to next page
-    res.redirect('/v1/discrepancy-category')
+    res.redirect('/v1/passport')
   }
 })
 
@@ -167,21 +167,9 @@ router.get('/v1/one-login-start', function (req, res) {
 })
 
 router.post('/v1/one-login-start', function (req, res) {
-  res.redirect('/v1/one-login-finish')
-})
-
-
-// ******* one-login-finish javascript ********************************
-router.get('/v1/one-login-finish', function (req, res) {
-  // Set URl
-  res.render('v1/one-login-finish', {
-    currentUrl: req.originalUrl
-  })
-})
-
-router.post('/v1/one-login-finish', function (req, res) {
   res.redirect('/v1/verified-success')
 })
+
 
 module.exports=router;
 
