@@ -1,0 +1,106 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+  {{ govukTag({
+    classes: "govuk-tag--blue govuk-!-margin-bottom-4",
+    text: "version 1"
+  }) }}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        Prove your identity
+      </h1>
+
+      <a href="start" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+        Start now
+      </a>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-bottom-6">
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-m" id="authScreens">Individual screen links</h2>
+      <ul class="govuk-list govuk-list--bullet">      
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="start">Guidence page</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="passport">Do you have a UK or non-UK biometric passport</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="driving-licence">Do you have a UK driving licence</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="resident">Are you resident in the UK</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="sign-in">Sign in</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="alternative-provider">Alternative provider</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="one-login-start">One login start</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="one-login-finish">One login finish</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="verified-success">successfully verified</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="verified-failure">Not verified</a>
+        </li>
+      </ul>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-bottom-6">
+
+      <h2 class="govuk-heading-m" id="authScreens">Journey maps and flows</h2>
+      <ul class="govuk-list govuk-list--bullet">      
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="#">Version 1 prototype flow</a>
+        </li>
+      </ul>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-bottom-6">
+
+      <h2 class="govuk-heading-m" id="authScreens">Changes to the prototype in this version</h2>
+      <ul class="govuk-list govuk-list--bullet">      
+        <li>
+          First version
+        </li>
+      </ul>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-bottom-6">
+
+      <h2 class="govuk-heading-m" id="authScreens">User research</h2>
+      <ul class="govuk-list govuk-list--bullet">      
+        <li>
+          TBD
+        </li>
+      </ul>
+
+    </div>
+  </div>
+
+
+
+
+
+{% endblock %}
