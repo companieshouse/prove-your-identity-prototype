@@ -19,21 +19,49 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        Prove your identity
+        Verify your identity at Companies House
       </h1>
 
-      <p>Use this service toprove your identity to Companies House</p>
+      <p>Use this service to verify your identity so that you can set up, run, own or control a company registered at Companies House.</p>
 
       <h2 class="govuk-heading-m">What'll you'll need</h2>
 
-      <ul class="govuk-list govuk-list--bullet">
-        <li>item 1</li>
-        <li>item 2</li>
-        <li>item 3</li>
-        <li>item 4</li>
-      </ul>
+      <p class="govuk-body">You'll need a:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>Companies House account - we’ll ask you to sign in or create one </li>
+  <li>GOV.UK One Login - we’ll ask you to sign in or create one </li>
+</ul>
 
-      <p>Registering takes around xx minutes.</p>
+<h3 class="govuk-heading-s">UK residents</h3>
+
+<p class="govuk-body">People who live in the UK will need:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>a form of photo ID, such as a biometric passport or a driving licence</li>
+  <li>to tell us your home address (you might also need your previous address if you’ve recently moved)</li>
+</ul>
+
+<h3 class="govuk-heading-s">Non-UK residents</h3>
+
+<p class="govuk-body">People who do not live in the UK will need:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>a biometric passport</li>
+</ul>
+
+{{ govukDetails({
+  summaryText: "What is a biometric passport?",
+  text: "Biometric passports (or ‘ePassports’) have a small rectangular symbol on the front cover. You can use them to go through eGates at airports and train stations."
+}) }}
+
+     <p>We’ll only use the information you give us to make sure that you are who you say you are.</p>
+
+     <p>If you do not have the information required to use this service, you’ll need to verify your identity in a different way (to be confirmed).</p>
+
+     <p>Alternatively, you can verify your identity through an agent, known as an <a href="#" class="govuk-link">Authorised Corporate Service Provider (ACSP)</a>.</p>
+
+
+
+
+      <p>It takes around 10 minutes to use this service.</p>
 
       {{ govukButton({
         text: "Start now",
@@ -41,17 +69,6 @@
         isStartButton: true
       }) }}
 
-      <h2 class="govuk-heading-m">
-        Before you start
-      </h2>
-
-      <p>
-        You can also register your identity through an ACSP...
-      </p>
-
-      <p>
-        The online service is also <a href="#">available in Welsh (ar gael yn Gymraeg)</a>.
-      </p>
 
     </div>
   </div>
