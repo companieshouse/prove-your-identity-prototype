@@ -1,51 +1,99 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Start page template – {{ serviceName }} – GOV.UK Prototype Kit
+  Start - Prove your identity 
 {% endblock %}
 
 {% block header %}
-  <!-- Blank header with no service name for the start page -->
+  <!-- Blank header with no service name for this page -->
   {{ govukHeader() }}
 {% endblock %}
 
 {% block beforeContent %}
   {% include "includes/phase-banner.html" %}
+  {% include "includes/back-link.html" %}
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Guidance</span>
+      <h1 class="govuk-heading-l">prove your identity</h1>
 
-      <h1 class="govuk-heading-xl">
-        Prove your identity
-      </h1>
+      <aside class="govuk-prototype-kit-common-templates-mainstream-guide-contents-list" role="complementary">
+        <nav class="govuk-prototype-kit-common-templates-contents-list" aria-label="Pages in this guide" role="navigation">
+          <h2 class="govuk-prototype-kit-common-templates-contents-list__title">
+            Contents
+          </h2>
+          <ol class="govuk-prototype-kit-common-templates-contents-list__list">
+            <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed govuk-prototype-kit-common-templates-contents-list__list-item--active">
+              <a href="#content-1">
+               Contents 1
+              </a>
+            </li>
+            <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+              <a href="#content-2">
+                Contents 2
+              </a>
+            </li>
+            <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed govuk-prototype-kit-common-templates-contents-list__list-item--active">
+              <a href="#content-3">
+                Contents 3
+              </a>
+            </li>
+            <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+              <a href="#content-4">
+                Contents 4
+              </a>
+            </li>
+          </ol>
+        </nav>
+      </aside>
 
-      <p>Use this service to:</p>
+    </div>
 
-      <ul class="govuk-list govuk-list--bullet">
-        <li>prove your identity to Companies House</li>
-      </ul>
+  </div>
 
-      <p>Registering takes around xx minutes.</p>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds govuk-prototype-kit-common-templates-mainstream-guide-body">
+      <h2 id="content-1" class="govuk-heading-m">Content 1</h2>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+        voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+
+      <h2 id="content-2" class="govuk-heading-m">Content 2 </h2>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+        voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+
+      <h2 id="content-3" class="govuk-heading-m">Content 3</h2>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+        voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+
+      <h2 id="content-4" class="govuk-heading-m">Content 4</h2>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+        voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
 
       {{ govukButton({
-        text: "Start now",
-        href: "sign-in",
-        isStartButton: true
+        text: "Prove your identity",
+        href:"sign-in"
       }) }}
 
-      <h2 class="govuk-heading-m">
-        Before you start
-      </h2>
-
       <p>
-        You can also register your identity through an ACSP...
-      </p>
-
-      <p>
-        The online service is also <a href="#">available in Welsh (ar gael yn Gymraeg)</a>.
+        <a href="#">
+          View a printable version of the whole guide
+        </a>
       </p>
 
     </div>
