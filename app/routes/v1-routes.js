@@ -66,7 +66,7 @@ router.post('/v1/passport', function (req, res) {
   if (typeof req.session.data['has-passport'] === 'undefined') {
     // No value so add error to array
     errors.push({
-      text: 'You must select if you have a biometric passport',
+      text: 'Select yes if you have a biometric passport',
       href: '#has-passport'
     })
 
