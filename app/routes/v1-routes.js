@@ -102,7 +102,7 @@ router.post('/v1/driving-licence', function (req, res) {
   if (typeof req.session.data['has-licence'] === 'undefined') {
     // No value so add error to array
     errors.push({
-      text: 'You must select if you have a UK driving licence',
+      text: 'Select yes if you have a UK driving licence',
       href: '#has-licence'
     })
 
