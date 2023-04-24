@@ -46,7 +46,7 @@ router.post('/v1/sign-in', function (req, res) {
     })
   } else {
     // User inputted value so move to next page
-    res.redirect('/v1/passport')
+    res.redirect('/v1/resident')
   }
 })
 
@@ -152,7 +152,7 @@ router.post('/v1/resident', function (req, res) {
       res.redirect('/v1/one-login-start')
     } else {
       // User inputted value so move to next page
-      res.redirect('/v1/alternative-provider')
+      res.redirect('/v1/passport')
     }
   }
 })
