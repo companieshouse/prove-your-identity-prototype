@@ -167,7 +167,57 @@ router.get('/v1/one-login-start', function (req, res) {
 })
 
 router.post('/v1/one-login-start', function (req, res) {
+  res.redirect('/v1/one-login-working')
+})
+
+// ******* one-login-working javascript ********************************
+router.get('/v1/one-login-working', function (req, res) {
+  // Set URl
+  res.render('v1/one-login-working', {
+    currentUrl: req.originalUrl
+  })
+})
+
+router.post('/v1/one-login-working', function (req, res) {
+  res.redirect('/v1/address-lookup')
+})
+
+
+// ******* address-lookup javascript ********************************
+router.get('/v1/address-lookup', function (req, res) {
+  // Set URl
+  res.render('v1/address-lookup', {
+    currentUrl: req.originalUrl
+  })
+})
+
+router.post('/v1/address-lookup', function (req, res) {
+  res.redirect('/v1/address-confirm')
+})
+
+// ******* address-confirm javascript ********************************
+router.get('/v1/address-confirm', function (req, res) {
+  // Set URl
+  res.render('v1/address-confirm', {
+    currentUrl: req.originalUrl
+  })
+})
+
+router.post('/v1/address-confirm', function (req, res) {
   res.redirect('/v1/verified-success')
+})
+
+
+// ******* address-manual javascript ********************************
+router.get('/v1/address-manual', function (req, res) {
+  // Set URl
+  res.render('v1/address-manual', {
+    currentUrl: req.originalUrl
+  })
+})
+
+router.post('/v1/address-manual', function (req, res) {
+  res.redirect('/v1/address-confirm')
 })
 
 
