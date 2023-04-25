@@ -116,7 +116,7 @@ router.post('/v1/driving-licence', function (req, res) {
       res.redirect('/v1/one-login-start')
     } else {
       // User inputted value so move to next page
-      res.redirect('/v1/resident')
+      res.redirect('/v1/alternative-provider')
     }
   }
 })
