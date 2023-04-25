@@ -16,10 +16,7 @@ Do you have a UK or non-UK biometric passport?
   <div class="govuk-grid-column-two-thirds">
     <form action="{{currentUrl}}" method="post">
 
-      <span class="govuk-caption-l">
-        {{data['firstName']}} {{data['middleName']}} {{data['lastName']}}
-      </span>
-      <h1 class="govuk-heading-l">Confirm their home address</h1>
+      <h1 class="govuk-heading-l">Confirm your home address</h1>
       <ul class="govuk-list">
         <li>70 Wentloog Road</li>
         <li>Rumney</li>
@@ -27,12 +24,12 @@ Do you have a UK or non-UK biometric passport?
         <li>Wales</li>
         <li>CF3 3EA</li>
       </ul>
-      <p> <a href="javascript:void(0);">Edit address</a> </p>
+      <p> <a href="address-manual">Edit address</a> </p>
 
       {{ govukButton({
         text: "Continue"
       }) }}
-      
+
     </form>
   </div>
 </div>
