@@ -18,11 +18,11 @@ Do you have a UK or non-UK biometric passport?
 
       <h1 class="govuk-heading-l">Confirm your home address</h1>
       <ul class="govuk-list">
-        <li>70 Wentloog Road</li>
+        <li>{{ data['property-name'] }} Wentloog Road</li>
         <li>Rumney</li>
         <li>Cardiff</li>
         <li>Wales</li>
-        <li>CF3 3EA</li>
+        <li>{{ data['postcode'] | upper }}</li>
       </ul>
       <p> <a href="address-manual">Edit address</a> </p>
 
