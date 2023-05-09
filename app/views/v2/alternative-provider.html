@@ -1,0 +1,32 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Alternative provider
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+       You need to use a Authorised Corporate Service Provider (ACSP) to verify your identity
+      </h1>
+
+      <p>
+      You can only use this service if you have a biometric passport, UK driving licence or live in the UK.
+      </p>
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+    </div>
+  </div>
+
+{% endblock %}

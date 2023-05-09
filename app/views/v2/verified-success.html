@@ -1,0 +1,54 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/account-banner.html" %}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Identity verified successfully</h1>
+        <div class="govuk-panel__body">
+          Your Verification ID is:<br><strong>HDJ2123F</strong>
+        </div>
+      </div>
+
+      <p class="govuk-body">We've sent a confirmation email to
+        <strong>{{ data['emailAddress'] }}</strong> which contains your Verification ID. You'll need this when you make a filing at Companies House. Only share it with people you trust to file on your behalf.</p>
+
+      <h2 class="govuk-heading-m">What you need to do now </h2>
+      
+<h3 class="govuk-heading-s">If you are a director (or equivalent)</h3>
+
+      <p class="govuk-body">File an update about your company by XX/XX/XX. After you’ve done this, we’ll update the Companies House register to show that you have verified your identity.
+      </p>
+
+<h3 class="govuk-heading-s">If you are a person with significant control (PSC)</h3>
+
+      <p class="govuk-body">File an update about your company by XX/XX/XX. After you’ve done this, we’ll update the Companies House register to show that you have verified your identity.
+      </p>
+
+  <h2 class="govuk-heading-m">What other directors or PSCs of your company need to do </h2>
+ <p class="govuk-body">If your company has other directors (or equivalent) or PSCs, they must also verify their identity, if they haven't already. You will need to provide their Verification IDs whenever you file for your company.
+      </p>
+
+
+
+      <h3 class="govuk-heading-m">Feedback</h3>
+      <p class="govuk-body">This is a new service. Help us improve it by completing our
+        <a href="https://www.smartsurvey.co.uk/s/reptpscdisp-fdbk/">quick survey</a>.
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}
