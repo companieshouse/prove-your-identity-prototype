@@ -113,7 +113,7 @@ router.post('/v2/resident', function (req, res) {
     })
   } else {
     if (req.session.data['is-resident'] === 'yes') {
-      res.redirect('/v2/one-login-start')
+      res.redirect('/v2/sign-in')
     } else {
       // User inputted value so move to next page
       res.redirect('/v2/id-check')
