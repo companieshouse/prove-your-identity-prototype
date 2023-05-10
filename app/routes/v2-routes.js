@@ -46,77 +46,41 @@ router.post('/v2/sign-in', function (req, res) {
     })
   } else {
     // User inputted value so move to next page
-    res.redirect('/v2/resident')
+    res.redirect('/v2/one-login-intro')
   }
 })
 
-// ******* passport javascript ********************************
-router.get('/v2/passport', function (req, res) {
+// ******* id-check javascript ********************************
+router.get('/v2/id-check', function (req, res) {
   // Set URl
-  res.render('v2/passport', {
+  res.render('v2/id-check', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/v2/passport', function (req, res) {
+router.post('/v2/id-check', function (req, res) {
   // Create empty array
   var errors = []
 
   // Check if user has filled out a value
-  if (typeof req.session.data['has-passport'] === 'undefined') {
+  if (typeof req.session.data['has-ID'] === 'undefined') {
     // No value so add error to array
     errors.push({
-      text: 'Select yes if you have a biometric passport',
-      href: '#has-passport'
+      text: 'Select what type of ID you have',
+      href: '#has-ID'
     })
 
     // Re-show page with error value as true so errors will show
-    res.render('v2/passport', {
-      errorPassport: true,
+    res.render('v2/id-check', {
+      errorID: true,
       errorList: errors
     })
   } else {
-    if (req.session.data['has-passport'] === 'yes') {
-      res.redirect('/v2/one-login-start')
-    } else {
-      // User inputted value so move to next page
-      res.redirect('/v2/driving-licence')
-    }
-  }
-})
-
-
-// ******* driving-licence javascript ********************************
-router.get('/v2/driving-licence', function (req, res) {
-  // Set URl
-  res.render('v2/driving-licence', {
-    currentUrl: req.originalUrl
-  })
-})
-
-router.post('/v2/driving-licence', function (req, res) {
-  // Create empty array
-  var errors = []
-
-  // Check if user has filled out a value
-  if (typeof req.session.data['has-licence'] === 'undefined') {
-    // No value so add error to array
-    errors.push({
-      text: 'Select yes if you have a UK driving licence',
-      href: '#has-licence'
-    })
-
-    // Re-show page with error value as true so errors will show
-    res.render('v2/driving-licence', {
-      errorLicence: true,
-      errorList: errors
-    })
-  } else {
-    if (req.session.data['has-licence'] === 'yes') {
-      res.redirect('/v2/one-login-start')
-    } else {
-      // User inputted value so move to next page
+    if (req.session.data['has-ID'] == 'no-id' ) {
       res.redirect('/v2/alternative-provider')
+    } else {
+      // User inputted value so move to next page
+      res.redirect('/v2/sign-in')
     }
   }
 })
@@ -152,7 +116,7 @@ router.post('/v2/resident', function (req, res) {
       res.redirect('/v2/one-login-start')
     } else {
       // User inputted value so move to next page
-      res.redirect('/v2/passport')
+      res.redirect('/v2/id-check')
     }
   }
 })

@@ -1,0 +1,44 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Are you resident in the UK?
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/account-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      You are about to be redirected to One login
+    </h1>
+
+    <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+      Suspendisse ultrices vulputate turpis vitae ultricies. Curabitur condimentum mi in odio bibendum, eu aliquam ex faucibus.</p>
+
+    <h2 class="govuk-heading-m">H2 heading</h2>
+
+    <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing 
+      elit. Suspendisse ultrices vulputate turpis vitae ultricies. Curabitur condimentum mi in odio bibendum, eu aliquam ex faucibus.</p>
+
+    <h3 class="govuk-heading-s">H3 Heading</h3>
+
+    <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing 
+      elit. Suspendisse ultrices vulputate turpis vitae ultricies. Curabitur condimentum mi in odio bibendum, eu aliquam ex faucibus.</p>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "one-login-start"
+      }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
