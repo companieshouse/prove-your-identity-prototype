@@ -77,10 +77,45 @@ router.post('/v2/id-check', function (req, res) {
     })
   } else {
     if (req.session.data['has-ID'] == 'no-id' ) {
-      res.redirect('/v2/alternative-provider')
+      res.redirect('/v2/acsp-alternate')
     } else {
       // User inputted value so move to next page
       res.redirect('/v2/sign-in')
+    }
+  }
+})
+
+// ******* route javascript ********************************
+router.get('/v2/route', function (req, res) {
+  // Set URl
+  res.render('v2/route', {
+    currentUrl: req.originalUrl
+  })
+})
+
+router.post('/v2/route', function (req, res) {
+  // Create empty array
+  var errors = []
+
+  // Check if user has filled out a value
+  if (typeof req.session.data['which-route'] === 'undefined') {
+    // No value so add error to array
+    errors.push({
+      text: 'You must select how you would you like to verify your identity with Companies House',
+      href: '#which-route'
+    })
+
+    // Re-show page with error value as true so errors will show
+    res.render('v2/route', {
+      errorRoute: true,
+      errorList: errors
+    })
+  } else {
+    if (req.session.data['which-route'] == 'gov') {
+      res.redirect('/v2/resident')
+    } else {
+      // User inputted value so move to next page
+      res.redirect('/v2/acsp-route')
     }
   }
 })
