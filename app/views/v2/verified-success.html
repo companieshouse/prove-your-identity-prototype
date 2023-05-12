@@ -22,23 +22,23 @@
         </div>
       </div>
 
-      <p class="govuk-body">We've sent a confirmation email to
-        <strong>{{ data['emailAddress'] }}</strong> which contains your identity code.</p>
-
-      <p class="govuk-body">You should only share your identity code with people you trust 
-        to file on your behalf.
-      </p>
+      <p class="govuk-body">We've sent your identity code to
+        <strong>{{ data['emailAddress'] }}</strong>.</p>
 
       <h2 class="govuk-heading-m">What you need to do with your identity code </h2>
 
+      <p class="govuk-body">Only share your code with people you trust to file on your behalf.
+      </p>
+
+
       <p class="govuk-body">You must file a verification statement to confirm the 
         directors and PSCs of your company are verified. We’ll ask for your identity
-         code in the verification statement. You’ll also need it for some future 
+         code in the verification statement and some future 
          filings.
       </p>
 
       {{ govukWarningText({
-        text: "You must file a verification statement in time to avoid sanctions and penalties. We advise you to do this as soon as possible, but no later than the date it's due.",
+        text: "You must file a verification statement in time to avoid sanctions and penalties. We advise you to do this as soon as possible.",
         iconFallbackText: "Warning"
       }) }}
       
@@ -54,11 +54,8 @@
 
       <h3 class="govuk-heading-s">If you are a new PSC</h3>
 
-      <p class="govuk-body">You must file a verification statement no later than 14 days after the company gives notice to Companies House. This means tells us about a new PSC. If the company does not file a verification statement by then, you have a further 14 days to file it.
+      <p class="govuk-body">You must file a verification statement no later than 14 days after the company gives notice to Companies House.
       </p>
-
-      <p class="govuk-body"><a href="#" class="govuk-link">Go to the ‘File a verification statement’ service</a>.</p>
-
 
 
       <h3 class="govuk-heading-m">Feedback</h3>
