@@ -22,6 +22,37 @@ How would you like to verify your identity with Companies House?
     {% endif %}
     <form action="{{currentUrl}}" method="post">
 
+    <h1 class="govuk-heading-l">Choose a way to verify</h1>
+    <h2 class="govuk-heading-m">Option 1: verify with GOV.UK</h2>
+                
+        <p class="govuk-body">You can use the online GOV.UK verification service if you have any of the following: </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>a home address in the UK</li>
+          <li>a biometric passport from any country</li>
+          <li>a UK photo driving licence</li>
+        </ul>
+
+      <p class="govuk-body">If you do not have a biometric ID but you live in the UK, GOV.UK will guide you through an in-person service. </p>
+
+     {{ govukDetails({
+        summaryText: "What is a biometric passport?",
+        text: "Biometric passports have a small rectangular symbol on the front cover. You can use them to go through electronic gates at airports and international train stations."
+      }) }}
+
+      <h2 class="govuk-heading-m">Option 2: verify with an authorised agent (such as an accountant or solicitor)</h2>
+    
+      <p class="govuk-body">Everyone can ask a UK authorised agent to verify their identity on their 
+        behalf. You do not need to live in the UK or have a biometric ID.</p>
+
+      <p class="govuk-body">If you verify with your authorised agent, your identity will be verified for Companies House only.</p>
+    
+
+
+
+
+
+
+
       <!-- Check for error -->
       {% if errorResident %}
       <div class="govuk-form-group govuk-form-group--error">
@@ -29,61 +60,35 @@ How would you like to verify your identity with Companies House?
       <div class="govuk-form-group">
       {% endif %} 
         <fieldset class="govuk-fieldset" aria-describedby="which-route-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-fieldset__heading">
-              How do you want to verify your identity with Companies House?
-            </h1>
-          </legend>
+        
+
+
           <!-- Check for error -->
           {% if errorRoute %}
           <p id="which-route-error" class="govuk-error-message">
             <span class="govuk-visually-hidden">Error:</span> Select how you would you like to verify your identity with Companies House
           </p>
           {% endif %} 
-          <div id="route-hint" class="govuk-hint">
-          </div>
+        
+           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m ">
+            <h3 class="govuk-fieldset__heading govuk-!-margin-top-5">
+              How do you want to verify your identity with Companies House?
+            </h3>
+          </legend>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="which-route" name="which-route" type="radio" value="gov">
               <label class="govuk-label govuk-radios__label" for="which-route">
                 Verify with GOV.UK
               </label>
-              <details class="govuk-details" data-module="govuk-details">
-                <summary class="govuk-details__summary">
-                  <span class="govuk-details__summary-text">
-                    Who can use the GOV.UK verification service  
-                  </span>
-                </summary>
-                <div class="govuk-details__text">
-                  <p class="govuk-body">You can use this online service if you have any of the following: </p>
-                  <ul class="govuk-list govuk-list--bullet">
-                    <li>a home address in the UK</li>
-                    <li>a biometric passport from any country</li>
-                    <li>a UK photo driving licence</li>
-                  </ul>
-                  <p class="govuk-body">If you do not have a biometric 
-                    ID but you live in the UK, GOV.UK will guide you through an in-person service. </p>
-                </div>
-              </details>
+              
             </div>
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="which-route-2" name="which-route" type="radio" value="acsp">
               <label class="govuk-label govuk-radios__label" for="which-route-2">
                 Verify with an authorised agent (such as an accountant or solicitor)
               </label>
-              <details class="govuk-details" data-module="govuk-details">
-                <summary class="govuk-details__summary">
-                  <span class="govuk-details__summary-text">
-                    Who can use an authorised agent   
-                  </span>
-                </summary>
-                <div class="govuk-details__text">
-                  <p class="govuk-body">Everyone can ask an authorised agent to verify their identity on their 
-                    behalf. You do not need to live in the UK or have a biometric ID.</p>
-           
-                  <p class="govuk-body">If you verify with your authorised agent, your identity will be verified for Companies House only.</p>
-                </div>
-              </details>
+             
             </div>
           </div>
         </fieldset>
