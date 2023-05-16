@@ -1,0 +1,53 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start page – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Verify your identity as a person with significant control (PSC) with Companies House 
+      </h1>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quisque non tellus orci ac auctor augue mauris. </p>
+
+      {# <h2 class="govuk-heading-m">How to verify your identity</h2> #}
+
+      <p class="govuk-body">Dignissim diam quis enim lobortis scelerisque fermentum dui faucibus in. Etiam non quam lacus suspendisse faucibus interdum posuere.</p>
+      {# <ul class="govuk-list govuk-list--bullet">
+        <li>Use the online GOV.UK ID verification service</li>
+        <li>Ask an authorised agent (usually your accountant or solicitor)  to verify on your behalf</li>
+      </ul> #}
+
+      <h3 class="govuk-heading-s">What you’ll need:</h3>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Id cursus metus aliquam eleifend mi</li>
+        <li>Dictum varius duis </li>
+      </ul>
+
+      {{ govukButton({
+        text: "Verify your identity as a PSC",
+        href: "sign-in",
+        isStartButton: true
+      }) }}
+
+      <h2 class="govuk-heading-m">More about verifying</h2>
+
+      <p>Read the <a href="javascript:void(0)" class="govuk-link">guidance about verifying your identity</a>.</p>
+
+    </div>
+  </div>
+{% endblock %}
