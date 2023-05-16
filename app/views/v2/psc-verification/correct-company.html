@@ -1,0 +1,68 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirm this is the correct company – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+
+
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Confirm this is the correct company</h1>
+ 
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Company name	"
+      },
+      value: {
+        text: "WEST HAM FOOTBALL CLUB LIMITED"
+      }
+    },
+    {
+      key: {
+        text: "Company number	"
+      },
+    value: {
+            text: "00066516"
+      }
+    },
+    {
+      key: {
+        text: "Company type"
+      },
+      value: {
+        html: "Private limited company"
+      }
+    },
+        {
+      key: {
+        text: "Incorporation date"
+      },
+      value: {
+        text: "5 July 1900"
+      }
+    }
+  ]
+}) }}
+
+
+   {{ govukButton({
+  text: "Continue",
+  href: "psc-statement"
+}) }}  
+
+
+    </div>
+  </div>
+{% endblock %}
