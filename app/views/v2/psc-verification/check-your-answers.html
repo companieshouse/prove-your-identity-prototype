@@ -4,7 +4,9 @@
   Check your answer – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 {% block beforeContent %}
-  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% include "includes/phase-banner.html" %}
+{% include "includes/account-banner.html" %}
+{% include "includes/back-link.html" %}
 {% endblock %}
 
 
