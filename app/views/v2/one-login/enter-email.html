@@ -1,0 +1,49 @@
+{% extends "layouts/main.html" %}
+<!-- Overwrite suerfice name -->
+{% set serviceName %}
+  
+{% endset%}
+
+{% block pageTitle %}
+  {{ serviceName }} – Prototype
+{% endblock %}
+
+{% block beforeContent %}
+    <div class="govuk-phase-banner">
+      <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+          beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+          This is a new service – your <a href="/contact-us?supportType=PUBLIC" class="govuk-link" rel="noopener" target="_blank">feedback (opens in new tab)</a> will help us to improve it.
+        </span>
+      </p>
+    </div>
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-label-wrapper">
+      <label class="govuk-label govuk-label--l" for="email">
+        Enter your email address to sign in to your GOV.UK One Login
+      </label>
+      </h1>
+
+      <form action="enter-password" method="post" novalidate="novalidate">
+
+        <input class="govuk-input" id="email" name="email" type="email" spellcheck="false" autocomplete="email">
+        <div style="height: 20px"></div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+        </form>
+
+    </div>
+  </div>
+
+{% endblock %}
