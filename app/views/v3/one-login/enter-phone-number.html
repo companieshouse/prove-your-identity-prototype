@@ -1,0 +1,132 @@
+{% extends "layouts/main.html" %}
+<!-- Overwrite suerfice name -->
+{% set serviceName %}
+  
+{% endset%}
+
+{% block pageTitle %}
+  {{ serviceName }} – Prototype
+{% endblock %}
+
+{% block beforeContent %}
+    <div class="govuk-phase-banner">
+      <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+          beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+          This is a new service – your <a href="/contact-us?supportType=PUBLIC" class="govuk-link" rel="noopener" target="_blank">feedback (opens in new tab)</a> will help us to improve it.
+        </span>
+      </p>
+    </div>
+
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds ">
+              
+  
+
+
+
+    <h1 class="govuk-heading-l govuk-!-margin-top-0 govuk-!-margin-bottom-3">Enter your mobile phone number</h1>
+    <p class="govuk-body">We will send a 6 digit security code to the number you give us.</p>
+    
+
+  <form action="check-your-phone" method="post" novalidate="novalidate">
+
+    <input type="hidden" name="_csrf" value="NIQS2IFj-LvYfeNp8WXN9GOOXph7_ej7VgNk">
+    <input type="hidden" name="supportInternationalNumbers" value="true">
+    <input type="hidden" name="isAccountPartCreated" value="false">
+
+    
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="phoneNumber">
+    UK mobile phone number
+  </label>
+
+<input class="govuk-input govuk-!-width-two-thirds" id="phoneNumber" name="phoneNumber" type="tel" autocomplete="tel">
+
+</div>
+
+
+    
+
+      
+
+
+<div class="govuk-form-group">
+
+  <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+    
+      
+        
+          
+          
+          
+          
+          
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="hasInternationalPhoneNumber" name="hasInternationalPhoneNumber" type="checkbox" value="true" aria-controls="conditional-hasInternationalPhoneNumber" aria-expanded="false">
+            <label class="govuk-label govuk-checkboxes__label" for="hasInternationalPhoneNumber">
+        I do not have a UK mobile number
+      </label>
+            
+          </div>
+          
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-hasInternationalPhoneNumber">
+              
+      
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="internationalPhoneNumber">
+    Mobile phone number
+  </label>
+
+  
+  
+  <div id="internationalPhoneNumber-hint" class="govuk-hint">
+    Include the country code, for example +33 for France
+  </div>
+
+<input class="govuk-input govuk-!-width-two-thirds" id="internationalPhoneNumber" name="internationalPhoneNumber" type="tel" aria-describedby="internationalPhoneNumber-hint" autocomplete="tel">
+
+</div>
+
+      
+            </div>
+          
+        
+      
+    
+  </div>
+
+</div>
+
+
+    
+
+    
+
+  
+    
+  
+
+<button type="Submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
+
+  </form>
+
+
+            </div>
+          </div>
+
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Do you have a UK or non-UK biometric passport?
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <!-- Check for error -->
+    {% if errorID %}
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: errorList
+      }) }}
+    {% endif %}
+    <form action="{{currentUrl}}" method="post">
+
+      <!-- Check for error -->
+      {% if errorID %}
+      <div class="govuk-form-group govuk-form-group--error">
+      {% else %}
+      <div class="govuk-form-group">
+      {% endif %} 
+        <fieldset class="govuk-fieldset" aria-describedby="has-ID-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Which type of photo ID do you have?
+            </h1>
+          </legend>
+          <div id="has-ID-hint" class="govuk-hint">
+            Select all that apply.
+          </div>
+          <!-- Check for error -->
+          {% if errorID %}
+            <p id="has-ID-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Select what type of ID you have
+            </p>
+          {% endif %} 
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="has-ID" name="has-ID" type="checkbox" value="passport">
+              <label class="govuk-label govuk-checkboxes__label" for="has-ID">
+                Biometric passport
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="has-ID-2" name="has-ID" type="checkbox" value="driving-licence">
+              <label class="govuk-label govuk-checkboxes__label" for="has-ID-2">
+                UK driving licence
+              </label>
+            </div>
+            <div class="govuk-checkboxes__divider">or</div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="has-ID-3" name="has-ID" type="checkbox" value="no-id" data-behaviour="exclusive">
+              <label class="govuk-label govuk-checkboxes__label" for="has-ID-3">
+                None of these
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukDetails({
+        summaryText: "What is a biometric passport?",
+        text: "Biometric passports have a small rectangular symbol on the front cover. You can use them to go through electronic gates at airports and international train stations."
+      }) }}
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

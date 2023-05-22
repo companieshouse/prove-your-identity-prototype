@@ -1,0 +1,88 @@
+{% extends "layouts/main.html" %}
+<!-- Overwrite suerfice name -->
+{% set serviceName %}
+  
+{% endset%}
+
+{% block pageTitle %}
+  {{ serviceName }} – Prototype
+{% endblock %}
+
+{% block beforeContent %}
+    <div class="govuk-phase-banner">
+      <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+          beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+          This is a new service – your <a href="/contact-us?supportType=PUBLIC" class="govuk-link" rel="noopener" target="_blank">feedback (opens in new tab)</a> will help us to improve it.
+        </span>
+      </p>
+    </div>
+
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds ">
+
+  <h1 class="govuk-heading-l govuk-!-margin-top-0 govuk-!-margin-bottom-3">Check your phone</h1>
+
+  <div class="govuk-inset-text">
+  We have sent a code to *******6975.
+</div>
+
+  <p class="govuk-body">It might take a few minutes to arrive. The code will expire after 15 minutes.</p>
+
+  <form action="account-created" method="post" novalidate="novalidate">
+
+    <input type="hidden" name="_csrf" value="zG7uJhTg-0r4oqsZFf4UtxGp3ZFSg5LJkDbo">
+    <input type="hidden" name="phoneNumber" value="*******6975">
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="code">
+    Enter the 6 digit security code
+  </label>
+
+<input class="govuk-input govuk-input--width-10 govuk-!-font-weight-bold" id="code" name="code" type="text" spellcheck="false" autocomplete="one-time-code" inputmode="numeric">
+
+</div>
+
+<button type="Submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
+
+    <details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Problems with the code?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+      
+    <p class="govuk-body">
+      We can 
+      <a href="/resend-code?isResendCodeRequest=true" class="govuk-link" rel="noreferrer noopener">send the code again</a>
+       or you can 
+      <a href="/enter-phone-number" class="govuk-link" rel="noreferrer noopener">use a different phone number</a>.
+    </p>
+    
+
+      <p class="govuk-body">
+        <a href="/get-security-codes" class="govuk-link" rel="noreferrer noopener">Get a code another way</a>.
+      </p>
+
+    
+  </div>
+</details>
+
+  </form>
+
+            </div>
+          </div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Failure – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/account-banner.html" %}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+{% set html %}
+  <h3 class="govuk-notification-banner__heading">
+    The information you entered does not match the information held by Companies House.
+  </h3>
+    <p class="govuk-body">You can <a class="govuk-notification-banner__link" href="confirm-psc">try entering the correct information again.</a> or <a class="govuk-notification-banner__link" href="javascript:void(0)">update the information held by Companies House</a> if you think that it might not be correct</p>
+{% endset %}
+
+{{ govukNotificationBanner({
+  html: html
+}) }}
+
+      <p class="govuk-body-s"><a href="psc-verified-success">Success</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

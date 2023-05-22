@@ -1,0 +1,168 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start - Prove your identity 
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Guidance</span>
+      <h1 class="govuk-heading-l">Verify your identity with Companies House</h1>
+
+      <p class="govuk-body-l">How to verify your identity so that you can set up, run, own or control a company registered at Companies House.</p>
+
+      <aside class="govuk-prototype-kit-common-templates-mainstream-guide-contents-list" role="complementary">
+        <nav class="govuk-prototype-kit-common-templates-contents-list" aria-label="Pages in this guide" role="navigation">
+          <h2 class="govuk-prototype-kit-common-templates-contents-list__title">
+            Contents
+          </h2>
+          <ol class="govuk-prototype-kit-common-templates-contents-list__list">
+            <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed govuk-prototype-kit-common-templates-contents-list__list-item--active">
+              <a href="#content-1">
+                Why you need to verify your identity
+              </a>
+            </li>
+            <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+              <a href="#content-2">
+                Who needs to verify their identity
+              </a>
+            </li>
+            <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed govuk-prototype-kit-common-templates-contents-list__list-item--active">
+              <a href="#content-3">
+                What happens when you verify
+              </a>
+          
+            </li>
+            <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed govuk-prototype-kit-common-templates-contents-list__list-item--active">
+              <a href="#content-4">
+                When you need to verify
+              </a>
+            </li>
+            <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+              <a href="#content-5">
+                What happens if you do not verify
+              </a>
+            </li>
+          </ol>
+        </nav>
+      </aside>
+
+    </div>
+
+  </div>
+
+  
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds govuk-prototype-kit-common-templates-mainstream-guide-body">
+
+
+      <h2 id="content-1" class="govuk-heading-m">Why you need to verify your identity</h2>
+
+      <p>You need to verify your identity to confirm you are who you say you are.</p>
+
+      <h2 id="content-2" class="govuk-heading-m">Who needs to verify their identity</h2>
+
+      <p class="govuk-body">You need to verify your identity if you are:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>a person with significant control (PSC)</li>
+        <li>a director</li>
+        <li>the equivalent of a director – this includes members, general partners and managing officers</li>
+      </ul>
+
+      <h2 id="content-3" class="govuk-heading-m">What happens when you verify</h2>
+      
+      <p class="govuk-body">After you’ve verified your identity, we’ll give you an identity code. </p>
+        
+        <p class="govuk-body">You’ll need to provide this:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>as part of the verification statement (this confirms the directors and PSCs are verified)</li>
+        <li>as part of some other company filings</li>
+        <li>when you are appointed as a director</li>
+        <li>when you are appointed as a PSC</li>
+      </ul>
+
+      <h2 id="content-4" class="govuk-heading-m">When you need to verify</h2>
+
+      <h3 class="govuk-heading-s">New companies</h3>
+
+      <p>All directors must verify their identity when incorporating (starting) a company. PSCs have 14 days from the day the company was incorporated to verify their identity and submit a verification statement.</p>
+
+      
+      <h3 class="govuk-heading-s">Current directors of existing companies</h3>
+
+      <p>Verify your identity as soon as possible, but no later than the due date of the next confirmation statement.</p>
+
+      <p>The company must file a verification statement with its next confirmation statement after all directors have verified their identity.</p>
+
+      <h3 class="govuk-heading-s">New directors of existing companies</h3>
+
+      <p>You must verify your identity before you notify (tell) Companies House you’ve become a director. </p>
+
+      <h3 class="govuk-heading-s">Current PSCs of existing companies</h3>
+
+      <p>Verify your identity and file a verification statement as soon as possible, but no later than 14 days after the due date of the next confirmation statement. <a href="https://find-and-update.company-information.service.gov.uk/" class="govuk-link">Search for the company on the Companies House register</a> to find the date.</p>
+
+      <h3 class="govuk-heading-s">New PSCs of existing companies</h3>
+
+      <p>Verify your identity and file a verification statement as soon as possible, but no later than 14 days after the company gives notice to Companies House. </p>
+
+      <h2 id="content-5" class="govuk-heading-m">What happens if you do not verify</h2>
+
+      <p>There will be a transition period until [date] so that you have time to do what is required by the regulations.</p>
+
+      <p>If you do not verify your identity in time, you are committing an offence. The public register will show that you are not verified.</p>
+
+      <p class="govuk-body">You could also:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>get a maximum fine of £XXX</li>
+        <li>be stopped from acting as a director</li>
+        <li>be unable to make any filings for your company</li>
+        <li>be unable to start a new company</li>
+      </ul>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Subsection
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="#">
+                Related link
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Related link
+              </a>
+            </li>
+            <li>
+              <a href="#" class="govuk-!-font-weight-bold">
+                More <span class="govuk-visually-hidden">in Subsection</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+
+{% endblock %}

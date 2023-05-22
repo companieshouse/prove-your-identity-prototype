@@ -1,0 +1,55 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start page – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Verify your identity with Companies House 
+      </h1>
+
+      <p>You need to verify your identity if you're a company director
+         (or equivalent) or a person with 
+        significant control (PSC) registered with Companies House.</p>
+
+      <h2 class="govuk-heading-m">How to verify your identity</h2>
+
+      <p class="govuk-body">You can choose to verify in one of these ways:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Use the online GOV.UK ID verification service</li>
+        <li>Ask an authorised agent (usually your accountant or solicitor)  to verify on your behalf</li>
+      </ul>
+
+      <h3 class="govuk-heading-s">What you’ll need:</h3>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Photo ID (a passport or driving licence)</li>
+        <li>Proof of your address</li>
+      </ul>
+
+      {{ govukButton({
+        text: "Verify your identity",
+        href: "route",
+        isStartButton: true
+      }) }}
+
+      <h2 class="govuk-heading-m">More about verifying</h2>
+
+      <p>Read the <a href="../v2/guidance" class="govuk-link">guidance about verifying your identity</a>.</p>
+
+    </div>
+  </div>
+{% endblock %}
