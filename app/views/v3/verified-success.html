@@ -15,15 +15,14 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <div class="govuk-panel govuk-panel--confirmation">
-        <h1 class="govuk-panel__title">Identity verified successfully</h1>
-        <div class="govuk-panel__body">
+      <!--<div class="govuk-panel govuk-panel--confirmation">-->
+        <h1 class="govuk-heading-xl">Identity verified successfully</h1>
+        <h2 class="govuk-heading-l">
           Your identity code:<br><strong>HDJ2123F</strong>
-        </div>
-      </div>
+        </h2>
+      <!--</div>-->
 
-      <p class="govuk-body">We've sent your identity code to
-        <strong>{{ data['emailAddress'] }}</strong>.</p>
+      <div class="govuk-inset-text">We've sent your identity code to <strong>{{ data['emailAddress'] }}</strong>.</div>
 
       <h2 class="govuk-heading-m">What you need to do with your identity code </h2>
 
