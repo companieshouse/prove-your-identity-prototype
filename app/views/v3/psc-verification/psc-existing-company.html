@@ -23,9 +23,9 @@
 
             {% set html %}
               <h3 class="govuk-notification-banner__heading">
-                Do we need to tell them that the One Login thing has now been done?
+                You've verified your identity. 
               </h3>
-              <!--<p class="govuk-body">Contact <a class="govuk-notification-banner__link" href="#">example@department.gov.uk</a> if you think there’s a problem.</p>-->
+              <p class="govuk-body">We've taken you back to Companies House.</p>
             {% endset %}
 
             {{ govukNotificationBanner({
@@ -38,13 +38,13 @@
                 name: "pscExisting",
                 fieldset: {
                   legend: {
-                    text: "Are you a PSC of an existing company?",
+                    text: "Are you a person with significant control (PSC) of an existing company?",
                     isPageHeading: true,
                     classes: "govuk-fieldset__legend--l"
                   }
                 },
                 hint: {
-                  text: "Hint if needed."
+                  text: ""
                 },
                 items: [
                   {
