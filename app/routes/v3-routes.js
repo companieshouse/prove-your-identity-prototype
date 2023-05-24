@@ -222,3 +222,19 @@ router.post('/v3/address-manual', function (req, res) {
 
 module.exports=router;
 
+
+
+// Verify your identity as a person with significant control (PSC) with Companies House
+
+// Are you a PSC of an existing company? - /psc-verification/psc-existing-company.html
+// Needs fixing!!!!!!!!
+
+router.post('/company-number', function(request, response) {
+
+  var pscExisting = request.session.data['pscExisting']
+  if (pscExisting == "yes"){
+      response.redirect("/company-number")
+  } else {
+      response.redirect("https://www.google.co.uk/")
+  }
+})

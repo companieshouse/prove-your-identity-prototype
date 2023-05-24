@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Failure – {{ serviceName }} – GOV.UK Prototype Kit
+  Confirmation – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,18 +14,32 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-{% set html %}
-  <h3 class="govuk-notification-banner__heading">
-    The information you entered does not match the information held by Companies House.
-  </h3>
-    <p class="govuk-body">You can <a class="govuk-notification-banner__link" href="confirm-psc">try entering the correct information again.</a> or <a class="govuk-notification-banner__link" href="javascript:void(0)">update the information held by Companies House</a> if you think that it might not be correct</p>
-{% endset %}
 
-{{ govukNotificationBanner({
-  html: html
-}) }}
+        <h1 class="govuk-heading-xl">Identity verification failed</h1>
 
-      <p class="govuk-body-s"><a href="psc-verified-success">Success</a></p>
+<p class="govuk-body"><strong>{{ data['emailAddress'] }}</strong> isn't authorised for the appointment of <strong>PATEL, Lisa Marie.</strong></p>
+
+<p class="govuk-body">You need to ask MORRIS ACCOUNTING LTD to invite <strong>{{ data['emailAddress'] }}</strong>, then try to verify this appointment.</p>
+
+ <h2 class="govuk-heading-l">What do you want to do next?</h2>
+
+<ul class="govuk-list">
+  <li>
+    <a class="govuk-link" href="#">Share my details with the company</a>
+  </li>
+  <li>
+    <a class="govuk-link" href="#">I will contact the company</a>
+  </li>
+  <li>
+    <a class="govuk-link" href="#">I will update the PSC appointment</a></a>
+  </li>
+</ul>
+
+
+      <h3 class="govuk-heading-m">Feedback</h3>
+      <p class="govuk-body">This is a new service. Help us improve it by completing our
+        <a href="https://www.smartsurvey.co.uk/s/reptpscdisp-fdbk/">quick survey</a>.
+      </p>
 
     </div>
   </div>

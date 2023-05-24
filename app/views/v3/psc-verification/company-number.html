@@ -20,27 +20,53 @@
 
 
 
-      {{ govukInput({
-  label: {
-    text: "What is the company number?",
-    classes: "govuk-label--xl",
-    isPageHeading: true
-  },
-  hint: {
-    text: "The 8-character reference issued by Companies House when the company was set up"
-  },
-    classes: "govuk-!-width-one-half",
-  id: "company-number",
-  name: "company-number",
-  value: data['company-number']
-}) }}
+    {% if errorNum == true %}
 
+          {{ govukErrorSummary({
+            titleText: "There is a problem",
+            errorList: errorList
+          }) }}
+          {{ govukInput({
+            label: {
+              text: "What is the company number?",
+              classes: "govuk-label--xl"
+            },
+            hint: {
+              text: "A company number is 8 characters long."
+            },
+            classes: "govuk-input--width-10",
+            id: "companynumber",
+            name: "companynumber",
+            errorMessage: {
+              text: "Enter the company number"
+            }
+          }) }}
+        {% else %}
+          {{ govukInput({
+            label: {
+              text: "What is the company number? ",
+              classes: "govuk-label--xl"
+            },
+            hint: {
+              text: "A company number is 8 characters long."
+            },
+            classes: "govuk-input--width-10",
+              id: "companynumber",
+              name: "companynumber"
+            }) }}
 
-
-{{ govukDetails({
-  summaryText: "Help with company number",
-  html: 'Use the <a class="govuk-link" href="https://find-and-update.company-information.service.gov.uk/">Companies House service</a> to find it.'
-}) }}
+        {% endif %}
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              How do I find the company number?
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            You can find this by searching for the company on the <a href="https://beta.companieshouse.gov.uk/" class="govuk-link" rel="noreferrer noopener" target="_blank">Companies House register (opens in new tab)</a>.
+          </div>
+        </details>
+   
       
 {{ govukButton({
   text: "Continue",

@@ -21,7 +21,8 @@
     <div class="govuk-grid-column-full">
 
       <h1 class="govuk-heading-xl">
-        {{ serviceName }}
+       Verify your identity with Companies House <span class="govuk-caption-xl">(and then verify your appointments, if applicable)</span>
+
       </h1>
 
       <a href="start" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
@@ -37,6 +38,10 @@
     <div class="govuk-grid-column-two-thirds">
       <h2 class="govuk-heading-m" id="authScreens">Individual screen links</h2>
       <ul class="govuk-list govuk-list--bullet">
+           <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="psc-verification/email-invite">Invite (email)</a>
+        </li> 
+        
            <li>
           <a class="govuk-link govuk-link--no-visited-state" href="chs/search">CHS search page</a>
         </li> 
@@ -71,10 +76,31 @@
           <a class="govuk-link govuk-link--no-visited-state" href="one-login-working">One login working</a>
         </li>
         <li>
-          <a class="govuk-link govuk-link--no-visited-state" href="one-login-exit">One login Exit</a>
+          <a class="govuk-link govuk-link--no-visited-state" href="one-login-exit"><s>One login Exit</s></a>
         </li>
         <li>
-          <a class="govuk-link govuk-link--no-visited-state" href="verified-success">successfully verified</a>
+          <a class="govuk-link govuk-link--no-visited-state" href="psc-verification/psc-existing-company">Are you a PSC of an existing company?</a>
+        </li> 
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="psc-verification/company-number">What is the company number?</a>
+        </li>  
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="psc-verification/correct-company">Confirm this is the correct company</a>
+        </li>
+            <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="psc-verification/appointments">Which person with significant control (PSC) are you?</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="psc-verification/psc-statement">Declaration/PSC statement</a>
+        </li>
+          <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="psc-verification/other-appointments">Do you have more appointments at other companies?</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="verified-success">Successfully verified</a>
+        </li>
+          <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="psc-verification/psc-verified-failure">Failed verification</a>
         </li>
       </ul>
 
@@ -177,30 +203,17 @@
     <div class="govuk-grid-column-two-thirds">
       <h2 class="govuk-heading-m" id="pscScreens">Individual screen links</h2>
       <ul class="govuk-list govuk-list--bullet">
+          <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="psc-verification/email-invite">Invite (email)</a>
+        </li> 
         <li>
           <a class="govuk-link govuk-link--no-visited-state" href="psc-verification/start">Start page</a>
         </li>  
         <li>
           <a class="govuk-link govuk-link--no-visited-state" href="psc-verification/sign-in">Sign in</a>
         </li>  
-        <li>
-          <a class="govuk-link govuk-link--no-visited-state" href="psc-verification/company-number">What is the company number?</a>
-        </li>  
-        <li>
-          <a class="govuk-link govuk-link--no-visited-state" href="psc-verification/correct-company">Confirm this is the correct company</a>
-        </li>
-            <li>
-          <a class="govuk-link govuk-link--no-visited-state" href="psc-verification/pscs">Which person with significant control (PSC) are you?</a>
-        </li>
-        <li>
-          <a class="govuk-link govuk-link--no-visited-state" href="psc-verification/psc-statement">Declaration/PSC statement</a>
-        </li>
-        <li>
-          <a class="govuk-link govuk-link--no-visited-state" href="psc-verification/psc-verified-success">'Success'</a>
-        </li>
-        <li>
-          <a class="govuk-link govuk-link--no-visited-state" href="psc-verification/psc-verified-failure">'Failure'</a>
-        </li>
+     
+   
       </ul>
 
     </div>
