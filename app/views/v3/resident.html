@@ -33,7 +33,11 @@ Are you resident in the UK?
             <h1 class="govuk-fieldset__heading">
             Do you have a home address in the UK?
             </h1>
+            
           </legend>
+          <div id="has-ID-hint" class="govuk-hint">
+            We only ask this to find out if you can use GOV.UK One Login. You do not need to provide any proof.  
+          </div>
           <!-- Check for error -->
           {% if errorResident %}
           <p id="is-resident-error" class="govuk-error-message">
