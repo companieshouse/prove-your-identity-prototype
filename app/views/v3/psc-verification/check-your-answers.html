@@ -1,63 +1,62 @@
+{% set title = "" %}
 {% extends "layouts/main.html" %}
 
+{% set serviceName %}
+{{title}}
+{% endset%}
+
 {% block pageTitle %}
-  Check your answer – {{ serviceName }} – GOV.UK Prototype Kit
+  Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
+
 {% block beforeContent %}
-{% include "includes/phase-banner.html" %}
-{% include "includes/account-banner.html" %}
-{% include "includes/back-link.html" %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/account-banner.html" %}
+  {% include "includes/back-link.html" %}
 {% endblock %}
-
-
-
 
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+    <form action="other-appointments" method="post">
 
+      <h1 class="govuk-heading-xl">Check your answers before sending your application</h1>
 
-      <h1 class="govuk-heading-l">Check your answers</h1>
-
-  
 
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
         rows: [
-         
-          
-          
           {
             key: {
-              text: "Date of birth"
+              text: "Person with significant control (PSC)"
             },
-               value: {
-              html: "23 March 1986"
+            value: {
+              html: "Sally Louise HARRIS<br> (Date of birth: April 1986)"
             },
             actions: {
               items: [
                 {
-                  href: "javascript:void(0)",
+                  href: "appointments",
                   text: "Change",
-                  visuallyHiddenText: "date of birth"
+                  visuallyHiddenText: "Sally Louise HARRIS"
                 }
               ]
             }
           },
-           {
+          {
             key: {
-              text: "Home address"
+              text: "Declaration"
             },
             value: {
-              html: "72 Guild Street<br>London<br>SE23 6FH"
+              text: "I, Sally Ann HARRIS, declare I have verified my identity."
             },
             actions: {
               items: [
                 {
-                  href: "javascript:void(0)",
+                  href: "psc-statement",
                   text: "Change",
-                  visuallyHiddenText: "home address"
+                  visuallyHiddenText: "declaration"
                 }
               ]
             }
@@ -66,20 +65,11 @@
       }) }}
 
 
-
-
-     
-
-
         {{ govukButton({
-          text: "Continue",
-          href: "psc-verified-success"
+         text: "Continue"
         }) }}
 
       </form>
-
     </div>
   </div>
 {% endblock %}
-
-

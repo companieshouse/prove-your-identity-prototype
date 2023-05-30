@@ -15,31 +15,32 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+      <form action="check-your-answers" method="post">
 
-{{ govukCheckboxes({
-  name: "waste",
-  fieldset: {
-    legend: {
-      text: "Verification statement",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--xl"
-    }
-  },
-  
-  items: [
-    {
-      value: "psc-confirmation",
-      html: "I, <strong>Sally Ann Harris</strong>, declare I have verified my identity."
-    }
-  ]
-  
-}) }}
+
+        {{ govukCheckboxes({
+          name: "verificationStatement",
+          fieldset: {
+            legend: {
+              text: "Verification statement",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          
+          items: [
+            {
+              value: "psc-confirmation",
+              html: "I, <strong>Sally Ann HARRIS</strong>, declare I have verified my identity."
+            }
+          ]
+          
+        }) }}
 
    {{ govukButton({
-  text: "Continue",
-  href: "other-appointments"
-}) }}  
+      text: "Continue"
+    }) }}  
+      </form>
 
     </div>
   </div>
