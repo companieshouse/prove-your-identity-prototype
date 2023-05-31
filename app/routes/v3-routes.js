@@ -235,7 +235,7 @@ router.post('/v3/psc-verification/psc-statement', function (req, res) {
   if (typeof req.session.data['verification-Statement'] === 'undefined') {
     // No value so add error to array
     errors.push({
-      text: 'You must confirm the verification statement',
+      text: 'Confirm if the verification statement is correct',
       href: '#verification-Statement'
     })
 
