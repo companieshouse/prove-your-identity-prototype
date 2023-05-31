@@ -302,7 +302,7 @@ router.post('/v3/psc-verification/appointments', function (req, res) {
   if (typeof req.session.data['psc-choice'] === 'undefined') {
     // No value so add error to array
     errors.push({
-      text: 'Select which person with significant control (PSC) you are',
+      text: 'Select which PSC you are',
       href: '#psc-choice'
     })
 
