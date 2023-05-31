@@ -19,17 +19,17 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Check your answers before sending your application</h1>
+      <h1 class="govuk-heading-l">Review your information before you submit</h1>
 
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
         rows: [
           {
             key: {
-              text: "Person with significant control (PSC)"
+              text: "PSC"
             },
             value: {
-              html: "Sally Louise HARRIS<br> (Date of birth: April 1986)"
+              html: "Sally Louise HARRIS<br> Born April 1986"
             },
             actions: {
               items: [
@@ -46,7 +46,7 @@
 
 
         {{ govukButton({
-         text: "Continue",
+         text: "Submit",
          href: "verified-success-psc"
         }) }}
 
