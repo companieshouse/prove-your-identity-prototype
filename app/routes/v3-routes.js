@@ -66,7 +66,7 @@ router.post('/v3/id-check', function (req, res) {
   if (typeof req.session.data['has-ID'] === 'undefined') {
     // No value so add error to array
     errors.push({
-      text: 'Select what type of ID you have',
+      text: 'Select which type of photo ID you have',
       href: '#has-ID'
     })
 
@@ -102,7 +102,7 @@ router.post('/v3/route', function (req, res) {
   if (typeof req.session.data['which-route'] === 'undefined') {
     // No value so add error to array
     errors.push({
-      text: 'You must select how you would you like to verify your identity with Companies House',
+      text: 'Select how you want to verify your identity',
       href: '#which-route'
     })
 
@@ -138,7 +138,7 @@ router.post('/v3/resident', function (req, res) {
   if (typeof req.session.data['is-resident'] === 'undefined') {
     // No value so add error to array
     errors.push({
-      text: 'You must select if you have a home address in the UK',
+      text: 'Select yes if you have a home address in the UK',
       href: '#is-resident'
     })
 
@@ -199,7 +199,7 @@ router.post('/v3/psc-verification/psc-existing-company', function (req, res) {
   if (typeof req.session.data['psc-existing'] === 'undefined') {
     // No value so add error to array
     errors.push({
-      text: 'You must select if you are a person with significant control',
+      text: 'Select yes if you are a person with significant control (PSC)',
       href: '#psc-existing'
     })
 
@@ -266,7 +266,7 @@ router.post('/v3/psc-verification/other-appointments', function (req, res) {
   if (typeof req.session.data['psc-another'] === 'undefined') {
     // No value so add error to array
     errors.push({
-      text: 'You must select if you are a PSC for another company',
+      text: 'Select yes if you are a PSC for another company',
       href: '#psc-another'
     })
 
@@ -302,7 +302,7 @@ router.post('/v3/psc-verification/appointments', function (req, res) {
   if (typeof req.session.data['psc-choice'] === 'undefined') {
     // No value so add error to array
     errors.push({
-      text: 'You must select which person with significant control you are',
+      text: 'Select which person with significant control (PSC) you are',
       href: '#psc-choice'
     })
 
