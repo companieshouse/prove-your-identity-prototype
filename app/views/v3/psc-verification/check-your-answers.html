@@ -19,10 +19,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-    <form action="other-appointments" method="post">
-
-      <h1 class="govuk-heading-xl">Check your answers before sending your application</h1>
-
+      <h1 class="govuk-heading-l">Check your answers before sending your application</h1>
 
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
@@ -49,10 +46,10 @@
 
 
         {{ govukButton({
-         text: "Continue"
+         text: "Continue",
+         href: "verified-success-psc"
         }) }}
 
-      </form>
     </div>
   </div>
 {% endblock %}

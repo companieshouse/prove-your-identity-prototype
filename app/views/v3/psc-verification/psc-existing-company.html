@@ -16,52 +16,55 @@
 {% endblock %}
 
 {% block content %}
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <!-- Check for error -->
+    {% if errorPsc %}
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: errorList
+      }) }}
+    {% endif %}
+    <form action="{{currentUrl}}" method="post">
 
-          <form action="company-number" method="post">
+      <h1 class="govuk-heading-l">Are you a person with significant control (PSC) of an exiting company?</h1>
+      
+      <!-- Check for error -->
+      {% if errorPsc %}
+      <div class="govuk-form-group govuk-form-group--error">
+      {% else %}
+      <div class="govuk-form-group">
+      {% endif %} 
+        <fieldset class="govuk-fieldset" aria-describedby="psc-existing-hint">
+          <!-- Check for error -->
+          {% if errorPsc %}
+          <p id="psc-existing-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Select if you are a person with significant control
+          </p>
+          {% endif %} 
+        
+          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="psc-existing" name="psc-existing" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="psc-existing">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="psc-existing-2" name="psc-existing" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="psc-existing-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
 
-            {% set html %}
-              <h3 class="govuk-notification-banner__heading">
-                You've verified your identity with GOV.UK One Login. 
-              </h3>
-              <p class="govuk-body">We've taken you back to Companies House.</p>
-            {% endset %}
+      {{ govukButton({
+        text: "Continue"
+      }) }}
 
-            {{ govukNotificationBanner({
-              html: html,
-              type: 'success'
-            }) }}
-
-            {{ govukRadios({
-                classes: "govuk-radios--inline",
-                name: "pscExisting",
-                fieldset: {
-                  legend: {
-                    text: "Are you a person with significant control (PSC) of an existing company?",
-                    isPageHeading: true,
-                    classes: "govuk-fieldset__legend--l"
-                  }
-                },
-                hint: {
-                  text: ""
-                },
-                items: [
-                  {
-                    value: "yes",
-                    text: "Yes"
-                  },
-                  {
-                    value: "no",
-                    text: "No"
-                  }
-                ]
-              }) }}
-
-                 {{ govukButton({
-                  text: "Continue"
-                  }) }}
-      </form>
-    </div>
+    </form>
   </div>
+</div>
 {% endblock %}

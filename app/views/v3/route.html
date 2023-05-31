@@ -22,21 +22,21 @@ How would you like to verify your identity with Companies House?
     {% endif %}
     <form action="{{currentUrl}}" method="post">
 
-    <h1 class="govuk-heading-l">Choose a way to verify</h1>
-    <h2 class="govuk-heading-m">Option 1: verify with GOV.UK online</h2>
-                
-        <p class="govuk-body">You can use GOV.UK One Login if you have any of the following: </p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>a home address in the UK</li>
-          <li>a biometric passport from any country</li>
-          <li>a UK photo driving licence</li>
-        </ul>
+      <h1 class="govuk-heading-l">Choose a way to verify</h1>
+      <h2 class="govuk-heading-m">Option 1: verify with GOV.UK online</h2>
+                  
+      <p class="govuk-body">You can use GOV.UK One Login if you have any of the following: </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>a home address in the UK</li>
+        <li>a biometric passport from any country</li>
+        <li>a UK photo driving licence</li>
+      </ul>
 
       <p class="govuk-body">If you do not have a biometric ID but you live in the UK, GOV.UK will guide you through an in-person service. </p>
 
       <p class="govuk-body">When your identity is verified with One Login, it will also be valid for use with HMRC and the DWP.</p>
 
-     {{ govukDetails({
+      {{ govukDetails({
         summaryText: "What is a biometric passport?",
         text: "Biometric passports have a small rectangular symbol on the front cover. You can use them to go through electronic gates at airports and international train stations."
       }) }}
@@ -48,23 +48,13 @@ How would you like to verify your identity with Companies House?
 
       <p class="govuk-body">If you verify with your authorised agent, your identity will only be verified for Companies House.</p>
     
-
-
-
-
-
-
-
       <!-- Check for error -->
-      {% if errorResident %}
+      {% if errorRoute %}
       <div class="govuk-form-group govuk-form-group--error">
       {% else %}
       <div class="govuk-form-group">
       {% endif %} 
         <fieldset class="govuk-fieldset" aria-describedby="which-route-hint">
-        
-
-
           <!-- Check for error -->
           {% if errorRoute %}
           <p id="which-route-error" class="govuk-error-message">
@@ -72,7 +62,7 @@ How would you like to verify your identity with Companies House?
           </p>
           {% endif %} 
         
-           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m ">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m ">
             <h3 class="govuk-fieldset__heading govuk-!-margin-top-5">
               How do you want to verify your identity with Companies House?
             </h3>
@@ -83,15 +73,15 @@ How would you like to verify your identity with Companies House?
               <label class="govuk-label govuk-radios__label" for="which-route">
                 Verify with GOV.UK One Login
               </label>
-              
             </div>
+
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="which-route-2" name="which-route" type="radio" value="acsp">
               <label class="govuk-label govuk-radios__label" for="which-route-2">
                 Verify with an authorised agent 
               </label>
-             
             </div>
+
           </div>
         </fieldset>
       </div>
