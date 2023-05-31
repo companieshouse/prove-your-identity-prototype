@@ -199,7 +199,7 @@ router.post('/v3/psc-verification/psc-existing-company', function (req, res) {
   if (typeof req.session.data['psc-existing'] === 'undefined') {
     // No value so add error to array
     errors.push({
-      text: 'Select yes if you are a person with significant control (PSC)',
+      text: 'Select yes if you are a PSC of an existing company',
       href: '#psc-existing'
     })
 
