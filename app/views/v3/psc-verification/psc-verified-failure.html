@@ -23,6 +23,11 @@
 
         <p class="govuk-body">Update your PSC details at Companies House so that the information you gave to GOV.UK One Login matches our records.</p>
 
+        {{ govukWarningText({
+          text: "If you fail to do this, your identity verification is not complete and you may face penalties and sanctions.",
+          iconFallbackText: "Warning"
+        }) }}
+
         <h3 class="govuk-heading-m">What you need to update your details</h3>
 
         <p class="govuk-body">You'll need your personal verification code: <strong>2F3P8MZ6</strong> </p>
