@@ -1,0 +1,74 @@
+{% extends "layouts/main.html" %}
+{% block pageTitle %}
+  Confirm you are DAVIS, Kathryn Rebecca
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/account-banner.html" %}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!-- Check for error -->
+      {% if errorThisYou %}
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: errorList
+        }) }}
+      {% endif %}
+      <form action="{{currentUrl}}" method="post">
+
+        <!-- Check for error -->
+        {% if errorThisYou %}
+        <div class="govuk-form-group govuk-form-group--error">
+        {% else %}
+        <div class="govuk-form-group">
+        {% endif %} 
+          <fieldset class="govuk-fieldset" aria-describedby="is-this-you-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Confirm you are Sally Louise Harris
+              </h1>
+            </legend>
+            <div id="is-this-you-hint" class="govuk-hint">
+              We have linked you verified identity to Sally Louise Harris, born August 1986. Confirm below that this is you.
+            </div>
+            <!-- Check for error -->
+            {% if errorThisYou %}
+            <p id="psc-another-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Select yes if this is you
+            </p>
+            {% endif %} 
+          
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="is-this-you" name="is-this-you" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="is-this-you">
+                  Yes, this is me
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="is-this-you-2" name="is-this-you" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="is-this-you-2">
+                  No, this is not me
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+  
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

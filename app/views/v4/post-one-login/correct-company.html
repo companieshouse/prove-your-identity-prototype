@@ -1,0 +1,73 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirm this is the correct company – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/account-banner.html" %}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+
+
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Confirm this is the correct company</h1>
+
+      <dl class="govuk-summary-list">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Company name</dt>
+
+          {% if data['company-number'] == '02050399' %}
+          <dd class="govuk-summary-list__value">WRIGHT SOLUTIONS LTD</dd>
+          {% else %}
+          <dd class="govuk-summary-list__value">CONSTRUCTION 123 LTD</dd>
+          {% endif %}
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Company number</dt>
+          <dd class="govuk-summary-list__value">{{ data['company-number'] }}</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Status</dt>
+          <dd class="govuk-summary-list__value">
+            Active
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Incorporation date</dt>
+          {% if data['company-number'] == '02050399' %}
+          <dd class="govuk-summary-list__value">28 August 1986</dd>
+          {% else %}
+          <dd class="govuk-summary-list__value">10 December 1978</dd>
+          {% endif %}
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Company type</dt>
+          <dd class="govuk-summary-list__value">Private limited company</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Registered office address</dt>
+          {% if data['company-number'] == '02050399' %}
+          <dd class="govuk-summary-list__value">34 Long Road <br> London <br> SE23 1FG</dd>
+          {% else %}
+          <dd class="govuk-summary-list__value">72 Guild Street <br> London <br> SE23 6FH</dd>
+          {% endif %}
+        </div>
+      </dl>
+       
+      {{ govukButton({
+        text: "Continue",
+        href: "is-this-you"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}

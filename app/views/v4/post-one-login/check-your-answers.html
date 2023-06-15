@@ -1,0 +1,131 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/account-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <!-- Check for error -->
+      {% if errorAnotherPsc %}
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: errorList
+      }) }}
+      {% endif %}
+
+      <form action="{{currentUrl}}" method="post">
+
+        <h1 class="govuk-heading-l">You have linked your verified identity to the following companies</h1>
+
+        <div class="govuk-summary-card" id="company-1">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">WRIGHT SOLUTIONS LTD</h2>
+            <ul class="govuk-summary-card__actions">
+              <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+                  Remove<span class="govuk-visually-hidden"></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Company number
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  02050399
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  PSC details
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Sally Louise Harris (Born April 1986)
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
+        <!-- <div class="govuk-summary-card" id="company-2">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">CONSTRUCTION 123 LTD</h2>
+            <ul class="govuk-summary-card__actions">
+              <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+                  Remove<span class="govuk-visually-hidden"></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Company number
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  12345678
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  PSC details
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Sal Louise Harris (Born April 1986)
+                </dd>
+              </div>
+            </dl>
+          </div> -->
+
+        <h2 class="govuk-heading-m">Do you need to link your verified identity to another company?</h2>
+        
+        <!-- Check for error -->
+        {% if errorAnotherPsc %}
+        <div class="govuk-form-group govuk-form-group--error">
+        {% else %}
+        <div class="govuk-form-group">
+        {% endif %} 
+          <fieldset class="govuk-fieldset" aria-describedby="psc-another-hint">
+            <!-- Check for error -->
+            {% if errorAnotherPsc %}
+            <p id="psc-another-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Select if you need to link your verified ID to another PSC
+            </p>
+            {% endif %} 
+          
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="psc-another" name="psc-another" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="psc-another">
+                  Yes, I am a PSC for another company
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="psc-another-2" name="psc-another" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="psc-another-2">
+                  No, I am not a PSC for any other companies
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

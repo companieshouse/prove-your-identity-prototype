@@ -1,0 +1,36 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Are you resident in the UK?
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/account-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      We've taken you back to Companies House
+    </h1>
+
+    <p class="govuk-body">
+      We will now connect your verified identity to the records we have 
+      on file for you. You will get a Companies House personal code to 
+      prove this.  
+    </p>
+
+    {{ govukButton({
+      text: "Continue",
+      href: "../post-one-login/psc-existing-company"
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
