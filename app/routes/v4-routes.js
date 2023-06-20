@@ -167,7 +167,7 @@ router.get('/v4/pre-one-login/one-login-start', function (req, res) {
 })
 
 router.post('/v4/pre-one-login/one-login-start', function (req, res) {
-  res.redirect('/v4/one-login/smartphone-type')
+  res.redirect('/v4/one-login/computer')
 })
 
 
@@ -208,28 +208,59 @@ router.post('/v4/post-one-login/psc-existing-company', function (req, res) {
 
 
 // ******* psc-statement javascript ********************************
-router.get('/v4/post-one-login/psc-statement', function (req, res) {
+router.get('/v4/post-one-login/psc-statement-one', function (req, res) {
   // Set URl
-  res.render('v4/post-one-login/psc-statement', {
+  res.render('v4/post-one-login/psc-statement-one', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/v4/post-one-login/psc-statement', function (req, res) {
+router.post('/v4/post-one-login/psc-statement-one', function (req, res) {
   // Create empty array
   var errors = []
 
   // Check if user has filled out a value
-  if (typeof req.session.data['verification-Statement'] === 'undefined') {
+  if (typeof req.session.data['verification-Statement-one'] === 'undefined') {
     // No value so add error to array
     errors.push({
       text: 'Confirm if the verification statement is correct',
-      href: '#verification-Statement'
+      href: '#verification-Statement-one'
     })
 
     // Re-show page with error value as true so errors will show
-    res.render('v4/post-one-login/psc-statement', {
-      errorStatement: true,
+    res.render('v4/post-one-login/psc-statement-one', {
+      errorStatementOne: true,
+      errorList: errors
+    })
+  } else {
+    res.redirect('/v4/post-one-login/check-your-answers')
+  }
+})
+
+
+// ******* psc-statement javascript ********************************
+router.get('/v4/post-one-login/psc-statement-two', function (req, res) {
+  // Set URl
+  res.render('v4/post-one-login/psc-statement-two', {
+    currentUrl: req.originalUrl
+  })
+})
+
+router.post('/v4/post-one-login/psc-statement-two', function (req, res) {
+  // Create empty array
+  var errors = []
+
+  // Check if user has filled out a value
+  if (typeof req.session.data['verification-Statement-two'] === 'undefined') {
+    // No value so add error to array
+    errors.push({
+      text: 'Confirm if the verification statement is correct',
+      href: '#verification-Statement-two'
+    })
+
+    // Re-show page with error value as true so errors will show
+    res.render('v4/post-one-login/psc-statement-two', {
+      errorStatementTwo: true,
       errorList: errors
     })
   } else {
@@ -274,37 +305,37 @@ router.post('/v4/post-one-login/check-your-answers', function (req, res) {
 })
 
 
-// ******* is-this-you javascript ********************************
-router.get('/v4/post-one-login/is-this-you', function (req, res) {
+// ******* other-appointments javascript ********************************
+router.get('/v4/post-one-login/unlinked-identity', function (req, res) {
   // Set URl
-  res.render('v4/post-one-login/is-this-you', {
+  res.render('v4/post-one-login/unlinked-identity', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/v4/post-one-login/is-this-you', function (req, res) {
+router.post('/v4/post-one-login/unlinked-identity', function (req, res) {
   // Create empty array
   var errors = []
 
   // Check if user has filled out a value
-  if (typeof req.session.data['is-this-you'] === 'undefined') {
+  if (typeof req.session.data['no-psc-another'] === 'undefined') {
     // No value so add error to array
     errors.push({
-      text: 'Select yes if this is you',
-      href: '#is-resident'
+      text: 'Select if you need to link your verified ID to another PSC',
+      href: '#no-psc-another'
     })
 
     // Re-show page with error value as true so errors will show
-    res.render('v4/post-one-login/is-this-you', {
-      errorThisYou: true,
+    res.render('v4/post-one-login/unlinked-identity', {
+      errorAnotherPsc2: true,
       errorList: errors
     })
   } else {
-    if (req.session.data['is-this-you'] === 'yes') {
-      res.redirect('/v4/post-one-login/psc-statement')
+    if (req.session.data['no-psc-another'] === 'yes') {
+      res.redirect('/v4/post-one-login/company-number')
     } else {
       // User inputted value so move to next page
-      res.redirect('/v4/post-one-login/psc-verified-failure')
+      res.redirect('/v4/post-one-login/verified-success-psc')
     }
   }
 })
@@ -350,6 +381,42 @@ router.post('/v4/post-one-login/company-number', function (req, res) {
 })
 
 // ******* smartphone-type javascript ********************************
+router.get('/v4/one-login/computer', function (req, res) {
+  // Set URl
+  res.render('v4/one-login/computer', {
+    currentUrl: req.originalUrl
+  })
+})
+
+router.post('/v4/one-login/computer', function (req, res) {
+  // Create empty array
+  var errors = []
+
+  // Check if user has filled out a value
+  if (typeof req.session.data['laptop'] === 'undefined') {
+    // No value so add error to array
+    errors.push({
+      text: 'Select if you are on a computer or tablet',
+      href: '#laptop'
+    })
+
+    // Re-show page with error value as true so errors will show
+    res.render('v4/one-login/computer', {
+      errorLaptop: true,
+      errorList: errors
+    })
+  } else {
+    if (req.session.data['laptop'] === 'no') {
+      res.redirect('/v4/one-login/computer')
+    } else {
+      // User inputted value so move to next page
+      res.redirect('/v4/one-login/smartphone-type')
+    }
+  }
+})
+
+
+// ******* smartphone-type javascript ********************************
 router.get('/v4/one-login/smartphone-type', function (req, res) {
   // Set URl
   res.render('v4/one-login/smartphone-type', {
@@ -379,7 +446,7 @@ router.post('/v4/one-login/smartphone-type', function (req, res) {
       res.redirect('/v4/one-login/smartphone-type')
     } else {
       // User inputted value so move to next page
-      res.redirect('/v4/one-login/passport')
+      res.redirect('/v4/one-login/interruption-card')
     }
   }
 })
@@ -417,6 +484,25 @@ router.post('/v4/one-login/passport', function (req, res) {
       // User inputted value so move to next page
       res.redirect('/v4/one-login/passport')
     }
+  }
+})
+
+
+
+// ******* linked-identity javascript ********************************
+router.get('/v4/post-one-login/linked-identity', function (req, res) {
+  // Set URl
+  res.render('v4/post-one-login/linked-identity', {
+    currentUrl: req.originalUrl
+  })
+})
+
+router.post('/v4/post-one-login/linked-identity', function (req, res) {
+  if (req.session.data['company-number'] === '02050399') {
+    res.redirect('/v4/post-one-login/psc-statement-one')
+  } else {
+    // User inputted value so move to next page
+    res.redirect('/v4/post-one-login/psc-statement-two')
   }
 })
 

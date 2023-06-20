@@ -1,0 +1,72 @@
+{% extends "layouts/main.html" %}
+{% block pageTitle %}
+  Confirm you are DAVIS, Kathryn Rebecca
+  -
+  {{serviceName}}
+  - GOV.UK
+{% endblock %}
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/account-banner.html" %}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">We have found a PSC that matches your verified identity</h1>
+
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">
+            {% if data['company-number'] == '02050399' %}
+              WRIGHT SOLUTIONS LTD (02050399)
+            {% else %}
+              CONSTRUCTION 123 LTD (12345678)
+            {% endif %}
+          </h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                PSC name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% if data['company-number'] == '02050399' %}
+                  Sally Louise Harris
+                {% else %}
+                  Sally Harris
+                {% endif %}
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Date of birth
+              </dt>
+              <dd class="govuk-summary-list__value">
+                April 1986
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                PSC Correspondence address
+              </dt>
+              <dd class="govuk-summary-list__value">
+                100 Long Street, Newtown, England, XY1 2BC
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+
+      <form action="{{currentUrl}}" method="post">
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

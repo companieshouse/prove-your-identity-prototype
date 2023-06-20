@@ -15,7 +15,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
     <!-- Check for error -->
-    {% if errorStatement %}
+    {% if errorStatementOne %}
       {{ govukErrorSummary({
         titleText: "There is a problem",
         errorList: errorList
@@ -24,26 +24,26 @@
       <form action="{{currentUrl}}" method="post">
 
         <!-- Check for error -->
-        {% if errorStatement %}
+        {% if errorStatementOne %}
         <div class="govuk-form-group govuk-form-group--error">
         {% else %}
         <div class="govuk-form-group">
         {% endif %} 
-          <fieldset class="govuk-fieldset" aria-describedby="verificationStatement-hint">
+          <fieldset class="govuk-fieldset" aria-describedby="verificationStatement-one-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
               <h1 class="govuk-fieldset__heading">
                 Verification statement
               </h1>
             </legend>
-            {% if errorStatement %}
-            <p id="verificationStatement-error" class="govuk-error-message">
+            {% if errorStatementOne %}
+            <p id="verificationStatement-one-error" class="govuk-error-message">
               <span class="govuk-visually-hidden">Error:</span>Confirm if the verification statement is correct
             </p>
             {% endif %}
             <div class="govuk-checkboxes" data-module="govuk-checkboxes">
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="verification-Statement" name="verification-Statement" type="checkbox" value="sally-ann">
-                <label class="govuk-label govuk-checkboxes__label" for="verification-Statement">
+                <input class="govuk-checkboxes__input" id="verification-Statement-one" name="verification-Statement-one" type="checkbox">
+                <label class="govuk-label govuk-checkboxes__label" for="verification-Statement-one">
                   I, <strong>Sally Louise Harris</strong>, declare I have verified my identity as a person with significant control (PSC) for WRIGHT SOLUTIONS LTD (02050399).
                 </label>
               </div>

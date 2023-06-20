@@ -11,9 +11,6 @@
 {% endblock %}
 
 
-
-
-
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -62,11 +59,19 @@
           {% endif %}
         </div>
       </dl>
-       
-      {{ govukButton({
-        text: "Continue",
-        href: "is-this-you"
-      }) }}
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Continue",
+            href: "linked-identity"
+          }) }}
+
+          {{ govukButton({
+            text: "Change company",
+            classes: "govuk-button--secondary",
+            href: "company-number"
+          }) }}
+        </div>
 
     </div>
   </div>

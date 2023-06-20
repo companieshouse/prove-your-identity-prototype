@@ -19,7 +19,7 @@ Prove your identity with GOV.UK account GOV.UK – GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <!-- Check for error -->
-    {% if errorPassport %}
+    {% if errorLaptop %}
       {{ govukErrorSummary({
         titleText: "There is a problem",
         errorList: errorList
@@ -28,39 +28,39 @@ Prove your identity with GOV.UK account GOV.UK – GOV.UK Prototype Kit
     <form action="{{currentUrl}}" method="post">
 
       <!-- Check for error -->
-      {% if errorPassport %}
+      {% if errorLaptop %}
       <div class="govuk-form-group govuk-form-group--error">
       {% else %}
       <div class="govuk-form-group">
       {% endif %} 
-        <fieldset class="govuk-fieldset" aria-describedby="passport-hint">
+        <fieldset class="govuk-fieldset" aria-describedby="laptop-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-            Do you have a valid passport?
+            Are you on a computer or a tablet right now?
             </h1>
   
           </legend>
-          <div id="passport-hint" class="govuk-hint">
-            If you have a passport you can use it to confirm your identity.
+          <div id="laptop-hint" class="govuk-hint">
+            <p>Some ways of confirming your identity are only available on specific devices. Let us know what device you are using right now.</p> 
           </div>
           <!-- Check for error -->
-          {% if errorPassport %}
-          <p id="passport-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> Select if you have a valid passport
+          {% if errorLaptop %}
+          <p id="laptop-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Select if you are on a computer or tablet
           </p>
           {% endif %} 
 
-          <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="passport" name="passport" type="radio" value="yes">
-              <label class="govuk-label govuk-radios__label" for="passport">
-                Yes
+              <input class="govuk-radios__input" id="laptop" name="laptop" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="laptop">
+                Yes, I am on a computer or tablet
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="passport-2" name="passport" type="radio" value="no">
-              <label class="govuk-label govuk-radios__label" for="passport-2">
-                No
+              <input class="govuk-radios__input" id="laptop-2" name="laptop" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="laptop-2">
+                No, I am on another device
               </label>
             </div>
           </div>
