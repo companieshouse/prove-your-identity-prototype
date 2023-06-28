@@ -1,0 +1,68 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/account-banner.html" %}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!--<div class="govuk-panel govuk-panel--confirmation">-->
+        <h1 class="govuk-heading-xl">Identity verified successfully</h1>
+        <h2 class="govuk-heading-l">
+          Your identity code:<br><strong>HDJ2123F</strong>
+        </h2>
+      <!--</div>-->
+
+      <div class="govuk-inset-text">We've sent your identity code to <strong>{{ data['emailAddress'] }}</strong>.</div>
+
+      <h2 class="govuk-heading-m">What you need to do with your identity code </h2>
+
+      <p class="govuk-body">Only share your code with people you trust to file on your behalf.
+      </p>
+
+
+      <p class="govuk-body">You must file a verification statement to confirm the 
+        directors and PSCs of your company are verified. We’ll ask for your identity
+         code in the verification statement and some future 
+         filings.
+      </p>
+
+      {{ govukWarningText({
+        text: "You must file a verification statement in time to avoid sanctions and penalties. We advise you to do this as soon as possible.",
+        iconFallbackText: "Warning"
+      }) }}
+      
+<h3 class="govuk-heading-s">If you are a director (or equivalent)</h3>
+
+      <p class="govuk-body">The company must file a verification statement with its next confirmation statement after all directors have verified their identity. 
+      </p>
+
+      <h3 class="govuk-heading-s">If you are an existing PSC</h3>
+
+      <p class="govuk-body">You must file a verification statement no later than 14 days after the due date of the next confirmation statement. You can find the date if you <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">search for the company on the Companies House register (opens in a new tab)</a>. 
+      </p>
+
+      <h3 class="govuk-heading-s">If you are a new PSC</h3>
+
+      <p class="govuk-body">You must file a verification statement no later than 14 days after the company gives notice to Companies House.
+      </p>
+
+
+      <h3 class="govuk-heading-m">Feedback</h3>
+      <p class="govuk-body">This is a new service. Help us improve it by completing our
+        <a href="https://www.smartsurvey.co.uk/s/reptpscdisp-fdbk/">quick survey</a>.
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}
