@@ -69,7 +69,7 @@ router.post('/v6/pre-one-login/sign-in-password', function (req, res) {
     })
   } else {
     // User inputted value so move to next page
-    res.redirect('/v6/pre-one-login/one-login-intro')
+    res.redirect('/v6/pre-one-login/you-need-to-verify')
   }
 })
 
