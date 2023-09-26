@@ -1,0 +1,59 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  You have failed to verify your identity for Companies House – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/account-banner.html" %}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation ch-panel--failure">
+        <h1 class="govuk-panel__title">
+        You have failed to verify your identity for Companies House
+        </h1>
+      </div>
+
+      <p class="govuk-body">You need to successfully prove who you are to Companies House. If you do not verify your identity in time, you are committing an offence.  </p>
+
+      <p class="govuk-body">
+        You could:
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>get a maximum fine of £XXX</li>
+        <li>be stopped from acting as a director</li>
+        <li>be unable to make any filings for your company</li>
+        <li>be unable to start a new company </li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Next steps</h2>
+
+      <p class="govuk-body">Contact the Companies House verification helpline as soon as possible on xxxxxxxx  
+      </p>
+
+        <p class="govuk-body">
+        We will help you to: 
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>apply for extensions for filings to prevent fines </li>
+        <li>find another way to verify</li>
+      </ul>
+
+      <h3 class="govuk-heading-m">Feedback</h3>
+      <p class="govuk-body">This is a new service. Help us improve it by completing our
+        <a href="https://www.smartsurvey.co.uk/s/reptpscdisp-fdbk/">quick survey</a>.
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

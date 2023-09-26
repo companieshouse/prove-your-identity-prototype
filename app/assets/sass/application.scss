@@ -158,3 +158,11 @@ ul#navigation {
   background-color: #F3F2F1;
   padding: 20px;
 }
+
+// Failed confirmation
+
+.ch-panel--failure {
+  background-color: govuk-colour("white");
+  border: 2px solid govuk-colour("black");
+  color: govuk-colour("black");
+}
