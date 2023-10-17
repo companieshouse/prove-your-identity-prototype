@@ -1,0 +1,50 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Are you resident in the UK?
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/account-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      We’re taking you to verify your identity with GOV.UK 
+    </h1>
+
+    <h3 class="govuk-heading-s">
+      With the GOV.UK app  
+    </h3>
+
+    <p class="govuk-body">If you verify online, you can download an 
+      app to scan your biometric ID. It’s the fastest and easiest 
+      way to verify. You can use any up-to-date mobile phone to get
+       the app, it doesn’t need to be your own.</p>
+
+    <h3 class="govuk-heading-s">
+      Without the GOV.UK app  
+    </h3>
+
+    <p class="govuk-body">You can continue without using the app. You 
+      will be asked some questions about your financial history to 
+      verify your identity. </p>
+
+    <p class="govuk-body">When you have verified your identity successfully, 
+      we'll take you back to Companies House to continue.</p>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "one-login-start"
+      }) }}
+
+  </div>
+</div>
+
+{% endblock %}

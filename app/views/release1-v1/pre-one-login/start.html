@@ -1,0 +1,59 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start page – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Verify your identity for Companies House 
+      </h1>
+
+      <p class="govuk-body">You need to verify your identity for 
+        Companies House. You only need to verify once, even if you have multiple roles for different companies. </p>
+
+      <p class="govuk-body">You need to verify your identity if you're a company director
+         (or equivalent), a person with 
+        significant control (PSC) or someone who files with Companies House.</p>
+
+      {{ govukButton({
+        text: "Verify your identity",
+        href: "create-or-sign-in",
+        isStartButton: true
+      }) }}
+
+      <h2 class="govuk-heading-m">More about verifying</h2>
+
+      <p>Read the <a href="guidance" class="govuk-link">guidance about verifying your identity</a>.</p>
+
+      <div class="grey-box">
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-warning-text__assistive">Warning</span>
+            Fraud warning: do not let others use your identity
+          </strong>
+        </div>
+        <p class="govuk-body">Do not sell or give away your identity to set up or run a company. Criminals can 
+          take out loans and other debt in your name, and you will be legally 
+          responsible.  </p>
+  
+          <p class="govuk-body"><a href="guidance" class="govuk-link">Get advice about financial crime</a>.</p>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

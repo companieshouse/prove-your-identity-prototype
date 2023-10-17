@@ -1,0 +1,56 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+How would you like to verify your identity with Companies House?
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="{{currentUrl}}" method="post">
+
+      <h1 class="govuk-heading-l">You need to verify your identity for Companies House</h1>
+      
+      <h2 class="govuk-heading-m">How to verify your identity</h2>
+      <p class="govuk-body">You can verify yourself online with GOV.UK if you have any one of the following:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>a home address in the UK or; </li>
+        <li>a biometric passport from any country or;</li>
+        <li>a UK photo driving licence (full or provisional) or;</li>
+        <li>a UK biometric resident permit (BRP)</li>
+      </ul>
+
+      <p class="govuk-body">If you do not have a biometric ID but you 
+        live in the UK, GOV.UK will guide you through an in-person service. </p>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            What is a biometric passport?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Biometric passports have a small rectangular symbol on the 
+          front cover. You can use them to go through electronic gates at airports 
+          and international train stations.
+
+          <p>All UK passports issued after 2006 are biometric.</p>
+        </div>
+      </details> 
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+      
+    </form>
+  </div>
+</div>
+
+{% endblock %}
