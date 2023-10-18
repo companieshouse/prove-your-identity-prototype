@@ -498,27 +498,4 @@ router.post('/release1-v1/post-one-login/linked-identity', function (req, res) {
 })
 
 
-// ******* one-login/success validation ********************************
-router.get('/release1-v1/one-login/success', function (req, res) {
-  // Set URl
-  res.render('release1-v1/one-login/success', {
-    currentUrl: req.originalUrl
-  })
-})
-
-router.post('/release1-v1/one-login/success', function (req, res) {
-
-  // Check if eother filed not filled out
-  if (req.session.data['version'] === 'sole-trader') {
-    // ACSP
-    res.redirect('/release1-v1/post-one-login/verified-success-sole-trader')
-  } else {
-    // General
-    res.redirect('/release1-v1/post-one-login/verified-success')
-  }
-})
-
-
-
-
 module.exports=router;
