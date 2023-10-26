@@ -1,0 +1,65 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  You have failed to verify your identity for Companies House – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/account-banner.html" %}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Verification failed: try again</h1>
+
+      <p class="govuk-body">Make sure you have the required identity documents and try again.</p>
+
+      <p class="govuk-body">To verify with GOV.UK One Login online, you need any of the following:  </p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>a biometric passport from any country</li>
+        <li>a UK photo driving licence  (full or provisional)</li>
+        <li>a UK biometric resident permit (BRP)</li>
+      </ul>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            What is a biometric passport?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          Biometric passports have a small rectangular symbol on the 
+          front cover. You can use them to go through electronic gates at airports 
+          and international train stations.
+
+          <p>All UK passports issued after 2006 are biometric.</p>
+        </div>
+      </details> 
+
+      <h3 class="govuk-heading-s">If you don’t verify your identity </h3>
+
+      <p class="govuk-body">You need to successfully prove who you are to Companies House. If you do not verify your identity in time, you are committing an offence.</p>
+
+      <p class="govuk-body">You could:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>get a maximum fine of £XXX </li>
+        <li>be stopped from acting as a director</li>
+        <li>be unable to make any filings for your company </li>
+        <li>be unable to start a new company </li>
+      </ul>
+
+      {{ govukButton({
+        text: "Try again",
+        href: "start"
+      }) }}
+
+
+    </div>
+  </div>
+
+{% endblock %}
