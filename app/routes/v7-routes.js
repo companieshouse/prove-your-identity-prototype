@@ -166,7 +166,7 @@ router.get('/v7/pre-one-login/one-login-start', function (req, res) {
 })
 
 router.post('/v7/pre-one-login/one-login-start', function (req, res) {
-  res.redirect('/v7/one-login/computer')
+  res.redirect('/v7/one-login/one-login-working')
 })
 
 

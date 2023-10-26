@@ -24,9 +24,23 @@
        Verify your identity for Companies House <span class="govuk-caption-xl">(and then verify your appointments, if applicable)</span>
       </h1>
 
-      <a href="you-need-to-verify" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
-        Start now
-      </a>
+      <form id="v1-general" action="start">
+        <p>
+          <input type="hidden" name="version" id="version" value="general" />
+          <a role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button" href="#" onclick="document.getElementById('v1-general').submit();">
+            Start</a>
+        </p>
+      </form>
+
+      <form id="v1-sole-trader" action="you-need-to-verify">
+        <p>
+          <input type="hidden" name="version" id="version" value="sole-trader" />
+          <a role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button" href="#" onclick="document.getElementById('v1-sole-trader').submit();">
+            Start - from ACSP service</a>
+        </p>
+      </form>
+
+      <h3 class="govuk-heading-s">Failure screens</h3>
 
       <p>
         <a class="govuk-link govuk-link--no-visited-state" href="../post-one-login/failure-evidence">Failure screen - insufficient evidence</a>
