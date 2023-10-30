@@ -1,0 +1,198 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+  {{ govukTag({
+    classes: "govuk-tag--blue govuk-!-margin-bottom-4",
+    text: "version 8"
+  }) }}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+       Verify your identity for Companies House <span class="govuk-caption-xl">(and then verify your appointments, if applicable)</span>
+
+      </h1>
+
+      <a href="start" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+        Start now
+      </a>
+
+      <h3 class="govuk-heading-s">Failure screen</h3>
+
+      <p>
+        <a class="govuk-link govuk-link--no-visited-state" href="../post-one-login/failure-evidence">Failure screen - insufficient evidence</a>
+      </p>
+
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-bottom-6">
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-m" id="authScreens">Individual screen links</h2>
+
+      <h3 class="govuk-heading-s">Pre one login</h3>
+
+      <ul class="govuk-list govuk-list--bullet">
+    
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="../pre-one-login/start">Start page</a>
+        </li>  
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="../pre-one-login/sign-in-email">Sign in email</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="../pre-one-login/sign-in-password">Sign in password</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="../pre-one-login/guidance">Guidance</a>
+        </li>  
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="../pre-one-login/you-need-to-verify">you-need-to-verify</a>
+        </li>  
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="../pre-one-login/ascp-route">ASCP route</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="../pre-one-login/one-login-intro">You are about to be redirected to One login</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="../pre-one-login/one-login-start">One login start</a>
+        </li>
+      </ul>
+
+      <h3 class="govuk-heading-s">One login</h3>
+
+      <ul class="govuk-list govuk-list--bullet">
+    
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="../one-login/computer">Do you have a computer</a>
+        </li>
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="../one-login/smartphone-type">Do you have a smartphone</a>
+        </li>  
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="../one-login/interruption-card">interruption card</a>
+        </li>  
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="../one-login/one-login-working">one login processing</a>
+        </li>  
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="../one-login/success">success</a>
+        </li>    
+      </ul>
+
+      <h3 class="govuk-heading-s">Post One login</h3>
+
+      <ul class="govuk-list govuk-list--bullet">
+          <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="../post-one-login/verified-success.html">Identity verification complete</a>
+        </li>
+          <li>
+          <a class="govuk-link govuk-link--no-visited-state" href="../post-one-login/verified-failure.html">Failed to verify</a>
+        </li>
+      </ul>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-bottom-6">
+
+      <h2 class="govuk-heading-m" id="authScreens">Changes to the prototype in this version</h2>
+      <ul class="govuk-list govuk-list--bullet">      
+        <li>
+          Sign in moved to front of journey
+        </li>
+        <li>
+          ACSP route de-prioritised
+        </li>
+        <li>
+          Your going to one login content changed
+        </li>
+        <li>
+          Sign in changed to one login style
+        </li>
+        <li>
+          'Keep your code safe' removed from green banner on success page
+        </li>
+        <li>
+          'Do you have a home address in the UK?', 'Which type of ID do you have?' pages removed from journey
+        </li>
+      </ul>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-bottom-6">
+
+      <h2 class="govuk-heading-m" id="authScreens">User research</h2>
+      <ul class="govuk-list govuk-list--bullet">      
+        <li>
+          <a class="govuk-link govuk-link--no-visited-state" target="_blank" href="#">TBD</a>
+        </li>
+      </ul>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-bottom-6">
+
+      <h2 class="govuk-heading-m" id="authScreens">Journey flow</h2>
+      <p class="govuk-body"><a class="govuk-link govuk-link--no-visited-state" target="_blank" href="https://app.mural.co/t/companieshouse8589/m/companieshouse8589/1694426622698/68e562769d448625189c0ef86e2625d674e0373d?sender=u9bc72e5725f1871777091172">Flow diagram for V6 with changes indicated</a></p>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-!-margin-bottom-6">
+
+      <h2 class="govuk-heading-m">
+        IDV services
+      </h2>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col">Links</th>
+
+            <th class="govuk-table__header" scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <a href="https://idv-prototype.herokuapp.com/">Register as an Authorised Corporate Service Provider</a>
+            </td>
+          
+            <td class="govuk-table__cell">
+              <strong class="govuk-tag govuk-tag--blue">
+                PROTOTYPE
+              </strong>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <a href="https://idv-sign-in-prototype-7fe752c06ff9.herokuapp.com/">IDV Sign in prototype</a>
+            </td>
+          
+            <td class="govuk-table__cell">
+              <strong class="govuk-tag govuk-tag--blue">
+                PROTOTYPE
+              </strong>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+
+
+
+        
+    </div>
+  </div>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Identity verification complete – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/account-banner.html" %}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+        Identity verification complete
+        </h1>
+      </div>
+
+      <div class="highlight-box">
+        <p class="govuk-body govuk-!-font-weight-regular">Your Companies House personal code is: <strong>2F3P8MZ6</strong> </p>
+        
+        <p class="govuk-body">We've sent your code to <strong>{{ data['signin-email'] }}</strong>.
+        </p>
+      </div>
+
+      <h2 class="govuk-heading-m">What is a Companies House personal code </h2>
+
+      <p class="govuk-body">Your Companies House personal code connects your 
+        verified identity to our records. This is so that we know the correct
+         person is linked to the personal details we have on file. 
+      </p>
+
+      <h2 class="govuk-heading-m">When you may need your Companies House personal code</h2>
+
+      <p class="govuk-body">
+        You may need your personal code:
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>as part of some other company filings</li>
+        <li>when you are appointed as a director</li>
+        <li>when you are appointed as a PSC</li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Keeping your information secure </h2>
+
+      <p class="govuk-body">Identity verification makes it much more difficult for 
+        criminals to impersonate someone, but not impossible. Keep this information 
+        secure, as you would with other unique codes such as your Unique Taxpayer 
+        Reference (UTR) for HMRC. Only share the code with people you trust to file 
+        on your behalf. 
+      </p>
+
+      <h3 class="govuk-heading-m">Feedback</h3>
+      <p class="govuk-body">This is a new service. Help us improve it by completing our
+        <a href="https://www.smartsurvey.co.uk/s/reptpscdisp-fdbk/">quick survey</a>.
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}
