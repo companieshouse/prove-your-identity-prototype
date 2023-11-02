@@ -5,7 +5,7 @@ const router = govukPrototypeKit.requests.setupRouter()
 // ******* Sign in email validation ********************************
 router.get('/release1-v2/pre-one-login/sign-in-email', function (req, res) {
   // Set URl
-  res.render('release1-v1/pre-one-login/sign-in-email', {
+  res.render('release1-v2/pre-one-login/sign-in-email', {
     currentUrl: req.originalUrl
   })
 })
@@ -27,7 +27,7 @@ router.post('/release1-v2/pre-one-login/sign-in-email', function (req, res) {
   // Check if eother filed not filled out
   if (req.session.data['signin-email'] === '') {
     // Re-show page with error value as true so errors will show
-    res.render('release1-v1/pre-one-login/sign-in-email', {
+    res.render('release1-v2/pre-one-login/sign-in-email', {
       errorSigninEmail: true,
       errorList: errors
     })
@@ -41,7 +41,7 @@ router.post('/release1-v2/pre-one-login/sign-in-email', function (req, res) {
 // ******* Sign in password validation ********************************
 router.get('/release1-v2/pre-one-login/sign-in-password', function (req, res) {
   // Set URl
-  res.render('release1-v1/pre-one-login/sign-in-password', {
+  res.render('release1-v2/pre-one-login/sign-in-password', {
     currentUrl: req.originalUrl
   })
 })
@@ -63,7 +63,7 @@ router.post('/release1-v2/pre-one-login/sign-in-password', function (req, res) {
   // Check if eother filed not filled out
   if (req.session.data['signin-password'] === '') {
     // Re-show page with error value as true so errors will show
-    res.render('release1-v1/pre-one-login/sign-in-password', {
+    res.render('release1-v2/pre-one-login/sign-in-password', {
       errorSigninPassword: true,
       errorList: errors
     })
@@ -76,7 +76,7 @@ router.post('/release1-v2/pre-one-login/sign-in-password', function (req, res) {
 // ******* you-need-to-verify javascript ********************************
 router.get('/release1-v2/pre-one-login/you-need-to-verify', function (req, res) {
   // Set URl
-  res.render('release1-v1/pre-one-login/you-need-to-verify', {
+  res.render('release1-v2/pre-one-login/you-need-to-verify', {
     currentUrl: req.originalUrl
   })
 })
@@ -88,7 +88,7 @@ router.post('/release1-v2/pre-one-login/you-need-to-verify', function (req, res)
 // ******* id-check javascript ********************************
 router.get('/release1-v2/pre-one-login/id-check', function (req, res) {
   // Set URl
-  res.render('release1-v1/pre-one-login/id-check', {
+  res.render('release1-v2/pre-one-login/id-check', {
     currentUrl: req.originalUrl
   })
 })
@@ -106,7 +106,7 @@ router.post('/release1-v2/pre-one-login/id-check', function (req, res) {
     })
 
     // Re-show page with error value as true so errors will show
-    res.render('release1-v1/pre-one-login/id-check', {
+    res.render('release1-v2/pre-one-login/id-check', {
       errorID: true,
       errorList: errors
     })
@@ -124,7 +124,7 @@ router.post('/release1-v2/pre-one-login/id-check', function (req, res) {
 // ******* resident javascript ********************************
 router.get('/release1-v2/pre-one-login/resident', function (req, res) {
   // Set URl
-  res.render('release1-v1/pre-one-login/resident', {
+  res.render('release1-v2/pre-one-login/resident', {
     currentUrl: req.originalUrl
   })
 })
@@ -142,7 +142,7 @@ router.post('/release1-v2/pre-one-login/resident', function (req, res) {
     })
 
     // Re-show page with error value as true so errors will show
-    res.render('release1-v1/pre-one-login/resident', {
+    res.render('release1-v2/pre-one-login/resident', {
       errorResident: true,
       errorList: errors
     })
@@ -160,7 +160,7 @@ router.post('/release1-v2/pre-one-login/resident', function (req, res) {
 // ******* one-login-start javascript ********************************
 router.get('/release1-v2/pre-one-login/one-login-start', function (req, res) {
   // Set URl
-  res.render('release1-v1/pre-one-login/one-login-start', {
+  res.render('release1-v2/pre-one-login/one-login-start', {
     currentUrl: req.originalUrl
   })
 })
@@ -173,7 +173,7 @@ router.post('/release1-v2/pre-one-login/one-login-start', function (req, res) {
 // ******* psc-existing-company javascript ********************************
 router.get('/release1-v2/post-one-login/psc-existing-company', function (req, res) {
   // Set URl
-  res.render('release1-v1/post-one-login/psc-existing-company', {
+  res.render('release1-v2/post-one-login/psc-existing-company', {
     currentUrl: req.originalUrl
   })
 })
@@ -191,7 +191,7 @@ router.post('/release1-v2/post-one-login/psc-existing-company', function (req, r
     })
 
     // Re-show page with error value as true so errors will show
-    res.render('release1-v1/post-one-login/psc-existing-company', {
+    res.render('release1-v2/post-one-login/psc-existing-company', {
       errorPsc: true,
       errorList: errors
     })
@@ -209,7 +209,7 @@ router.post('/release1-v2/post-one-login/psc-existing-company', function (req, r
 // ******* psc-statement javascript ********************************
 router.get('/release1-v2/post-one-login/psc-statement-one', function (req, res) {
   // Set URl
-  res.render('release1-v1/post-one-login/psc-statement-one', {
+  res.render('release1-v2/post-one-login/psc-statement-one', {
     currentUrl: req.originalUrl
   })
 })
@@ -227,7 +227,7 @@ router.post('/release1-v2/post-one-login/psc-statement-one', function (req, res)
     })
 
     // Re-show page with error value as true so errors will show
-    res.render('release1-v1/post-one-login/psc-statement-one', {
+    res.render('release1-v2/post-one-login/psc-statement-one', {
       errorStatementOne: true,
       errorList: errors
     })
@@ -240,7 +240,7 @@ router.post('/release1-v2/post-one-login/psc-statement-one', function (req, res)
 // ******* psc-statement javascript ********************************
 router.get('/release1-v2/post-one-login/psc-statement-two', function (req, res) {
   // Set URl
-  res.render('release1-v1/post-one-login/psc-statement-two', {
+  res.render('release1-v2/post-one-login/psc-statement-two', {
     currentUrl: req.originalUrl
   })
 })
@@ -258,7 +258,7 @@ router.post('/release1-v2/post-one-login/psc-statement-two', function (req, res)
     })
 
     // Re-show page with error value as true so errors will show
-    res.render('release1-v1/post-one-login/psc-statement-two', {
+    res.render('release1-v2/post-one-login/psc-statement-two', {
       errorStatementTwo: true,
       errorList: errors
     })
@@ -271,7 +271,7 @@ router.post('/release1-v2/post-one-login/psc-statement-two', function (req, res)
 // ******* other-appointments javascript ********************************
 router.get('/release1-v2/post-one-login/check-your-answers', function (req, res) {
   // Set URl
-  res.render('release1-v1/post-one-login/check-your-answers', {
+  res.render('release1-v2/post-one-login/check-your-answers', {
     currentUrl: req.originalUrl
   })
 })
@@ -289,7 +289,7 @@ router.post('/release1-v2/post-one-login/check-your-answers', function (req, res
     })
 
     // Re-show page with error value as true so errors will show
-    res.render('release1-v1/post-one-login/check-your-answers', {
+    res.render('release1-v2/post-one-login/check-your-answers', {
       errorAnotherPsc: true,
       errorList: errors
     })
@@ -307,7 +307,7 @@ router.post('/release1-v2/post-one-login/check-your-answers', function (req, res
 // ******* other-appointments javascript ********************************
 router.get('/release1-v2/post-one-login/unlinked-identity', function (req, res) {
   // Set URl
-  res.render('release1-v1/post-one-login/unlinked-identity', {
+  res.render('release1-v2/post-one-login/unlinked-identity', {
     currentUrl: req.originalUrl
   })
 })
@@ -325,7 +325,7 @@ router.post('/release1-v2/post-one-login/unlinked-identity', function (req, res)
     })
 
     // Re-show page with error value as true so errors will show
-    res.render('release1-v1/post-one-login/unlinked-identity', {
+    res.render('release1-v2/post-one-login/unlinked-identity', {
       errorAnotherPsc2: true,
       errorList: errors
     })
@@ -343,7 +343,7 @@ router.post('/release1-v2/post-one-login/unlinked-identity', function (req, res)
 // ******* company number javascript ********************************
 router.get('/release1-v2/post-one-login/company-number', function (req, res) {
   // Set URl
-  res.render('release1-v1/post-one-login/company-number', {
+  res.render('release1-v2/post-one-login/company-number', {
     currentUrl: req.originalUrl
   })
 })
@@ -361,7 +361,7 @@ router.post('/release1-v2/post-one-login/company-number', function (req, res) {
     })
 
     // Re-show page with error value as true so errors will show
-    res.render('release1-v1/post-one-login/company-number', {
+    res.render('release1-v2/post-one-login/company-number', {
       errorCompany: true,
       errorList: errors
     })
@@ -374,7 +374,7 @@ router.post('/release1-v2/post-one-login/company-number', function (req, res) {
 // ******* smartphone-type javascript ********************************
 router.get('/release1-v2/one-login/computer', function (req, res) {
   // Set URl
-  res.render('release1-v1/one-login/computer', {
+  res.render('release1-v2/one-login/computer', {
     currentUrl: req.originalUrl
   })
 })
@@ -392,7 +392,7 @@ router.post('/release1-v2/one-login/computer', function (req, res) {
     })
 
     // Re-show page with error value as true so errors will show
-    res.render('release1-v1/one-login/computer', {
+    res.render('release1-v2/one-login/computer', {
       errorLaptop: true,
       errorList: errors
     })
@@ -410,7 +410,7 @@ router.post('/release1-v2/one-login/computer', function (req, res) {
 // ******* smartphone-type javascript ********************************
 router.get('/release1-v2/one-login/smartphone-type', function (req, res) {
   // Set URl
-  res.render('release1-v1/one-login/smartphone-type', {
+  res.render('release1-v2/one-login/smartphone-type', {
     currentUrl: req.originalUrl
   })
 })
@@ -428,7 +428,7 @@ router.post('/release1-v2/one-login/smartphone-type', function (req, res) {
     })
 
     // Re-show page with error value as true so errors will show
-    res.render('release1-v1/one-login/smartphone-type', {
+    res.render('release1-v2/one-login/smartphone-type', {
       errorSmartphone: true,
       errorList: errors
     })
@@ -446,7 +446,7 @@ router.post('/release1-v2/one-login/smartphone-type', function (req, res) {
 // ******* passport javascript ********************************
 router.get('/release1-v2/one-login/passport', function (req, res) {
   // Set URl
-  res.render('release1-v1/one-login/passport', {
+  res.render('release1-v2/one-login/passport', {
     currentUrl: req.originalUrl
   })
 })
@@ -464,7 +464,7 @@ router.post('/release1-v2/one-login/passport', function (req, res) {
     })
 
     // Re-show page with error value as true so errors will show
-    res.render('release1-v1/one-login/passport', {
+    res.render('release1-v2/one-login/passport', {
       errorPassport: true,
       errorList: errors
     })
@@ -483,7 +483,7 @@ router.post('/release1-v2/one-login/passport', function (req, res) {
 // ******* linked-identity javascript ********************************
 router.get('/release1-v2/post-one-login/linked-identity', function (req, res) {
   // Set URl
-  res.render('release1-v1/post-one-login/linked-identity', {
+  res.render('release1-v2/post-one-login/linked-identity', {
     currentUrl: req.originalUrl
   })
 })
@@ -501,7 +501,7 @@ router.post('/release1-v2/post-one-login/linked-identity', function (req, res) {
 // ******* one-login/success validation ********************************
 router.get('/release1-v2/one-login/success', function (req, res) {
   // Set URl
-  res.render('release1-v1/one-login/success', {
+  res.render('release1-v2/one-login/success', {
     currentUrl: req.originalUrl
   })
 })
