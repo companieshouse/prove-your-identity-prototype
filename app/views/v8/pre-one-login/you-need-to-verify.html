@@ -29,12 +29,20 @@ How would you like to verify your identity with Companies House?
       <p class="govuk-body">If you do not have a biometric ID but you 
         live in the UK, GOV.UK will tell you how to verify in-person at the Post Office. </p>
 
-      {{ govukDetails({
-        summaryText: "What is a biometric passport?",
-        text: "Biometric passports have a small rectangular symbol on the 
-        front cover. You can use them to go through electronic gates at airports 
-        and international train stations."
-      }) }}
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              What is a biometric passport?
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+           <p>Biometric passports have a small rectangular symbol on the front cover. You can use them to go through electronic gates at airports and international train stations.</p>
+           <p>All UK passports issued after 2006 are biometric.</p>
+
+          </div>
+        </details>
+
+ 
 
       {{ govukButton({
         text: "Continue"
