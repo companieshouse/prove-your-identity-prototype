@@ -18,40 +18,42 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">
-        Verify your identity for Companies House 
-      </h1>
+      <form action="{{currentUrl}}" method="post">
 
-      <p class="govuk-body">You need to verify your identity for 
-        Companies House. You only need to verify once, even if you have multiple roles for different companies. </p>
+        <h1 class="govuk-heading-l">
+          Verify your identity for Companies House
+        </h1>
 
-      <p class="govuk-body">Anyone who runs or files for a company needs to verify their identity for Companies House.</p>
+        <p class="govuk-body">You need to verify your identity for 
+          Companies House. You only need to verify once, even if you have multiple roles for different companies. </p>
 
-      {{ govukButton({
-        text: "Verify your identity",
-        href: "create-or-sign-in",
-        isStartButton: true
-      }) }}
+        <p class="govuk-body">Anyone who runs or files for a company needs to verify their identity for Companies House.</p>
 
-      <h2 class="govuk-heading-m">More about verifying</h2>
+        {{ govukButton({
+          text: "Verify your identity",
+          isStartButton: true
+        }) }}
 
-      <p>Read the <a href="guidance" class="govuk-link">guidance about verifying your identity</a>.</p>
+        <h2 class="govuk-heading-m">More about verifying</h2>
 
-      <div class="grey-box">
-        <div class="govuk-warning-text">
-          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-          <strong class="govuk-warning-text__text">
-            <span class="govuk-warning-text__assistive">Warning</span>
-            Fraud warning: do not let others use your identity
-          </strong>
+        <p>Read the <a href="guidance" class="govuk-link">guidance about verifying your identity</a>.</p>
+
+        <div class="grey-box">
+          <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-warning-text__assistive">Warning</span>
+              Fraud warning: do not let others use your identity
+            </strong>
+          </div>
+          <p class="govuk-body">Do not sell or give away your identity to set up or run a company. Criminals can 
+            take out loans and other debt in your name, and you will be legally 
+            responsible.  </p>
+    
+            <p class="govuk-body"><a href="guidance" class="govuk-link">Get advice about financial crime</a>.</p>
         </div>
-        <p class="govuk-body">Do not sell or give away your identity to set up or run a company. Criminals can 
-          take out loans and other debt in your name, and you will be legally 
-          responsible.  </p>
-  
-          <p class="govuk-body"><a href="guidance" class="govuk-link">Get advice about financial crime</a>.</p>
-      </div>
 
+      </form>
     </div>
   </div>
 {% endblock %}
