@@ -93,15 +93,118 @@ router.post('/release1-v2/pre-one-login/sign-in-password', function (req, res) {
 })
 
 // ******* one-login-start javascript ********************************
-router.get('/release1-v2/pre-one-login/one-login-start', function (req, res) {
+router.get('/release1-v2/one-login/one-login-start', function (req, res) {
   // Set URl
-  res.render('release1-v2/pre-one-login/one-login-start', {
+  res.render('release1-v2/one-login/one-login-start', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/release1-v2/pre-one-login/one-login-start', function (req, res) {
-  res.redirect('/release1-v2/one-login/one-login-working')
+router.post('/release1-v2/one-login/one-login-start', function (req, res) {
+  res.redirect('/release1-v2/one-login/one-login-id')
+})
+
+
+// ******* one-login-id javascript ********************************
+router.get('/release1-v2/one-login/one-login-id', function (req, res) {
+  // Set URl
+  res.render('release1-v2/one-login/one-login-id', {
+    currentUrl: req.originalUrl
+  })
+})
+
+router.post('/release1-v2/one-login/one-login-id', function (req, res) {
+  // Create empty array
+  var errors = []
+
+  // Check if user has filled out a value
+  if (typeof req.session.data['photoID'] === 'undefined') {
+    // No value so add error to array
+    errors.push({
+      text: 'Select yes if you have any of these types of photo ID',
+      href: '#photoID'
+    })
+
+    // Re-show page with error value as true so errors will show
+    res.render('release1-v2/one-login/one-login-id', {
+      errorPhotoID: true,
+      errorList: errors
+    })
+  } else {
+    if (req.session.data['photoID'] == 'yes' ) {
+      res.redirect('/release1-v2/one-login/one-login-working')
+    } else {
+      res.redirect('/release1-v2/one-login/one-login-post-office')
+    }
+  }
+})
+
+
+// ******* one-login-post-0ffice javascript ********************************
+router.get('/release1-v2/one-login/one-login-post-office', function (req, res) {
+  // Set URl
+  res.render('release1-v2/one-login/one-login-post-office', {
+    currentUrl: req.originalUrl
+  })
+})
+
+router.post('/release1-v2/one-login/one-login-post-office', function (req, res) {
+  // Create empty array
+  var errors = []
+
+  // Check if user has filled out a value
+  if (typeof req.session.data['postOffice'] === 'undefined') {
+    // No value so add error to array
+    errors.push({
+      text: 'Select yes if you have any of these types of photo ID',
+      href: '#postOffice'
+    })
+
+    // Re-show page with error value as true so errors will show
+    res.render('release1-v2/one-login/one-login-post-office', {
+      errorPostOffice: true,
+      errorList: errors
+    })
+  } else {
+    if (req.session.data['postOffice'] == 'no' ) {
+      res.redirect('/release1-v2/one-login/one-login-another-way')
+    }
+  }
+})
+
+
+// ******* one-login-another-way javascript ********************************
+router.get('/release1-v2/one-login/one-login-another-way', function (req, res) {
+  // Set URl
+  res.render('release1-v2/one-login/one-login-another-way', {
+    currentUrl: req.originalUrl
+  })
+})
+
+router.post('/release1-v2/one-login/one-login-another-way', function (req, res) {
+  // Create empty array
+  var errors = []
+
+  // Check if user has filled out a value
+  if (typeof req.session.data['anotherWay'] === 'undefined') {
+    // No value so add error to array
+    errors.push({
+      text: 'Select yes if you have any of these types of photo ID',
+      href: '#anotherWay'
+    })
+
+    // Re-show page with error value as true so errors will show
+    res.render('release1-v2/one-login/one-login-another-way', {
+      errorAnotherWay: true,
+      errorList: errors
+    })
+  } else {
+    if (req.session.data['anotherWay'] == 'onelogin' ) {
+      res.redirect('/release1-v2/one-login/one-login-id')
+    } else {
+      res.redirect('/release1-v2/post-one-login/failure-evidence')
+    }
+  }
 })
 
 

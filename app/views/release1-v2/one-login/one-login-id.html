@@ -1,0 +1,112 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Prove your identity with GOV.UK account GOV.UK – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!-- Check for error -->
+      {% if errorPhotoID %}
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: errorList
+        }) }}
+      {% endif %}
+      <form action="{{currentUrl}}" method="post">
+
+        <h1 class="govuk-heading-l">
+          Tell us if you have one of the following types of photo ID
+        </h1>
+
+        <p class="govuk-body">This will help us find the best way for you to prove your identity.</p>
+
+        <h2 class="govuk-heading-m">UK photocard driving licence</h2>
+
+        <p class="govuk-body">You can use a UK driving licence if it:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>has your photo</li>
+          <li>has not expired</li>
+        </ul>
+
+        <p class="govuk-body">It can be a full or provisional UK driving licence.</p>
+
+        <h2 class="govuk-heading-m">UK passport</h2>
+
+        <p class="govuk-body">You can use any UK passport</p>
+
+        <h2 class="govuk-heading-m">Non-UK passport with a biometric chip</h2>
+
+        <p class="govuk-body">You can use a non-UK passport if it:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>has a biometric chip</li>
+          <li>has not expired</li>
+        </ul>
+
+        <p class="govuk-body">To check if your passport has a biometric chip, 
+          look for the rectangular biometric chip symbol on the front cover
+        </p>
+
+        <img class="govuk-!-padding-bottom-9" src="/public/images/passport-logo.png" alt="passport-logo">
+
+        <h2 class="govuk-heading-m">UK biometric resident permit</h2>
+
+        <p class="govuk-body">You can use a UK biometric permit (BRP) that has not expired.</p>
+
+        <!-- Check for error -->
+        {% if errorPhotoID %}
+        <div class="govuk-form-group govuk-form-group--error">
+        {% else %}
+        <div class="govuk-form-group">
+        {% endif %} 
+          <fieldset class="govuk-fieldset" aria-describedby="photoID-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-fieldset__heading govuk-!-padding-top-7">
+                Do you have any of these types of photo ID?
+              </h2>
+            </legend>
+            <!-- Check for error -->
+            {% if errorPhotoID %}
+            <p id="photoID-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Select yes if you have any of these types of photo ID
+            </p>
+            {% endif %} 
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="photoID" name="photoID" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="photoID">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="photoID-2" name="photoID" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="photoID-2">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
