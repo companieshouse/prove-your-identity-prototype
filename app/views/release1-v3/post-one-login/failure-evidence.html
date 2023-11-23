@@ -1,0 +1,80 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  You have failed to verify your identity for Companies House – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/account-banner.html" %}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Ways you can prove your identity for Companies House </h1>
+
+      <h3 class="govuk-heading-s">Online</h3>
+      
+      <p class="govuk-body">You can use the <a href="https://prove-your-identity-prototype.herokuapp.com/release1-v3/pre-one-login/start?version=sole-trader" class="govuk-link">Verify your identity 
+        for Companies House</a> service to verify online if you have the required identity documents.</p>
+
+      <p class="govuk-body">You'll need a (one of the following):</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>biometric passport from any country</li>
+        <li>UK photo driving licence  (full or provisional)</li>
+        <li>UK <a href="https://www.gov.uk/biometric-residence-permits" class="govuk-link">biometric residence permit (BRP) (opens in a new tab)</a></li>
+      </ul>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            What is a biometric passport?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p> Biometric passports have a small rectangular symbol on the 
+          front cover. You can use them to go through electronic gates at airports 
+          and international train stations.</p>
+
+          <p>All UK passports issued after 2006 are biometric.</p>
+        </div>
+      </details> 
+
+      <h3 class="govuk-heading-s">In person</h3>
+
+      <p class="govuk-body">If you live in the UK, you can use the <a href="https://prove-your-identity-prototype.herokuapp.com/release1-v3/pre-one-login/start?version=sole-trader" class="govuk-link">Verify your identity 
+        for Companies House</a> service to find out how to verify in person at the Post Office.</p>
+
+      <h3 class="govuk-heading-s">Using a Companies House authorised agent </h3>
+
+      <p class="govuk-body">If you do not have any of the required identity documents, you can ask a 
+        Companies House authorised agent to verify your identity on your behalf. You can do this from any country, 
+        but your agent must be registered in the UK. </p> 
+
+      <p class="govuk-body"><a href="acsp-route" class="govuk-link">
+        More about verifying with a Companies House authorised agent</a>.</p>
+
+      <h3 class="govuk-heading-s">What happens if you do not verify your identity </h3>
+
+      <p class="govuk-body">You need to successfully prove who you are to Companies House. If you do not verify your 
+        identity in time, you are committing an offence. </p>
+
+      <p class="govuk-body">You could:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>get a maximum fine of £XXX </li>
+        <li>be stopped from acting as a director</li>
+        <li>be unable to make any filings for your company or entity </li>
+        <li>be unable to start a new company or entity</li>
+      </ul>
+
+ 
+
+
+    </div>
+  </div>
+
+{% endblock %}

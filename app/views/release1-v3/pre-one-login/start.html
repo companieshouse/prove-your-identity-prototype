@@ -1,0 +1,92 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start page – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="{{currentUrl}}" method="post">
+
+        <h1 class="govuk-heading-l">
+          Verify your identity for Companies House
+        </h1>
+
+        <p class="govuk-body">Anyone who runs or files for a company needs to verify their identity for Companies House. You only need to verify once, even if you have multiple roles for different companies.</p>
+
+           <p class="govuk-body">You can verify yourself online with GOV.UK if you have a (one of the following):</p>
+           <ul class="govuk-list govuk-list--bullet">
+             <li>biometric passport from any country</li>
+             <li>UK photo driving licence (full or provisional)</li>
+             <li>UK <a href="https://www.gov.uk/biometric-residence-permits" class="govuk-link">biometric residence permit (BRP)</a></li>
+           </ul>
+
+           <p class="govuk-body">If you do not have any of these types of identity but you live in the UK, GOV.UK 
+            will tell you how to verify in person at the Post Office.</p>
+
+            <details class="govuk-details" data-module="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  What is a biometric passport?
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p>Biometric passports have a small rectangular symbol on the front cover. You can use them to go through electronic gates at airports and international train stations.</p>
+      
+                <p>All UK passports issued after 2006 are biometric.</p>
+              </div>
+            </details> 
+
+            <p>Read the <a href="guidance" class="govuk-link">guidance about verifying your identity</a>.</p>
+
+        {{ govukButton({
+          text: "Verify your identity",
+          isStartButton: true
+        }) }}
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              I do not have any of the required identity documents
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <p class="govuk-body">You can ask a Companies House authorised agent (such as an 
+              accountant or solicitor) to verify your identity on your behalf. You can do 
+              this from any country, but your agent must be registered in the UK. </p>
+  
+            <p class="govuk-body"><a href="acsp-route.html" class="govuk-link">More about verifying with a Companies House authorised agent</a>.</p>
+          </div>
+        </details>
+
+        <div class="grey-box">
+          <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-warning-text__assistive">Warning</span>
+              Fraud warning: do not let others use your identity
+            </strong>
+          </div>
+          <p class="govuk-body">Do not sell or give away your identity to set up or run a company. Criminals can 
+            take out loans and other debt in your name, and you will be legally 
+            responsible.  </p>
+    
+            <p class="govuk-body"><a href="guidance" class="govuk-link">Get advice about financial crime</a>.</p>
+        </div>
+
+      </form>
+    </div>
+  </div>
+{% endblock %}
