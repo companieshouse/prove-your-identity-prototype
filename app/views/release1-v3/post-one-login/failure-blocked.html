@@ -19,16 +19,32 @@
 
       <p class="govuk-body">You have not been able to prove who you are with GOV.UK One Login.</p>
 
+      <h2 class="govuk-heading-m">What happens if you do not verify</h2>
+
+      <p class="govuk-body">
+        There will be a transition period until [date] so that you have time to do what is required by the regulations. 
+      </p>
+
+      {{ govukWarningText({
+        text: "If you do not verify your identity in time, you could get a maximum fine of £XXX.",
+        iconFallbackText: "Warning"
+      }) }}
+
+      <p class="govuk-body">You will also be unable to:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>make any filings for your company or entity</li>
+  <li>start a new company or entity</li>
+  <li>register as a Companies House authorised agent</li>
+</ul>
+
+<p class="govuk-body">
+  If you continue to act as a director after the deadline, you will be committing an offence. The company (or entity) and all directors will also be committing an offence. 
+</p>
+
       <h2 class="govuk-heading-m">Next steps</h2>
       
-      <p class="govuk-body">
-        If you are a sole trader registering as a Companies House authorised agent, you can ask another authorised agent to verify your identity on your behalf.
-      </p>
-      <p class="govuk-body"><a href="acsp-route.html" class="govuk-link">More about verifying with a Companies House authorised agent</a>.</p>
-      <p class="govuk-body">
-        You'll be able to submit filings and act on behalf of your clients as 
-        normal until [date]. After then, you will need to have verified 
-        your identity and registered as a Companies House authorised agent.  
+      <p class="govuk-body"><a href="https://prove-your-identity-prototype.herokuapp.com/release1-v3/pre-one-login/guidance" class="govuk-link">Check the guidance</a> to find other ways you can try to verify your identity.
+        
       </p>
 
     </div>
