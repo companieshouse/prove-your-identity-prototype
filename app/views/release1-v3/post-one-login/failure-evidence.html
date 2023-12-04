@@ -58,18 +58,27 @@
       <p class="govuk-body"><a href="acsp-route" class="govuk-link">
         More about verifying with a Companies House authorised agent</a>.</p>
 
-      <h3 class="govuk-heading-s">What happens if you do not verify your identity </h3>
+      <h3 class="govuk-heading-s">What happens if you do not verify </h3>
 
-      <p class="govuk-body">You need to successfully prove who you are to Companies House. If you do not verify your 
-        identity in time, you are committing an offence. </p>
+      <p class="govuk-body">
+        There will be a transition period until [date] so that you have time to do what is required by the regulations. 
+      </p>
 
-      <p class="govuk-body">You could:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>get a maximum fine of £XXX </li>
-        <li>be stopped from acting as a director</li>
-        <li>be unable to make any filings for your company or entity </li>
-        <li>be unable to start a new company or entity</li>
-      </ul>
+      {{ govukWarningText({
+        text: "If you do not verify your identity in time, you could get a maximum fine of £XXX.",
+        iconFallbackText: "Warning"
+      }) }}
+
+      <p class="govuk-body">You will also be unable to:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>make any filings for your company or entity</li>
+  <li>start a new company or entity</li>
+  <li>register as a Companies House authorised agent</li>
+</ul>
+
+<p class="govuk-body">
+  If you continue to act as a director after the deadline, you will be committing an offence. The company (or entity) and all directors will also be committing an offence. 
+</p>
 
  
 
