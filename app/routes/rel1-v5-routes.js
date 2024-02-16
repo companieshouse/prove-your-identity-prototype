@@ -168,6 +168,9 @@ router.post('/release1-v5/one-login/one-login-post-office', function (req, res) 
   } else {
     if (req.session.data['postOffice'] == 'no' ) {
       res.redirect('/release1-v5/one-login/one-login-another-way')
+    } else 
+    {
+      res.redirect('/release1-v4/one-login/one-login-post-office')
     }
   }
 })
