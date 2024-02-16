@@ -149,18 +149,14 @@ router.get('/release1-v4/one-login/one-login-post-office', function (req, res) {
 })
 
 router.post('/release1-v4/one-login/one-login-post-office', function (req, res) {
-  // Create empty array
   var errors = []
 
-  // Check if user has filled out a value
   if (typeof req.session.data['postOffice'] === 'undefined') {
-    // No value so add error to array
     errors.push({
       text: 'Select yes if you have any of these types of photo ID',
       href: '#postOffice'
     })
 
-    // Re-show page with error value as true so errors will show
     res.render('release1-v4/one-login/one-login-post-office', {
       errorPostOffice: true,
       errorList: errors
@@ -168,8 +164,11 @@ router.post('/release1-v4/one-login/one-login-post-office', function (req, res) 
   } else {
     if (req.session.data['postOffice'] == 'no' ) {
       res.redirect('/release1-v4/one-login/one-login-another-way')
+    } else 
+    {
+      res.redirect('/release1-v4/one-login/one-login-post-office')
     }
-  }
+    }
 })
 
 
