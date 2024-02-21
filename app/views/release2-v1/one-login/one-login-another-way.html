@@ -1,0 +1,82 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Prove your identity with GOV.UK account GOV.UK – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!-- Check for error -->
+      {% if errorAnotherWay %}
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: errorList
+        }) }}
+      {% endif %}
+      <form action="{{currentUrl}}" method="post">
+
+        <h1 class="govuk-heading-l">
+          Find another way to prove your identity
+        </h1>
+
+        <!-- Check for error -->
+        {% if errorAnotherWay %}
+        <div class="govuk-form-group govuk-form-group--error">
+        {% else %}
+        <div class="govuk-form-group">
+        {% endif %} 
+          <fieldset class="govuk-fieldset" aria-describedby="anotherWay-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-fieldset__heading">
+                What would you like to do?
+              </h2>
+            </legend>
+            <!-- Check for error -->
+            {% if errorAnotherWay %}
+            <p id="anotherWay-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Select what you would like to do next
+            </p>
+            {% endif %} 
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="anotherWay" name="anotherWay" type="radio" value="service">
+                <label class="govuk-label govuk-radios__label" for="anotherWay">
+                  Continue to the service you were trying to use to look for ways to prove your identity
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="anotherWay-2" name="anotherWay" type="radio" value="onelogin">
+                <label class="govuk-label govuk-radios__label" for="anotherWay-2">
+                  Try proving your identity with GOV.UK One Login again
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link govuk-link--no-visited-state">Contact the GOV.UK One Login team (opens in a new tab)</a>.
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

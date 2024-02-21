@@ -1,0 +1,60 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  You have failed to verify your identity for Companies House – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/account-banner.html" %}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">You cannot use GOV.UK One Login to verify your identity</h1>
+
+      <p class="govuk-body">You have not been able to prove who you are with GOV.UK One Login.</p>
+
+      <h2 class="govuk-heading-m">Next steps</h2>
+      
+      <p class="govuk-body"><a href="https://prove-your-identity-prototype.herokuapp.com/release2-v1/pre-one-login/guidance" class="govuk-link govuk-link--no-visited-state">Check the guidance</a> to find other ways you can try to verify your identity.
+      </p>
+
+      <h2 class="govuk-heading-m">What happens if you do not verify</h2>
+
+      <p class="govuk-body">
+        There will be a transition period until [date] so that you have time to do what is required by the regulations. 
+      </p>
+
+      {{ govukWarningText({
+        text: "If you do not verify your identity in time, you could get a maximum fine of £XXX.",
+        iconFallbackText: "Warning"
+      }) }}
+
+      <p class="govuk-body">You will also be unable to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>make any filings for your company or entity</li>
+        <li>start a new company or entity</li>
+        <li>register as a Companies House authorised agent</li>
+      </ul>
+
+      <p class="govuk-body">
+        If you continue to act as a director after the deadline, you will be committing an offence. The company (or entity) and all directors may also be committing an offence. 
+      </p>
+
+      <h2 class="govuk-heading-m">If you still need help</h2>
+
+      <p class="govuk-body">
+        Do not contact Companies House - you can contact GOV.UK One Login instead on [phone number]. However, they will not be able to tell you why you cannot verify using GOV.UK One Login.
+      </p>
+
+    
+
+    </div>
+  </div>
+
+{% endblock %}
