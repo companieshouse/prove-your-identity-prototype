@@ -25,6 +25,7 @@ router.use('/', require('./routes/rel1-v3-routes.js'))
 router.use('/', require('./routes/rel1-v4-routes.js'))
 router.use('/', require('./routes/rel1-v5-routes.js'))
 router.use('/', require('./routes/rel1-v6-routes.js'))
+router.use('/', require('./routes/rel1-dev-routes.js'))
 
 // release 2
 
