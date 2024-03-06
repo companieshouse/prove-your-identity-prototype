@@ -30,3 +30,4 @@ router.use('/', require('./routes/rel1-dev-routes.js'))
 // release 2
 
 router.use('/', require('./routes/rel2-v1-routes.js'))
+router.use('/', require('./routes/rel2-v2-routes.js'))
