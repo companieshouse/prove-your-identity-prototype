@@ -220,7 +220,7 @@ router.get('/release2-v2/one-login/success', function (req, res) {
 })
 
 router.post('/release2-v2/one-login/success', function (req, res) {
-    res.redirect('/release2-v2/post-one-login/verified-success-sole-trader')
+    res.redirect('/release2-v2/post-one-login/verified-success')
 })
 
 
