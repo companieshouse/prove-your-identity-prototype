@@ -31,3 +31,4 @@ router.use('/', require('./routes/rel1-dev-routes.js'))
 
 router.use('/', require('./routes/rel2-v1-routes.js'))
 router.use('/', require('./routes/rel2-v2-routes.js'))
+router.use('/', require('./routes/rel2-v3-routes.js'))
