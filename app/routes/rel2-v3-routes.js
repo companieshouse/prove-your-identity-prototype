@@ -101,7 +101,7 @@ router.get('/release2-v3/one-login/one-login-start', function (req, res) {
 })
 
 router.post('/release2-v3/one-login/one-login-start', function (req, res) {
-  res.redirect('/release2-v3/one-login/one-login-id')
+  res.redirect('https://govuk-one-login-prototype-6d2545e2d700.herokuapp.com/page-index/ipv-core/id-screener')
 })
 
 
