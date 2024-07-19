@@ -46,17 +46,17 @@
 
       <p class="govuk-body">You can now continue to register as a Companies House authorised agent.</p>
 
-      {% if data['version'] == 'sole-trader' %}
+    <!--  {% if data['version'] == 'sole-trader' %} -->
       {{ govukButton({
         text: "Continue",
         href: "https://register-an-acsp-prototype.herokuapp.com/v13/start-page-under-review"
       }) }}
-      {% else %}
+    <!--  {% else %} 
       {{ govukButton({
         text: "Continue",
         href: "https://www.gov.uk/government/organisations/companies-house"
       }) }}
-      {% endif %} 
+      {% endif %} -->
 
       <h3 class="govuk-heading-s">Feedback</h3>
       <p class="govuk-body">This is a new service. Help us improve it by completing our
