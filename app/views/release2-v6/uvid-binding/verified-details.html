@@ -27,7 +27,44 @@
     {% endif %}
     <form action="{{currentUrl}}" method="post">
 
-      <h1 class="govuk-heading-l">Enter your date of birth and Companies House personal code</h1>
+      <h1 class="govuk-heading-l">Enter your Companies House personal code and date of birth</h1>
+
+      <!-- Check for error -->
+    {% if errorVerified or matchError %}
+      <div class="govuk-form-group govuk-form-group--error">
+    {% else %}
+      <div class="govuk-form-group">
+    {% endif %} 
+        <label class="govuk-label govuk-date-input__label" for="personalCode">
+          Companies House personal code
+        </label>
+
+        <!-- Check for error -->
+        {% if matchError %} 
+          <p id="personalCode-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Enter the correct Companies House personal code
+          </p>
+          <input class="govuk-input govuk-input--width-10 govuk-input--extra-letter-spacing govuk-input--error" id="personalCode" name="personalCode" type="text" aria-describedby="personalCode-hint" value="{{ data['personalCode'] }}">
+        {% elif errorVerified %} 
+          <p id="personalCode-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Enter a Companies House personal code
+          </p>
+          <input class="govuk-input govuk-input--width-10 govuk-input--extra-letter-spacing govuk-input--error" id="personalCode" name="personalCode" type="text" aria-describedby="personalCode-hint" value="{{ data['personalCode'] }}">
+        {% else %}
+          <input class="govuk-input govuk-input--width-10 govuk-input--extra-letter-spacing" id="personalCode" name="personalCode" type="text" aria-describedby="personalCode-hint" value="{{ data['personalCode'] }}">
+        {% endif %} 
+      </div> 
+    
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Where to find the Companies House personal code
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          This is an 11 character code that is given to a person after they have verified their identity with Companies House. 
+        </div>
+      </details>
 
       <!-- Check for error -->
       {% if errorVerifiedDobDay or errorVerifiedDobMonte or errorVerifiedDobYear %}
@@ -96,43 +133,6 @@
           </div>
         </fieldset>
       </div>
-
-      <!-- Check for error -->
-      {% if errorVerified or matchError %}
-        <div class="govuk-form-group govuk-form-group--error">
-      {% else %}
-        <div class="govuk-form-group">
-      {% endif %} 
-          <label class="govuk-label govuk-date-input__label" for="personalCode">
-            Companies House personal code
-          </label>
-
-          <!-- Check for error -->
-          {% if matchError %} 
-            <p id="personalCode-error" class="govuk-error-message">
-              <span class="govuk-visually-hidden">Error:</span> Enter the correct Companies House personal code
-            </p>
-            <input class="govuk-input govuk-input--width-10 govuk-input--extra-letter-spacing govuk-input--error" id="personalCode" name="personalCode" type="text" aria-describedby="personalCode-hint" value="{{ data['personalCode'] }}">
-          {% elif errorVerified %} 
-            <p id="personalCode-error" class="govuk-error-message">
-              <span class="govuk-visually-hidden">Error:</span> Enter a Companies House personal code
-            </p>
-            <input class="govuk-input govuk-input--width-10 govuk-input--extra-letter-spacing govuk-input--error" id="personalCode" name="personalCode" type="text" aria-describedby="personalCode-hint" value="{{ data['personalCode'] }}">
-          {% else %}
-            <input class="govuk-input govuk-input--width-10 govuk-input--extra-letter-spacing" id="personalCode" name="personalCode" type="text" aria-describedby="personalCode-hint" value="{{ data['personalCode'] }}">
-          {% endif %} 
-      </div> 
-
-      <details class="govuk-details" data-module="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Where to find the Companies House personal code
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          This is an 11 character code that is given to a person after they have verified their identity with Companies House. 
-        </div>
-      </details>
 
       {{ govukButton({
         text: "Continue"
