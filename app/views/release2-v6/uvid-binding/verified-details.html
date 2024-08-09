@@ -29,6 +29,14 @@ Enter your Companies House personal code and date of birth
 
       <h1 class="govuk-heading-l">What are your identity verification details?</h1>
 
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          Enter this information carefully. For security reasons, if you enter incorrect information too many times, you will not be able to continue to use this service.
+        </strong>
+      </div>
+
       <!-- Check for error -->
     {% if errorVerified or matchError %}
       <div class="govuk-form-group govuk-form-group--error">
@@ -63,7 +71,7 @@ Enter your Companies House personal code and date of birth
         </summary>
         <div class="govuk-details__text"><p>
           This is an 11 character code that is given to a person once they have verified their identity. </p>
-          <p>If you verified using a Companies House authorised agent, we sent your personal code to the email address they provided when they told us they've verified your identity. If you don't know which email address the authorised agent provided, you'll need to ask them.  </p>
+          <p>If a Companies House authorised agent verified your identity, we sent your personal code to the email address they provided for you.  </p>
           <p>An authorised agent is also known as an Authorised Corporate Service Provider (ACSP). </p>
         </div>
       </details>
@@ -89,7 +97,7 @@ Enter your Companies House personal code and date of birth
           </p>
           {% endif %} 
           <div id="verifiedDob-hint" class="govuk-hint">
-            For example, 27 3 1992
+            For example, 27 March 1992
           </div>
     
           <div class="govuk-date-input" id="verifiedDob">
