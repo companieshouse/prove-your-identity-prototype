@@ -121,7 +121,7 @@ router.post('/release2-v6/uvid-binding/verified-details', function (req, res) {
     })
   } else if (req.session.data['personalCode'] === '444-5555-6666'){
     errors.push({
-    text: 'You have entered incorrect verification details. Check the date of birth and Companies House personal code, and try again.',
+    text: 'You have entered incorrect verification details. Check your Companies House personal code and date of birth, and try again.',
     href: '#personalCode'
     })
     
