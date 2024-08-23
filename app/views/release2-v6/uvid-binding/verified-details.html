@@ -38,7 +38,7 @@ Enter your Companies House personal code and date of birth
       </div>
 
       <!-- Check for error -->
-    {% if errorVerified or matchError %}
+    {% if errorVerifiedCode or matchError %}
       <div class="govuk-form-group govuk-form-group--error">
     {% else %}
       <div class="govuk-form-group">
@@ -77,7 +77,7 @@ Enter your Companies House personal code and date of birth
       </details>
 
       <!-- Check for error -->
-      {% if errorVerifiedDobDay or errorVerifiedDobMonte or errorVerifiedDobYear %}
+      {% if errorVerifiedDobDay or errorVerifiedDobMonth or errorVerifiedDobYear %}
       <div class="govuk-form-group govuk-form-group--error">
       {% else %}
       <div class="govuk-form-group">
@@ -91,7 +91,7 @@ Enter your Companies House personal code and date of birth
           <p id="verifiedDob-error" class="govuk-error-message">
             <span class="govuk-visually-hidden">Error:</span> Enter the correct date of birth
           </p>
-          {% elif errorVerifiedDobDay or errorVerifiedDobMonte or errorVerifiedDobYear %}
+          {% elif errorVerifiedDobDay or errorVerifiedDobMonth or errorVerifiedDobYear %}
           <p id="verifiedDob-error" class="govuk-error-message">
             <span class="govuk-visually-hidden">Error:</span> The date must include a day, month and year
           </p>

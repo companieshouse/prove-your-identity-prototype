@@ -117,6 +117,7 @@ router.post('/release2-v6/uvid-binding/verified-details', function (req, res) {
       errorVerifiedDobDay: dayHasError,
       errorVerifiedDobMonth: monthHasError,
       errorVerifiedDobYear: yearHasError,
+      errorVerifiedCode: codeHasError,
       errorList: errors
     })
   } else if (req.session.data['personalCode'] === '444-5555-6666'){
