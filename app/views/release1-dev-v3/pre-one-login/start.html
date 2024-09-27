@@ -1,0 +1,102 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start page – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="{{currentUrl}}" method="post">
+
+      <h1 class="govuk-heading-l">
+        Verify your identity for Companies House
+      </h1>
+      
+
+      <p class="govuk-body">You can verify yourself online with GOV.UK if you have one of the following types of photo ID:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>biometric passport from any country</li>
+        <li>UK photo driving licence (full or provisional)</li>
+        <li>UK <a href="https://www.gov.uk/biometric-residence-permits" class="govuk-link">biometric residence permit (BRP)</a></li>
+        <li>UK <a href="https://www.gov.uk/uk-residence-card" class="govuk-link">biometric residence card (BRC)</a></li>
+        <li>UK <a href="https://www.gov.uk/frontier-worker-permit" class="govuk-link">Frontier Worker permit (FWP)</a></li>
+      </ul>
+
+      <p class="govuk-body">You'll also need your current address, and the year you moved in.</p>
+
+      <p class="govuk-body">If you do not have any of these types of photo ID but you live in the UK, GOV.UK 
+      will tell you how to verify in person at the Post Office.</p>
+
+   
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            What is a biometric passport?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>Biometric passports have a small rectangular symbol on 
+            the front cover. You can use them to go through electronic 
+            gates at airports and international train stations.
+          </p>
+          <p>All UK passports issued after 2006 are biometric.</p>
+          <img src="/public/images/passport-logo.png" alt="passport-logo">
+        </div>
+      </details> 
+
+      <p>Read the <a href="guidance" class="govuk-link">guidance about verifying your identity</a>.</p>
+
+      {{ govukButton({
+        text: "Verify your identity",
+        isStartButton: true
+      }) }}
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            I do not have any of the required identity documents to verify with GOV.UK or the Post Office
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">You'll soon be able to ask a <a href="/release1-dev-v3/pre-one-login/acsp-route" class="govuk-link">Companies House authorised agent</a> (such as an 
+            accountant or solicitor) to verify your identity on your behalf. </p>
+
+            <p class="govuk-body">You’ll need to provide suitable identity documents.</p>
+        </div>
+      </details>
+
+      <div class="grey-box">
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-visually-hidden">Warning</span>
+            Fraud warning: do not let others use your identity
+          </strong>
+        </div>
+        <p class="govuk-body">Do not sell or give away your identity to enable people you don't trust to set up or run a company. Criminals can 
+          take out loans and other debt in your name, and you will be legally 
+          responsible.  
+        </p>
+      </div>
+      <br>
+      <p>
+        <a href="https://mcmw.abilitynet.org.uk/" class="govuk-link">Read advice from AbilityNet on how to adapt your device to meet your needs</a>.
+     For example, changing the background colour or text size.</p>
+
+    </form>
+  </div>
+</div>
+{% endblock %}
