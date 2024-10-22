@@ -1,0 +1,117 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+ Enter your one login password
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="{{currentUrl}}" method="post">
+
+      <h1 class="govuk-heading-l">
+        You have already proved your identity
+      </h1>
+
+      <p class="govuk-body">
+        You have already proved your identity with GOV.UK One 
+        Login. You would have done this online or in person 
+        at the Post Office.
+      </p>
+
+      <p class="govuk-body">You can now continue to the service you need to use.</p>
+
+
+      <h2 class="govuk-heading-m">
+        Check your details
+      </h2>
+
+      <p class="govuk-body">You submitted the following details 
+        when you proved your identity. You might want to check 
+        your details are still correct if you've not signed in to 
+        GOV.UK One Login in a while.
+      </p>
+
+      <p class="govuk-body">Some of these details might be used to automatically 
+        fill in forms within the service you need to use.
+      </p>
+
+      <h3 class="govuk-heading-s">
+        Your details
+      </h3>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Full name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Sarah Philips
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Current home address
+          </dt>
+          <dd class="govuk-summary-list__value">
+            72 Guild Street<br>London<br>SE23 6FH
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date of birth
+          </dt>
+          <dd class="govuk-summary-list__value">
+            5 January 1978
+          </dd>
+        </div>
+      </dl>
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            If your details are wrong
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <h3 class="govuk-heading-s">
+            Your details
+          </h3>
+          <p class="govuk-body">Your proof of identity is still valid even if your details have changed.
+          </p>
+          <p class="govuk-body">You do not need to update your details to continue to the service you need to use.
+          </p>
+          <p class="govuk-body">When you continue, GOV.UK One Login will share your saved details with the service.
+          </p>
+          <p class="govuk-body">If you need to, you can <a href="#" class="govuk-link">update your details</a>.
+          </p>
+          <h3 class="govuk-heading-s">
+            If there is a mistake in your name
+          </h3>
+          <p class="govuk-body"><a href="#" class="govuk-link">Contact the GOV.UK One Login team (opens in new tab)</a> 
+            if there is a mistake in your name. For example, if your name is 
+            missing letters or a hyphen.
+          </p>
+          <p class="govuk-body">Do not try to update your details or prove your identity again unless 
+            the GOV.UK One Login team has told you to.
+          </p>
+        </div>
+      </details>
+
+
+      {{ govukButton({
+        text: "Continue",
+        href: "po-verified-success"
+      }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

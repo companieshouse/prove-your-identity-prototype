@@ -1,0 +1,107 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Prove your identity with GOV.UK account GOV.UK – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!-- Check for error -->
+      {% if errorPostOffice %}
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: errorList
+        }) }}
+      {% endif %}
+      <form action="{{currentUrl}}" method="post">
+
+        <h1 class="govuk-heading-l">
+          Prove your identity at a Post Office with one of the following types of photo ID
+        </h1>
+
+        <p class="govuk-body">Based on what you have told us, you cannot prove your identity online.</p>
+
+        <p class="govuk-body">If you have any of the following types of photo ID, you can prove your identity at a Post Office instead.</p>
+        
+        <h2 class="govuk-heading-m">European Union (EU) photocard driving licence</h2>
+
+        <p class="govuk-body">You can use an EU driving licence if:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>it is a plastic photocard, not a paper or handwritten licence</li>
+          <li>it has not expired</li>
+          <li>the address on it is the same as your current address (if it has an address)</li>
+        </ul>
+
+        <h2 class="govuk-heading-m">Non-UK passport</h2>
+
+        <p class="govuk-body">You can use a non-UK passport as long as it has not expired.</p>
+
+        <h2 class="govuk-heading-m">National identity card from European Economic Area country</h2>
+
+        <p class="govuk-body">You can use a national identity card from a European Economic Area (EEA) country if:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>it is a plastic photocard, not a paper or handwritten licence</li>
+          <li>has not expired</li>
+          <li>the address on it is the same as your current address (if it has an address)</li>
+        </ul>
+
+        <p class="govuk-body">The EEA includes EU countries, Norway, Iceland and Liechtenstein.
+        </p>
+
+        <!-- Check for error -->
+        {% if errorPostOffice %}
+        <div class="govuk-form-group govuk-form-group--error">
+        {% else %}
+        <div class="govuk-form-group">
+        {% endif %} 
+          <fieldset class="govuk-fieldset" aria-describedby="postOffice-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-fieldset__heading govuk-!-padding-top-4">
+                Do you have any of these types of photo ID?
+              </h2>
+            </legend>
+            <!-- Check for error -->
+            {% if errorPostOffice %}
+            <p id="postOffice-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Select yes if you have any of these types of photo ID
+            </p>
+            {% endif %} 
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="postOffice" name="postOffice" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="postOffice">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="postOffice-2" name="postOffice" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="postOffice-2">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

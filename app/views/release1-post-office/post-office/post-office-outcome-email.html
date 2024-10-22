@@ -1,0 +1,99 @@
+{% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+
+{% block pageTitle %}
+  Unbranded page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-l">Face to face at a post office</span>
+      ID check outcome email
+    </h1>
+
+    <div class="email-box">
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            From
+          </dt>
+          <dd class="govuk-summary-list__value">
+            GOV.UK One Login
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            To
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Email address
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Subject
+          </dt>
+          <dd class="govuk-summary-list__value">
+            You have an outcome for your identity check
+          </dd>
+        </div>
+      </dl>
+
+      <p class="govuk-body">
+        Hi Jane Doe,
+      </p>
+
+      <p class="govuk-body">
+        You recently took your driving licence, which expires 
+        on 31 December 2024, to the Post Office at 4:43pm on 
+        15 September 2023.
+      </p>
+
+      <p class="govuk-body">
+        The Post Office branch shown on your customer letter 
+        is Brixton Hill, 106 Brixton Hill, SW2 1AH.
+      </p>
+
+      <p class="govuk-body">
+        To view the result of your identity check, you need to sign in to your GOV.UK One Login:<a href="po-create-or-sign-in.html" class="govuk-link">https://return.account.gov.uk/</a> 
+      </p>
+
+      <p class="govuk-body">
+        Then you'll be sent to the service you want to use.
+      </p>
+
+      <p class="govuk-body">
+        After you continue, you'll be able to view the result of your identity check.
+      </p>
+
+      <p class="govuk-body">
+        If you need help, contact us: <br>
+        <a href="#" class="govuk-link">https://signin.account.gov.uk/contact-us</a> 
+      </p>
+
+      <p class="govuk-body">
+        Regards,
+      </p>
+
+      <p class="govuk-body">
+        GOV.UK One Login team
+      </p>
+
+      <hr>
+
+      <p class="govuk-body">
+        Do not reply to this email - it’s an automatic message from an unmonitored account.
+      </p>
+
+    </div>
+
+
+
+  </div>
+</div>
+
+
+
+{% endblock %}
