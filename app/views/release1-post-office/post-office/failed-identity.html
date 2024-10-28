@@ -16,27 +16,26 @@
     <form action="{{currentUrl}}" method="post">
 
       <h1 class="govuk-heading-l">
-        We're taking you to view the result of your identity check
+        Sorry, we cannot prove your identity
       </h1>
 
-      <h2 class="govuk-heading-m">
-        If you were successful
-      </h2>
-
-      <p class="govuk-body">You'll see a screen called 'You have already proved your identity'. 
-        Select 'Continue' on that screen to see your Companies House personal code.
-        You'll need this to connect your verified identity to our records.
+      <p class="govuk-body">
+        We could not find a match when we checked your details with another organisation.
       </p>
 
+      <p class="govuk-body">To keep your information safe, we cannot tell you which of your details we were unable to match.</p>
+
 
       <h2 class="govuk-heading-m">
-        If you were not successful
+        What can you do
       </h2>
 
-      <p class="govuk-body">We'll let you know what you can do next.</p>
+      <p class="govuk-body">Continue to the service you were trying to use and look for other ways to prove your identity.
+      </p>
 
       {{ govukButton({
-        text: "Continue"
+        text: "Continue",
+        href: "po-failure-evidence"
       }) }}
 
     </form>

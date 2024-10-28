@@ -29,17 +29,17 @@
           <div class="govuk-form-group">
         {% endif %} 
           <h1 class="govuk-label-wrapper">
-            <label class="govuk-label govuk-label--l" for="signin-email">
+            <label class="govuk-label govuk-label--l" for="po-signin-email">
               Enter your email address to sign in to your GOV.UK One Login
             </label>
           </h1>
             <!-- Check for error -->
           {% if errorSigninEmail %}
-            <p id="signin-email-error" class="govuk-error-message">
+            <p id="po-signin-email-error" class="govuk-error-message">
               <span class="govuk-visually-hidden">Error:</span> Enter your email address
             </p>
           {% endif %} 
-            <input class="govuk-input" id="signin-email" name="signin-email" type="text">
+            <input class="govuk-input" id="po-signin-email" name="po-signin-email" type="text">
         </div>
 
       {{ govukButton({

@@ -1,6 +1,20 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
+module.exports=router;
+
+
+// Show session data and URLs in the terminal  
+router.use((req, res, next) => {  
+  const log = {  
+    method: req.method,  
+    url: req.originalUrl,  
+    data: req.session.data  
+  }  
+  console.log(JSON.stringify(log, null, 2))  
+  next()  
+}) 
+
 
 // ******* start validation ********************************
 router.get('/release1-post-office/pre-one-login/start', function (req, res) {
@@ -250,4 +264,22 @@ router.post('/release1-post-office/post-office/po-sign-in-password', function (r
 })
 
 
-module.exports=router;
+// ******* ch-landing-page javascript ********************************
+router.get('/release1-post-office/post-officen/ch-landing-page', function (req, res) {
+  // Set URl
+  res.render('release1-post-office/post-office/ch-landing-page', {
+    currentUrl: req.originalUrl
+  })
+})
+
+router.post('/release1-post-office/post-office/ch-landing-page', function (req, res) {
+  
+  if (req.session.data['po-signin-email'] == 'email_one@server.com' ) 
+  {
+    res.redirect('/release1-post-office/post-office/already-proved-identity')
+  } else 
+  {
+    res.redirect('/release1-post-office/post-office/failed-identity')
+  }
+
+})
