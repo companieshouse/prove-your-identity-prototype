@@ -279,7 +279,7 @@ router.post('/release1-post-office/post-office/ch-landing-page', function (req, 
     res.redirect('/release1-post-office/post-office/already-proved-identity')
   } else 
   {
-    res.redirect('/release1-post-office/post-office/failed-identity')
+    res.redirect('/release1-post-office/post-office/po-failure-blocked')
   }
 
 })
