@@ -260,7 +260,21 @@ router.get('/release1-post-office/post-office/po-sign-in-password', function (re
 })
 
 router.post('/release1-post-office/post-office/po-sign-in-password', function (req, res) {
-  res.redirect('/release1-post-office/post-office/ch-landing-page')
+  
+  if (req.session.data['task-status'] == 'version_b' ) 
+  {
+    if (req.session.data['po-signin-email'] == 'email1@server.com' ) 
+    {
+      res.redirect('/release1-post-office/post-office/po-verified-success')
+    } else 
+    {
+      res.redirect('/release1-post-office/post-office/failed-identity')
+    }
+  } else 
+  {
+    res.redirect('/release1-post-office/post-office/ch-landing-page')
+  }
+
 })
 
 
