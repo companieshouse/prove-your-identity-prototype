@@ -274,12 +274,12 @@ router.get('/release1-post-office/post-officen/ch-landing-page', function (req, 
 
 router.post('/release1-post-office/post-office/ch-landing-page', function (req, res) {
   
-  if (req.session.data['po-signin-email'] == 'email_one@server.com' ) 
+  if (req.session.data['po-signin-email'] == 'email1@server.com' ) 
   {
     res.redirect('/release1-post-office/post-office/already-proved-identity')
   } else 
   {
-    res.redirect('/release1-post-office/post-office/po-failure-blocked')
+    res.redirect('/release1-post-office/post-office/failed-identity')
   }
 
 })
