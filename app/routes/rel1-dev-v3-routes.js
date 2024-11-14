@@ -101,7 +101,13 @@ router.get('/release1-dev-v3/one-login/one-login-start', function (req, res) {
 })
 
 router.post('/release1-dev-v3/one-login/one-login-start', function (req, res) {
-  res.redirect('https://govuk-one-login-prototype-6d2545e2d700.herokuapp.com/page-index/ipv-core/id-screener')
+  if (req.session.data['version'] === 'sole-trader') {
+    // ACSP
+    res.redirect('/release1-dev-v3/one-login/one-login-id')
+  } else {
+    // General
+    res.redirect('https://govuk-one-login-prototype-6d2545e2d700.herokuapp.com/page-index/ipv-core/id-screener')
+  }
 })
 
 

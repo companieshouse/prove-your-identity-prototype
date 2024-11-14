@@ -55,17 +55,10 @@
     <p class="govuk-body">Identity verification makes it much more difficult for 
       criminals to impersonate someone, but not impossible.</p>
 
-    {% if data['version'] == 'sole-trader' %}
     {{ govukButton({
       text: "Continue",
-      href: "#"
+      href: "https://register-an-acsp-prototype.herokuapp.com/v14/start-page-under-review"
     }) }}
-    {% else %}
-    {{ govukButton({
-      text: "Continue",
-      href: "#"
-    }) }}
-    {% endif %} 
 
     <h3 class="govuk-heading-s">Feedback</h3>
     <p class="govuk-body">This is a new service. Help us improve it by completing our
