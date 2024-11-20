@@ -1,0 +1,74 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  You have failed to verify your identity for Companies House – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/account-banner.html" %}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Ways you can prove your identity for Companies House </h1>
+
+      <h3 class="govuk-heading-s">If you have the required photo ID </h3>
+
+      <p class="govuk-body">You can <a href="/release1-dev-v3/one-login/one-login-start" class="govuk-link">try proving your identity with GOV.UK One Login again</a>.</p> 
+
+      <h3 class="govuk-heading-s">If you do not have the required photo ID </h3>
+
+      <p class="govuk-body">You'll soon be able to ask a <a href="/release1-dev-v3/post-one-login/acsp-route" class="govuk-link">Companies House authorised agent</a>
+       (such as an accountant or solicitor) to verify your identity on your behalf. This is also known as an Authorised Corporate Service Provider (ACSP). You can do this from any country, 
+     but your agent must register with Companies House in order to become authorised. They must be registered with a UK Anti-Money Laundering (AML) supervisory body. You’ll need to provide suitable identity documents.</p> 
+
+     {{ govukInsetText({
+      text: "We cannot give an exact date for when this option will be available yet, but it will be before the transition period begins."
+    }) }}
+
+      <h2 class="govuk-heading-m">What happens if you do not verify </h2>
+
+      <p class="govuk-body">
+        There will be a transition period for existing directors and people with significant control (PSCs), so that you have time to do what the regulations require. <a href="../pre-one-login/guidance-when" class="govuk-link">
+          Find out when you need to verify your identity</a>.
+      </p>
+
+      {{ govukWarningText({
+        text: "If you do not comply with identity verification requirements on time, you will be committing an offence and may have to pay a financial penalty or fine.",
+        iconFallbackText: "Warning"
+      }) }}
+
+      <p class="govuk-body">You will also be unable to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>make any filings for your company or entity</li>
+        <li>start a new company or entity</li>
+        <li>register as a Companies House authorised agent</li>
+      </ul>
+
+      
+
+<h3 class="govuk-heading-s">Directors</h3>
+
+<p class="govuk-body">
+  If you continue to act as a director after the deadline without verifying, you will be committing an offence. The company (or entity) and all directors may also be committing an offence.
+</p>
+
+<h3 class="govuk-heading-s">People with significant control (PSCs)</h3>
+
+<p class="govuk-body">
+  If you continue to be a PSC after the deadline without verifying, you will be committing an offence.
+</p>
+
+<h3 class="govuk-heading-s">Feedback</h3>
+    <p class="govuk-body">This is a new service. Help us improve it by completing our
+      <a href="#">quick survey</a>.
+
+    </div>
+  </div>
+
+{% endblock %}

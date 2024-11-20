@@ -29,6 +29,7 @@ router.use('/', require('./routes/rel1-dev-routes.js'))
 router.use('/', require('./routes/rel1-dev-v2-routes.js'))
 router.use('/', require('./routes/rel1-dev-v3-routes.js'))
 router.use('/', require('./routes/rel1-post-office.js'))
+router.use('/', require('./routes/rel1-post-office-v2.js'))
 
 // release 2
 
