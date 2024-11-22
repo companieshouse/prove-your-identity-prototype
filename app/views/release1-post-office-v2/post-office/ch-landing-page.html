@@ -19,15 +19,17 @@
         We're taking you to view the result of your identity check
       </h1>
 
-      <h2 class="govuk-heading-m">
-        If you were successful
-      </h2>
-
-      <p class="govuk-body">You'll see a screen that says 'You have already proved your identity'. 
-        Select continue on that screen to see your Companies House personal code.
+      <p class="govuk-body">If you were successful, you'll see a screen that says 'You have already proved your identity'. 
       </p>
 
+      {{ govukWarningText({
+        text: "You must select continue on that screen to see your Companies House personal code.",
+        iconFallbackText: "Warning"
+      }) }}
+
       
+
+      <p class="govuk-body">If you were not successful, we'll tell you what you can do next.</p>
 
       <details class="govuk-details">
         <summary class="govuk-details__summary">
@@ -55,14 +57,6 @@
         
         </div>
       </details>
-
-      <h2 class="govuk-heading-m">
-        If you were not successful
-      </h2>
-
-      <p class="govuk-body">We'll tell you what you can do next.</p>
-
-
       
       {{ govukButton({
         text: "View result"
