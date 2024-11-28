@@ -29,13 +29,6 @@ Enter your Companies House personal code and date of birth
 
       <h1 class="govuk-heading-l">What are your identity verification details?</h1>
 
-      <div class="govuk-warning-text">
-        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-        <strong class="govuk-warning-text__text">
-          <span class="govuk-visually-hidden">Warning</span>
-          Enter this information carefully. For security reasons, if you enter incorrect information too many times, you will not be able to continue to use this service.
-        </strong>
-      </div>
 
       <!-- Check for error -->
     {% if errorVerifiedCode or matchError %}
@@ -46,6 +39,9 @@ Enter your Companies House personal code and date of birth
         <label class="govuk-label govuk-date-input__label" for="personalCode">
           Companies House personal code
         </label>
+        <div id="email-hint" class="govuk-hint">
+          This is an 11 character code, like A1B-2C3D-4E5F
+        </div>
 
         <!-- Check for error -->
         {% if matchError %} 
@@ -69,9 +65,14 @@ Enter your Companies House personal code and date of birth
             Where to find your Companies House personal code
           </span>
         </summary>
-        <div class="govuk-details__text"><p>
-          This is an 11 character code that is given to a person once they have verified their identity. </p>
-          <p>If a Companies House authorised agent verified your identity, we sent your personal code to the email address they provided for you.  </p>
+        <div class="govuk-details__text">
+          <p>If a Companies House authorised agent verified your identity, we sent your personal code to the email address they provided for you. </p>
+        
+          <p class="govuk-body">If you cannot find the email, you can:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>check your junk folder</li>
+  <li>ask your authorised agent which email address they provided</li>
+</ul>
           <p>An authorised agent is also known as an Authorised Corporate Service Provider (ACSP). </p>
         </div>
       </details>
