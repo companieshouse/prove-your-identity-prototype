@@ -134,9 +134,12 @@ router.post('/release2-v6/uvid-binding/verified-details', function (req, res) {
       errorVerifiedDobYear: true,
       errorList: errors
     })
+  } else if (req.session.data['personalCode'] === '111-2222-3333'){
+    // User inputted incorrect value so move to fail page
+    res.redirect('/release2-v6/uvid-binding/binding-fail')
   } else {
     // User inputted value so move to next page
-    res.redirect('/release2-v6/uvid-binding/verified-details')
+    res.redirect('/release2-v6/uvid-binding/binding-success')
   }
 })
 
