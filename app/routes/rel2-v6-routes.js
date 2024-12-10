@@ -87,7 +87,7 @@ router.post('/release2-v6/uvid-binding/verified-details', function (req, res) {
   }
     
   // Check if user has filled out a month
-  if (req.session.data['verifiedDob-month'] === 'Choose month') {
+  if (req.session.data['verifiedDob-month'] === '') {
     // No value so add error to array
     monthHasError = true
     detailsError = true
