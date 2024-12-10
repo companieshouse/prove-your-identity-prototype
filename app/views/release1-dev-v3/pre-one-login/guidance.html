@@ -95,7 +95,7 @@
 <ul class="govuk-list govuk-list--bullet">
   <li>make any filings for your company or entity</li>
   <li>start a new company or entity</li>
-  <li>register as a Companies House authorised agent</li>
+  <li>register as a Companies House authorised agent (also known as an Authorised Corporate Service Provider, or ACSP)</li>
 </ul>
 
 <h3 class="govuk-heading-s">Directors</h3>
@@ -125,7 +125,10 @@
       <li>someone who files for a company - for example, a company secretary</li>
     </ul>
 
-    <p class="govuk-body">All companies with a registered email address will receive an email to let them know their directors and PSCs are required to verify their identity. If we do not hold a valid registered email address, we'll send a letter to the registered office address instead.</p>
+    <p class="govuk-body">All companies with a registered email address will receive an email to let them know their directors and PSCs are required to verify their identity. If we do not hold a valid registered email address, we'll send a letter to the registered office address instead.  {{govukTag({
+      text: "Is this correct?",
+      classes: "govuk-tag--yellow"
+    })}}</p>
 
     <!-- ***************************************************************-->
 
@@ -135,7 +138,7 @@
 
     <h3 class="govuk-heading-s">Online </h3>
 
-    <p>You can use the <a href="start.html" class="govuk-link">Verify your identity for Companies House</a> service to verify online if you have the required identity documents. This route uses GOV.UK One Login to verify your identity and is free of charge.</p>
+    <p>You can use the <a href="start.html" class="govuk-link">Verify your identity for Companies House</a> service to verify online if you have the identity documents or information required. This route uses GOV.UK One Login to verify your identity and is free of charge.</p>
 
     <p class="govuk-body">You'll need one of the following types of photo ID:</p>
     <ul class="govuk-list govuk-list--bullet">
@@ -145,6 +148,8 @@
       <li>UK <a href="https://www.gov.uk/uk-residence-card" class="govuk-link">biometric residence card (BRC)</a></li>
       <li>UK <a href="https://www.gov.uk/frontier-worker-permit" class="govuk-link">Frontier Worker permit (FWP)</a></li>
     </ul>
+
+    <p class="govuk-body">If you do not have any of these types of photo ID but live in the UK, you can use the service to find out if you can verify with bank or building society details. You'll need to provide your National Insurance number and answer some security questions.</p>
 
     <h3 class="govuk-heading-s">In person at the Post Office </h3>
 
@@ -160,8 +165,10 @@
 
     <h3 class="govuk-heading-s">Using a Companies House authorised agent </h3>
 
-    <p class="govuk-body">You can ask a <a href="/release1-dev-v3/post-one-login/acsp-route" class="govuk-link">Companies House authorised agent</a>
-      (such as an accountant or solicitor) to verify your identity on your behalf. You can do this from any country, 
+    <p class="govuk-body">You'll soon be able to ask a <a href="/release1-dev-v3/post-one-login/acsp-route" class="govuk-link">Companies House authorised agent</a>
+      (such as an accountant or solicitor) to verify your identity on your behalf. This is also known as an Authorised Corporate Service Provider (ACSP). </p>
+      
+      <p class="govuk-body">You can do this from any country, 
     but your agent must register with Companies House in order to become authorised. They must be registered with a UK Anti-Money Laundering (AML) supervisory body. You’ll need to provide suitable identity documents. They will charge a fee for their services.</p> 
    
 
@@ -175,11 +182,7 @@
 
       <h2 id="content-5" class="govuk-heading-m">What happens when you verify</h2>
       
-      <p class="govuk-body">When you have successfully verified, you'll be given a Companies House personal code. You'll need to use your code to connect your verified identity to our 
-        records. This is so that we know the correct person is linked to 
-        the name we have on file. The code is personal to you, not your company or a company you work for.</p>
-        
-      <p class="govuk-body">You'll need your personal code for various reasons. For example:</p>
+      <p class="govuk-body">When you have successfully verified, you'll be given a Companies House personal code. You'll need this for various reasons. For example:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>as part of some other company filings, such as the <a href="https://www.gov.uk/running-a-limited-company/confirmation-statement" class="govuk-link">confirmation statement</a></li>
         <li>if you are appointed as a director</li>
@@ -187,6 +190,9 @@
           <a href="https://www.gov.uk/guidance/people-with-significant-control-pscs" class="govuk-link">person with significant control (PSC)</a>
         </li>
       </ul>
+
+      <p class="govuk-body">The code is personal to you, not your company or a company you work for. If you are a director or a PSC, you'll need to use your Companies House personal code to connect your verified identity to our records. This is a requirement, and will ensure that we know the correct person is linked to the name we have on file.
+      </p>
 
       <h3 class="govuk-heading-s">Only share the code with people you trust </h3>
 
