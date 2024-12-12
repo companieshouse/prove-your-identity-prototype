@@ -46,7 +46,7 @@ Enter your Companies House personal code and date of birth
         <!-- Check for error -->
         {% if matchError %} 
           <p id="personalCode-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> Enter the correct Companies House personal code
+            <span class="govuk-visually-hidden">Error:</span> Check you've entered the correct Companies House personal code
           </p>
           <input class="govuk-input govuk-input--width-10 govuk-input--extra-letter-spacing govuk-input--error" id="personalCode" name="personalCode" type="text" aria-describedby="personalCode-hint" value="{{ data['personalCode'] }}">
         {% elif errorVerified %} 
@@ -90,7 +90,7 @@ Enter your Companies House personal code and date of birth
           <!-- Check for error -->
           {% if matchError %}
           <p id="verifiedDob-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> Enter the correct date of birth
+            <span class="govuk-visually-hidden">Error:</span> Check you've entered the correct date of birth
           </p>
           {% elif errorVerifiedDobDay or errorVerifiedDobMonth or errorVerifiedDobYear %}
           <p id="verifiedDob-error" class="govuk-error-message">
