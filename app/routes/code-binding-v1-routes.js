@@ -13,14 +13,14 @@ router.use((req, res, next) => {
 }) 
 
 // ******* have-you-verified javascript ********************************
-router.get('/release2-v6/uvid-binding/have-you-verified', function (req, res) {
+router.get('/code-binding-v1/uvid-binding/have-you-verified', function (req, res) {
   // Set URl
-  res.render('release2-v6/uvid-binding/have-you-verified', {
+  res.render('code-binding-v1/uvid-binding/have-you-verified', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/release2-v6/uvid-binding/have-you-verified', function (req, res) {
+router.post('/code-binding-v1/uvid-binding/have-you-verified', function (req, res) {
   // Create empty array
   var errors = []
 
@@ -33,29 +33,29 @@ router.post('/release2-v6/uvid-binding/have-you-verified', function (req, res) {
     })
 
     // Re-show page with error value as true so errors will show
-    res.render('release2-v6/uvid-binding/have-you-verified', {
+    res.render('code-binding-v1/uvid-binding/have-you-verified', {
       errorHaveVerified: true,
       errorList: errors
     })
   } else {
     if (req.session.data['haveVerified'] === 'yes') {
-      res.redirect('/release2-v6/uvid-binding/verified-details')
+      res.redirect('/code-binding-v1/uvid-binding/verified-details')
     } else {
       // User inputted value so move to next page
-      res.redirect('/release2-v6/pre-one-login/one-login-intro')
+      res.redirect('/code-binding-v1/pre-one-login/one-login-intro')
     }
   }
 })
 
 // ******* verified-details javascript ******************************
-router.get('/release2-v6/uvid-binding/verified-details', function (req, res) {
+router.get('/code-binding-v1/uvid-binding/verified-details', function (req, res) {
   // Set URl
-  res.render('release2-v6/uvid-binding/verified-details', {
+  res.render('code-binding-v1/uvid-binding/verified-details', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/release2-v6/uvid-binding/verified-details', function (req, res) {
+router.post('/code-binding-v1/uvid-binding/verified-details', function (req, res) {
   // Create empty array and set error variables to false
   var errors = []
   var codeHasError = false
@@ -112,7 +112,7 @@ router.post('/release2-v6/uvid-binding/verified-details', function (req, res) {
   // Check if eother filed not filled out
   if (detailsError) {
     // Re-show page with error value as true so errors will show
-    res.render('release2-v6/uvid-binding/verified-details', {
+    res.render('code-binding-v1/uvid-binding/verified-details', {
       errorVerified: detailsError,
       errorVerifiedDobDay: dayHasError,
       errorVerifiedDobMonth: monthHasError,
@@ -126,7 +126,7 @@ router.post('/release2-v6/uvid-binding/verified-details', function (req, res) {
     href: '#personalCode'
     })
     
-    res.render('release2-v6/uvid-binding/verified-details', {
+    res.render('code-binding-v1/uvid-binding/verified-details', {
       errorVerified: true,
       matchError: true,
       errorVerifiedDobDay: true,
@@ -136,36 +136,36 @@ router.post('/release2-v6/uvid-binding/verified-details', function (req, res) {
     })
   } else if (req.session.data['personalCode'] === '111-2222-3333'){
     // User inputted incorrect value so move to fail page
-    res.redirect('/release2-v6/uvid-binding/binding-fail')
+    res.redirect('/code-binding-v1/uvid-binding/binding-fail')
   } else {
     // User inputted value so move to next page
-    res.redirect('/release2-v6/uvid-binding/binding-success')
+    res.redirect('/code-binding-v1/uvid-binding/binding-success')
   }
 })
 
 
 // ******* one-login-start javascript ********************************
-router.get('/release2-v6/one-login/one-login-start', function (req, res) {
+router.get('/code-binding-v1/one-login/one-login-start', function (req, res) {
   // Set URl
-  res.render('release2-v6/one-login/one-login-start', {
+  res.render('code-binding-v1/one-login/one-login-start', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/release2-v6/one-login/one-login-start', function (req, res) {
+router.post('/code-binding-v1/one-login/one-login-start', function (req, res) {
   res.redirect('/release2-v1/one-login/one-login-id')
 })
 
 
 // ******* one-login-id javascript ********************************
-router.get('/release2-v6/one-login/one-login-id', function (req, res) {
+router.get('/code-binding-v1/one-login/one-login-id', function (req, res) {
   // Set URl
-  res.render('release2-v6/one-login/one-login-id', {
+  res.render('code-binding-v1/one-login/one-login-id', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/release2-v6/one-login/one-login-id', function (req, res) {
+router.post('/code-binding-v1/one-login/one-login-id', function (req, res) {
   // Create empty array
   var errors = []
 
@@ -178,29 +178,29 @@ router.post('/release2-v6/one-login/one-login-id', function (req, res) {
     })
 
     // Re-show page with error value as true so errors will show
-    res.render('release2-v6/one-login/one-login-id', {
+    res.render('code-binding-v1/one-login/one-login-id', {
       errorPhotoID: true,
       errorList: errors
     })
   } else {
     if (req.session.data['photoID'] == 'yes' ) {
-      res.redirect('/release2-v6/one-login/one-login-working')
+      res.redirect('/code-binding-v1/one-login/one-login-working')
     } else {
-      res.redirect('/release2-v6/one-login/one-login-post-office')
+      res.redirect('/code-binding-v1/one-login/one-login-post-office')
     }
   }
 })
 
 
 // ******* one-login-post-0ffice javascript ********************************
-router.get('/release2-v6/one-login/one-login-post-office', function (req, res) {
+router.get('/code-binding-v1/one-login/one-login-post-office', function (req, res) {
   // Set URl
-  res.render('release2-v6/one-login/one-login-post-office', {
+  res.render('code-binding-v1/one-login/one-login-post-office', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/release2-v6/one-login/one-login-post-office', function (req, res) {
+router.post('/code-binding-v1/one-login/one-login-post-office', function (req, res) {
   // Create empty array
   var errors = []
 
@@ -213,13 +213,13 @@ router.post('/release2-v6/one-login/one-login-post-office', function (req, res) 
     })
 
     // Re-show page with error value as true so errors will show
-    res.render('release2-v6/one-login/one-login-post-office', {
+    res.render('code-binding-v1/one-login/one-login-post-office', {
       errorPostOffice: true,
       errorList: errors
     })
   } else {
     if (req.session.data['postOffice'] == 'no' ) {
-      res.redirect('/release2-v6/one-login/one-login-another-way')
+      res.redirect('/code-binding-v1/one-login/one-login-another-way')
     } else 
     {
       res.redirect('/release1-v4/one-login/one-login-post-office')
@@ -229,14 +229,14 @@ router.post('/release2-v6/one-login/one-login-post-office', function (req, res) 
 
 
 // ******* one-login-another-way javascript ********************************
-router.get('/release2-v6/one-login/one-login-another-way', function (req, res) {
+router.get('/code-binding-v1/one-login/one-login-another-way', function (req, res) {
   // Set URl
-  res.render('release2-v6/one-login/one-login-another-way', {
+  res.render('code-binding-v1/one-login/one-login-another-way', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/release2-v6/one-login/one-login-another-way', function (req, res) {
+router.post('/code-binding-v1/one-login/one-login-another-way', function (req, res) {
   // Create empty array
   var errors = []
 
@@ -249,30 +249,30 @@ router.post('/release2-v6/one-login/one-login-another-way', function (req, res) 
     })
 
     // Re-show page with error value as true so errors will show
-    res.render('release2-v6/one-login/one-login-another-way', {
+    res.render('code-binding-v1/one-login/one-login-another-way', {
       errorAnotherWay: true,
       errorList: errors
     })
   } else {
     if (req.session.data['anotherWay'] == 'onelogin' ) {
-      res.redirect('/release2-v6/one-login/one-login-id')
+      res.redirect('/code-binding-v1/one-login/one-login-id')
     } else {
-      res.redirect('/release2-v6/post-one-login/failure-evidence')
+      res.redirect('/code-binding-v1/post-one-login/failure-evidence')
     }
   }
 })
 
 
 // ******* one-login/success validation ********************************
-router.get('/release2-v6/one-login/success', function (req, res) {
+router.get('/code-binding-v1/one-login/success', function (req, res) {
   // Set URl
-  res.render('release2-v6/one-login/success', {
+  res.render('code-binding-v1/one-login/success', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/release2-v6/one-login/success', function (req, res) {
-    res.redirect('/release2-v6/post-one-login/verified-success')
+router.post('/code-binding-v1/one-login/success', function (req, res) {
+    res.redirect('/code-binding-v1/post-one-login/verified-success')
 })
 
 
