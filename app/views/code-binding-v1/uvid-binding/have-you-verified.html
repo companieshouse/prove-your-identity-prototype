@@ -66,6 +66,14 @@ Has your identity been verified for Companies House?
         </fieldset>
       </div>
 
+      {% from "govuk/components/details/macro.njk" import govukDetails %}
+
+      {{ govukDetails({
+        summaryText: "If you used GOV.UK One Login to verify your identity",
+        text: "You must be signed in with the email address you verified with to use this service.
+   "
+      }) }}
+
       {{ govukButton({
         text: "Continue"
       }) }}
