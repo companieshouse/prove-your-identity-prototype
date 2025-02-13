@@ -136,7 +136,7 @@ router.post('/code-binding-v1/uvid-binding/verified-details', function (req, res
     })
   } else if (req.session.data['personalCode'] === '111-2222-3333'){
     // User inputted incorrect value so move to fail page
-    res.redirect('/code-binding-v1/uvid-binding/binding-fail')
+    res.redirect('/code-binding-v1/uvid-binding/binding-fail-locked')
   } else {
     // User inputted value so move to next page
     res.redirect('/code-binding-v1/uvid-binding/binding-success')
