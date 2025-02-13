@@ -1,0 +1,46 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+You've entered the wrong details too many times
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">You've entered the wrong details too many times</h1>
+
+      <p class="govuk-body">
+        The identity verification details you’ve entered do not match our records. 
+     
+       For security reasons, you must wait 2 hours before you can try again.
+      </p>
+
+      <h2 class="govuk-heading-m">What you can do</h2>
+
+      <p class="govuk-body">To ensure you are providing the correct details, you could:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>check the email that contains your Companies House personal code, to make sure you’ve entered the code correctly</li>
+        <li>contact your Companies House authorised agent to check they entered your date of birth correctly when they told us they’ve verified your identity</li>
+      </ul>     
+      
+      <p>An authorised agent is also known as an Authorised Corporate Service Provider (ACSP).</p>
+
+<p>You can <a href="https://www.gov.uk/contact-companies-house" class="govuk-link">contact Companies House</a>
+if you have any questions.</p>
+
+  </div>
+</div>
+
+{% endblock %}
