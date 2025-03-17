@@ -1,0 +1,58 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Prove your identity with GOV.UK account GOV.UK – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/welsh-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Create your GOV.UK One Login or sign in
+      </h1>
+
+        <p class="govuk-body">You can use your GOV.UK One Login to access some government services.</p>
+
+        <p class="govuk-body">In the future, you’ll be able to use it to access all services on GOV.UK.</p>
+
+        <p class="govuk-body">You'll need:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>an email address</li>
+          <li>a way to get security codes - this can be a mobile phone number or an authenticator app</li>
+        </ul>
+
+        <div class="govuk-inset-text">
+          You can also <a href="#" class="govuk-link"> use GOV.UK One Login in Welsh (Cymraeg)</a>. 
+        </div>
+
+        {{ govukButton({
+          text: "Create your GOV.UK One Login"
+        }) }}
+
+        <div>
+          {{ govukButton({
+            text: "Sign in",
+            classes: "govuk-button--secondary",
+            href: "sign-in-email"
+          }) }}
+        </div>
+
+        <p class="govuk-body"><a href="#" class="govuk-link"> use GOV.UK One Login in Welsh (Cymraeg)</a></p>
+
+
+    </div>
+  </div>
+
+{% endblock %}

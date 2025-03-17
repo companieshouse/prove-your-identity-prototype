@@ -42,3 +42,7 @@ router.use('/', require('./routes/rel2-v5-routes.js'))
 // code binding
 
 router.use('/', require('./routes/code-binding-v1-routes.js'))
+
+// Alt routes v1
+
+router.use('/', require('./routes/altroutes-v1-routes.js'))
