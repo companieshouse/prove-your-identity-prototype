@@ -111,123 +111,105 @@ router.post('/alt-routes-v1/one-login/one-login-start', function (req, res) {
 })
 
 
-// ******* one-login-id javascript ********************************
-router.get('/alt-routes-v1/one-login/one-login-id', function (req, res) {
+// ******* full name validation ********************************
+router.get('/alt-routes-v1/post-one-login/full-name', function (req, res) {
   // Set URl
-  res.render('alt-routes-v1/one-login/one-login-id', {
+  res.render('alt-routes-v1/post-one-login/full-name', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/alt-routes-v1/one-login/one-login-id', function (req, res) {
-  // Create empty array
+router.post('/alt-routes-v1/post-one-login/full-name', function (req, res) {
+  // Create empty array and set error variables to false
   var errors = []
 
-  // Check if user has filled out a value
-  if (typeof req.session.data['photoID'] === 'undefined') {
+  // Check if user has filled out a email
+  if (req.session.data['fullName'] === '') {
     // No value so add error to array
     errors.push({
-      text: 'Select yes if you have any of these types of photo ID',
-      href: '#photoID'
+      text: 'Enter your full name',
+      href: '#fullName'
     })
+  }
 
+  // Check if eother filed not filled out
+  if (req.session.data['fullName'] === '') {
     // Re-show page with error value as true so errors will show
-    res.render('alt-routes-v1/one-login/one-login-id', {
-      errorPhotoID: true,
+    res.render('alt-routes-v1/post-one-login/full-name', {
+      errorFullName: true,
       errorList: errors
     })
   } else {
-    if (req.session.data['photoID'] == 'yes' ) {
-      res.redirect('/alt-routes-v1/one-login/one-login-working')
-    } else {
-      res.redirect('/alt-routes-v1/one-login/one-login-post-office')
-    }
+    // User inputted value so move to next page
+    res.redirect('/alt-routes-v1/post-one-login/dob')
   }
 })
 
 
-// ******* one-login-post-0ffice javascript ********************************
-router.get('/alt-routes-v1/one-login/one-login-post-office', function (req, res) {
+// ******* director-details javascript ******************************
+router.get('/alt-routes-v1/post-one-login/dob', function (req, res) {
   // Set URl
-  res.render('alt-routes-v1/one-login/one-login-post-office', {
+  res.render('alt-routes-v1/post-one-login/dob', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/alt-routes-v1/one-login/one-login-post-office', function (req, res) {
-  // Create empty array
+router.post('/alt-routes-v1/post-one-login/dob', function (req, res) {
+  // Create empty array and set error variables to false
   var errors = []
+  var dayHasError = false
+  var monthHasError = false
+  var yearHasError = false
+  var dobError = false
 
-  // Check if user has filled out a value
-  if (typeof req.session.data['postOffice'] === 'undefined') {
+    // Check if user has filled out a day
+  if (req.session.data['dob-day'] === '') {
     // No value so add error to array
+    dayHasError = true
+    dobError = true
     errors.push({
-      text: 'Select yes if you have any of these types of photo ID',
-      href: '#postOffice'
+      text: 'The date must include a day',
+      href: '#dob-day'
     })
+  }
 
+  // Check if user has filled out a month
+  if (req.session.data['dob-month'] === '') {
+    // No value so add error to array
+    monthHasError = true
+    dobError = true
+    errors.push({
+      text: 'The date must include a month',
+      href: '#dob-day'
+    })
+  }
+
+  // Check if user has filled out a year
+  if (req.session.data['dob-year'] === '') {
+    // No value so add error to array
+    yearHasError = true
+    dobError = true
+    errors.push({
+      text: 'The date must include a year',
+      href: '#dob-day'
+    })
+  }
+
+  // Check if other filed not filled out
+  if (dobError) {
     // Re-show page with error value as true so errors will show
-    res.render('alt-routes-v1/one-login/one-login-post-office', {
-      errorPostOffice: true,
+    res.render('alt-routes-v1/post-one-login/dob', {
+      errorDobDay: dayHasError,
+      errorDobMonth: monthHasError,
+      errorDobYear: yearHasError,
+      errorDob: dobError,
       errorList: errors
     })
   } else {
-    if (req.session.data['postOffice'] == 'no' ) {
-      res.redirect('/alt-routes-v1/one-login/one-login-another-way')
-    } else 
-    {
-      res.redirect('/release1-v4/one-login/one-login-post-office')
-    }
+    res.redirect('/alt-routes-v1/post-one-login/address')
   }
 })
 
-
-// ******* one-login-another-way javascript ********************************
-router.get('/alt-routes-v1/one-login/one-login-another-way', function (req, res) {
-  // Set URl
-  res.render('alt-routes-v1/one-login/one-login-another-way', {
-    currentUrl: req.originalUrl
-  })
-})
-
-router.post('/alt-routes-v1/one-login/one-login-another-way', function (req, res) {
-  // Create empty array
-  var errors = []
-
-  // Check if user has filled out a value
-  if (typeof req.session.data['anotherWay'] === 'undefined') {
-    // No value so add error to array
-    errors.push({
-      text: 'Select yes if you have any of these types of photo ID',
-      href: '#anotherWay'
-    })
-
-    // Re-show page with error value as true so errors will show
-    res.render('alt-routes-v1/one-login/one-login-another-way', {
-      errorAnotherWay: true,
-      errorList: errors
-    })
-  } else {
-    if (req.session.data['anotherWay'] == 'onelogin' ) {
-      res.redirect('/alt-routes-v1/one-login/one-login-id')
-    } else {
-      res.redirect('/alt-routes-v1/post-one-login/failure-evidence')
-    }
-  }
-})
-
-
-// ******* one-login/success validation ********************************
-router.get('/alt-routes-v1/one-login/success', function (req, res) {
-  // Set URl
-  res.render('alt-routes-v1/one-login/success', {
-    currentUrl: req.originalUrl
-  })
-})
-
-router.post('/alt-routes-v1/one-login/success', function (req, res) {
-    res.redirect('/alt-routes-v1/post-one-login/verified-success')
-})
 
 
 module.exports=router;

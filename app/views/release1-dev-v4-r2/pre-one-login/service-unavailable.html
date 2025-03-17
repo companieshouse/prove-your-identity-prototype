@@ -7,22 +7,22 @@
 {% block beforeContent %}
 {% include "includes/phase-banner.html" %}
 {% include "includes/account-banner.html" %}
+{% include "includes/back-link.html" %}
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Sorry, the service is unavailable</h1>
 
-      <h1 class="govuk-heading-l">Verify your identity using alternative route</h1>
+      <p class="govuk-body">You'll be able to try again soon.
+      </p> 
 
-      <p class="govuk-body"><a href="alt-route-guidance" class="govuk-link">Guidance</a>.</p> 
-
-      {{ govukButton({
-        text: "Continue",
-        href: "full-name"
-      }) }}
-
+      <p class="govuk-body">
+        <a href="https://www.gov.uk/contact-companies-house" class="govuk-link">Contact Companies House</a> 
+        if you have any questions.
+      </p>
     </div>
   </div>
 

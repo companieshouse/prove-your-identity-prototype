@@ -1,0 +1,69 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  What is the correspondence address?
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/welsh-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">What is the correspondence address for {{ data['directorTitle']}} {{ data['directorFirstName']}} {{ data['directorMiddleName']}} {{ data['directorLastName']}}?</h1>
+
+    <p class="govuk-body">We'll use this address to send notifications to 
+      the director. You can use a business or home address and it doesn't 
+      have to be in the UK.</p>
+
+    <p class="govuk-body">This address will be publicly available on the Companies House online register.</p>
+
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          I don't want my home address to be publicly available
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p>If you don't want to use your home address, you can use a business address service. You'll need their permission and they usually charge a fee.</p>
+        <p>Learn more about <a href=''>how your personal information is used</a> on the Companies House online public register and <a href=''>how to protect your home address</a>.</p>
+      </div>
+    </details>
+
+    <p class="govuk-body"><a href="#" class="govuk-link"></a></p>
+
+    <form action="{{currentUrl}}" method="post">
+
+       <div class="govuk-form-group">
+        <label class="govuk-label" for="postcode">
+          UK postcode
+        </label>
+        <input class="govuk-input govuk-input--width-10" id="postcode" name="postcode" type="text">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="propertyName">
+          Property name or number (optional)
+        </label>
+        <div id="event-name-hint" class="govuk-hint">
+          For example, 'The Mill', '116' or 'Flat 37a'
+        </div>
+        <input class="govuk-input govuk-input--width-5" id="propertyName" name="propertyName" type="text">
+      </div>
+
+      <p class="govuk-body"><a href="#" class="govuk-link">Enter address manually</a></p>
+      
+      {{ govukButton({
+        text: "Find address"
+      }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
