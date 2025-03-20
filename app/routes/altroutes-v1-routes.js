@@ -211,5 +211,18 @@ router.post('/alt-routes-v1/post-one-login/dob', function (req, res) {
 })
 
 
+// ******* address validation ********************************
+router.get('/alt-routes-v1/post-one-login/address', function (req, res) {
+  // Set URl
+  res.render('alt-routes-v1/post-one-login/address', {
+    currentUrl: req.originalUrl
+  })
+})
+
+router.post('/alt-routes-v1/post-one-login/address', function (req, res) {
+    res.redirect('/alt-routes-v1/post-one-login/address-confirm')
+})
+
+
 
 module.exports=router;
