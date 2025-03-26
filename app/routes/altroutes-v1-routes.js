@@ -224,5 +224,237 @@ router.post('/alt-routes-v1/post-one-login/address', function (req, res) {
 })
 
 
+// ******* primary-id javascript ********************************
+router.get('/alt-routes-v1/post-one-login/primary-id', function (req, res) {
+  // Set URl
+  res.render('alt-routes-v1/post-one-login/primary-id', {
+    currentUrl: req.originalUrl
+  })
+})
+
+router.post('/alt-routes-v1/post-one-login/primary-id', function (req, res) {
+  // Create empty array
+  var errors = []
+
+  // Check if user has filled out a value
+  if (typeof req.session.data['primaryId'] === 'undefined') {
+    // No value so add error to array
+    errors.push({
+      text: 'Select primary identity documents',
+      href: '#primaryId'
+    })
+
+    // Re-show page with error value as true so errors will show
+    res.render('alt-routes-v1/post-one-login/primary-id', {
+      errorPrimaryId: true,
+      errorList: errors
+    })
+  } else {
+    res.redirect('/alt-routes-v1/post-one-login/primary-id-upload')
+  }
+})
+
+// ******* primary-id-upload javascript ********************************
+router.get('/alt-routes-v1/post-one-login/primary-id-upload', function (req, res) {
+  // Set URl
+  res.render('alt-routes-v1/post-one-login/primary-id-upload', {
+    currentUrl: req.originalUrl
+  })
+})
+
+router.post('/alt-routes-v1/post-one-login/primary-id-upload', function (req, res) {
+  res.redirect('/alt-routes-v1/post-one-login/secondary-id')
+})
+
+
+// ******* secondary-id javascript ********************************
+router.get('/alt-routes-v1/post-one-login/secondary-id', function (req, res) {
+  // Set URl
+  res.render('alt-routes-v1/post-one-login/secondary-id', {
+    currentUrl: req.originalUrl
+  })
+})
+
+router.post('/alt-routes-v1/post-one-login/secondary-id', function (req, res) {
+  // Create empty array
+  var errors = []
+
+  // Check if user has filled out a value
+  if (typeof req.session.data['secondaryId'] === 'undefined') {
+    // No value so add error to array
+    errors.push({
+      text: 'Select secondary identity documents',
+      href: '#secondaryId'
+    })
+
+    // Re-show page with error value as true so errors will show
+    res.render('alt-routes-v1/post-one-login/secondary-id', {
+      errorSecondaryId: true,
+      errorList: errors
+    })
+  } else {
+    res.redirect('/alt-routes-v1/post-one-login/secondary-id-upload')
+  }
+})
+
+// ******* secondary-id-upload javascript ********************************
+router.get('/alt-routes-v1/post-one-login/secondary-id-upload', function (req, res) {
+  // Set URl
+  res.render('alt-routes-v1/post-one-login/secondary-id-upload', {
+    currentUrl: req.originalUrl
+  })
+})
+
+router.post('/alt-routes-v1/post-one-login/secondary-id-upload', function (req, res) {
+  res.redirect('/alt-routes-v1/post-one-login/secondary-id-translations')
+})
+
+
+// ******* post-one-login/secondary-id-translations javascript ********************************
+router.get('/alt-routes-v1/post-one-login/secondary-id-translations', function (req, res) {
+  // Set URl
+  res.render('alt-routes-v1/post-one-login/check-id-details', {
+    currentUrl: req.originalUrl
+  })
+})
+
+
+
+router.post('/alt-routes-v1/post-one-login/secondary-id-translations', function (req, res) {
+  // Create empty array
+  var errors = []
+
+  // Check if user has filled out a value
+  if (typeof req.session.data['secondaryTranslations'] === 'undefined') {
+    // No value so add error to array
+    errors.push({
+      text: 'Select yes if you are providing translations for the secondary ID documents',
+      href: '#secondaryTranslations'
+    })
+
+    // Re-show page with error value as true so errors will show
+    res.render('alt-routes-v1/post-one-login/secondary-id-translations', {
+      errorPaypal: true,
+      errorList: errors
+    })
+  } else {
+    if (req.session.data['paypal'] === 'yes') {
+      res.redirect('/alt-routes-v1/post-one-login/secondary-id-translations')
+    } else {
+      // User inputted value so move to next page
+      res.redirect('/alt-routes-v1/post-one-login/secondary-id-translations')
+    }
+  }
+})
+
+
+// ******* upload-id-video javascript ********************************
+router.get('/alt-routes-v1/post-one-login/upload-id-video', function (req, res) {
+  // Set URl
+  res.render('alt-routes-v1/post-one-login/upload-id-video', {
+    currentUrl: req.originalUrl
+  })
+})
+
+router.post('/alt-routes-v1/post-one-login/upload-id-video', function (req, res) {
+  res.redirect('/alt-routes-v1/post-one-login/declaration')
+})
+
+
+// ******* declaration javascript ********************************
+router.get('/alt-routes-v1/post-one-login/declaration', function (req, res) {
+  // Set URl
+  res.render('/alt-routes-v1/post-one-login/declaration', {
+    currentUrl: req.originalUrl
+  })
+})
+
+router.post('/alt-routes-v1/post-one-login/declaration', function (req, res) {
+  // Create empty array
+  var errors = []
+
+  if (typeof req.session.data['declaration'] === 'undefined') {
+    // No value so add error to array
+    errors.push({
+      text: 'Select declaration',
+      href: '#declaration'
+    })
+
+    // Re-show page with error value as true so errors will show
+    res.render('/alt-routes-v1/post-one-login/declaration', {
+      errorDeclaration: true,
+      errorList: errors
+    })
+  } else {
+      res.redirect('/alt-routes-v1/post-one-login/vouching-intro')
+  }
+})
+
+
+// ******* applicant-details javascript ******************************
+router.get('/alt-routes-v1/post-one-login/voucher-details', function (req, res) {
+  // Set URl
+  res.render('alt-routes-v1/post-one-login/voucher-details', {
+    currentUrl: req.originalUrl
+  })
+})
+
+router.post('/alt-routes-v1/post-one-login/voucher-details', function (req, res) {
+  // Create empty array and set error variables to false
+  var errors = []
+  var voucherNameError = false
+  var voucherEmailError = false
+  var voucherRoleError = false
+  var detailsError = false
+
+  // Check if user has filled out first name
+  if (req.session.data['voucherName'] === '') {
+    // No value so add error to array
+    voucherNameError = true
+    detailsError = true
+    errors.push({
+      text: 'Enter the vouchers name in full',
+      href: '#voucherName'
+    })
+  }
+
+  // Check if user has filled out first name
+  if (req.session.data['voucherEmail'] === '') {
+    // No value so add error to array
+    voucherEmailError = true
+    detailsError = true
+    errors.push({
+      text: 'Enter the vouchers email',
+      href: '#voucherEmail'
+    })
+  }
+
+    // Check if user has filled out first name
+    if (req.session.data['voucherRole'] === '') {
+      // No value so add error to array
+      voucherRoleError = true
+      detailsError = true
+      errors.push({
+        text: 'Enter the role of the voucher',
+        href: '#voucherRole'
+      })
+    }
+
+  // Check if eother filed not filled out
+  if (detailsError) {
+    // Re-show page with error value as true so errors will show
+    res.render('alt-routes-v1/post-one-login/voucher-details', {
+      errorVoucherName: voucherNameError,
+      errorVoucherEmail: voucherEmailError,
+      errorVoucherRole: voucherRoleError,
+      errorVoucherDetails: detailsError,
+      errorList: errors
+    })
+  } 
+  else  
+  {res.redirect('/alt-routes-v1/post-one-login/check-details')}
+})
+
+
 
 module.exports=router;

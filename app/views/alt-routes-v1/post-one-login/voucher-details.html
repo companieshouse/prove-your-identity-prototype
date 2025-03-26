@@ -1,0 +1,92 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  What are the applicant's details? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <!-- Check for error -->
+    {% if errorVoucherDetails %}
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: errorList
+      }) }}
+    {% endif %}
+    <h1 class="govuk-heading-l">What are the vouchers's details?</h1>
+    <div id="H1-hint" class="govuk-hint">
+      Tell us the details of the voucher....
+    </div>
+
+    <form action="{{currentUrl}}" method="post">
+
+      <!-- Check for error -->
+      {% if errorVoucherName %}
+        <div class="govuk-form-group govuk-form-group--error">
+      {% else %}
+        <div class="govuk-form-group">
+      {% endif %} 
+      <label class="govuk-label" for="voucherName">
+        Full name
+      </label>
+        <!-- Check for error -->
+        {% if errorVoucherName %}
+          <p id="voucherName-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Enter the voucher's name in full
+          </p>
+        {% endif %} 
+        <input class="govuk-input" id="voucherName" name="voucherName" type="text" spellcheck="false" autocomplete="name">
+      </div>
+
+      <!-- Check for error -->
+      {% if errorVoucherEmail %}
+        <div class="govuk-form-group govuk-form-group--error">
+      {% else %}
+        <div class="govuk-form-group">
+      {% endif %} 
+      <label class="govuk-label" for="voucherEmail">
+        Email address
+      </label>
+          <!-- Check for error -->
+        {% if errorVoucherEmail %}
+          <p id="voucherEmail-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Enter the voucher's email
+          </p>
+        {% endif %} 
+          <input class="govuk-input" id="voucherEmail" name="voucherEmail" type="text">
+      </div>
+
+      <!-- Check for error -->
+      {% if errorVoucherRole %}
+        <div class="govuk-form-group govuk-form-group--error">
+      {% else %}
+        <div class="govuk-form-group">
+      {% endif %} 
+      <label class="govuk-label" for="voucherRole">
+        Role
+      </label>
+          <!-- Check for error -->
+        {% if errorVoucherRole %}
+          <p id="voucherRole-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Enter the role of the voucher
+          </p>
+        {% endif %} 
+          <input class="govuk-input govuk-!-width-one-third" id="voucherRole" name="voucherRole" type="text">
+      </div>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

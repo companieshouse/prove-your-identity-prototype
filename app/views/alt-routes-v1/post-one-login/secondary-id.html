@@ -1,0 +1,85 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Enter your one login email
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/welsh-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <!-- Check for error -->
+    {% if errorSecondaryId %}
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: errorList
+      }) }}
+    {% endif %}
+    <form action="{{currentUrl}}" method="post">
+
+      <!-- Check for error -->
+      {% if errorSecondaryId %}
+      <div class="govuk-form-group govuk-form-group--error">
+      {% else %}
+      <div class="govuk-form-group">
+      {% endif %} 
+        <fieldset class="govuk-fieldset" aria-describedby="secondaryId-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+            Select from the list of secondary ID documents
+            </h1>
+          </legend>
+          <div id="secondaryId-hint" class="govuk-hint">
+            Select one piece of secondary id documentation
+          </div>
+          <!-- Check for error -->
+          {% if errorSecondaryId %}
+          <p id="secondaryId-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Select from the list of secondary ID documents
+          </p>
+          {% endif %} 
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="secondaryId" name="secondaryId" type="radio" value="secondary1">
+              <label class="govuk-label govuk-radios__label" for="secondaryId">
+                Non photographic ID 1
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="secondaryId-2" name="secondaryId" type="radio" value="secondary2">
+              <label class="govuk-label govuk-radios__label" for="secondaryId-2">
+                Non photographic ID 2
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="secondaryId-3" name="secondaryId" type="radio" value="secondary3">
+              <label class="govuk-label govuk-radios__label" for="secondaryId-3">
+                Non photographic ID 3
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="secondaryId-4" name="secondaryId" type="radio" value="secondary4">
+              <label class="govuk-label govuk-radios__label" for="secondaryId-4">
+                Non photographic ID 4
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Enter your one login email
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/welsh-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <!-- Check for error -->
+    {% if errorPrimaryId %}
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: errorList
+      }) }}
+    {% endif %}
+    <form action="{{currentUrl}}" method="post">
+
+        <!-- Check for error -->
+        {% if errorPrimaryId %}
+          <div class="govuk-form-group govuk-form-group--error">
+        {% else %}
+          <div class="govuk-form-group">
+        {% endif %} 
+          <fieldset class="govuk-fieldset" aria-describedby="primaryId-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Select from the list of primary identity documents to upload
+              </h1>
+            </legend>
+            <div id="primaryId-hint" class="govuk-hint">
+              Select one or two pieces of photographic id to upload.
+            </div>
+            <!-- Check for error -->
+            {% if errorPrimaryId %}
+            <p id="primaryId-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span>Select primary identity documents
+            </p>
+            {% endif %}
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="primaryId" name="primaryId" type="checkbox" value="passport">
+                <label class="govuk-label govuk-checkboxes__label" for="primaryId">
+                  Passport
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="primaryId-2" name="primaryId" type="checkbox" value="primaryIdTwo">
+                <label class="govuk-label govuk-checkboxes__label" for="primaryId-2">
+                  Photographic ID 2
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="primaryId-3" name="primaryId" type="checkbox" value="primaryIdThree">
+                <label class="govuk-label govuk-checkboxes__label" for="primaryId-3">
+                  Photographic ID 3
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="primaryId-4" name="primaryId" type="checkbox" value="primaryIdFour">
+                <label class="govuk-label govuk-checkboxes__label" for="primaryId-4">
+                  Photographic ID 4
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

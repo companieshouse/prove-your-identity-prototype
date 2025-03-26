@@ -1,0 +1,73 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Enter your one login email
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/welsh-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <!-- Check for error -->
+    {% if errorSecondaryTranslations %}
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: errorList
+      }) }}
+    {% endif %}
+    <form action="{{currentUrl}}" method="post">
+
+      <!-- Check for error -->
+      {% if errorSecondaryTranslations %}
+      <div class="govuk-form-group govuk-form-group--error">
+      {% else %}
+      <div class="govuk-form-group">
+      {% endif %} 
+        <fieldset class="govuk-fieldset" aria-describedby="newApplication-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+            Are you providing translated copies of the secondary ID documents?
+            </h1>
+          </legend>
+          <div id="secondaryTranslations-hint" class="govuk-hint">
+            Guidance on translations.
+          </div>
+          <!-- Check for error -->
+          {% if errorSecondaryTranslations %}
+          <p id="secondaryTranslations-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Select yes if you are providing translations for the secondary ID documents
+          </p>
+          {% endif %} 
+
+          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="secondaryTranslations" name="secondaryTranslations" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="secondaryTranslations">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="secondaryTranslations-2" name="secondaryTranslations" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="secondaryTranslations-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

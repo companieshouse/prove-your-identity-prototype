@@ -16,13 +16,15 @@
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">Check your details</h1>
 
+    <h1 class="govuk-heading-m">Personal details</h1>
+
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Name
         </dt>
         <dd class="govuk-summary-list__value">
-          Sarah Philips
+          {{ data['fullName']}}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
@@ -33,7 +35,9 @@
           Date of birth
         </dt>
         <dd class="govuk-summary-list__value">
-          5 January 1978
+          {{ data['dob-day'] }} 
+          {{ data['dob-month'] | displayMonth }} 
+          {{ data['dob-year'] }} 
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
@@ -44,16 +48,93 @@
           Address
         </dt>
         <dd class="govuk-summary-list__value">
-          72 Guild Street<br>London<br>SE23 6FH
+          {{ data['addressLine1']}} <br> {{ data['addressLine2']}} <br> {{ data['addressTown']}} <br> {{ data['addressCountry']}}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> address</span></a>
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+        </dd>
+      </div>
+    </dl>
+
+    <h1 class="govuk-heading-m">Identity documents</h1>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Photographic ID
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['primaryId']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Non photographic ID
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['secondaryId']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Video
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Video name
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+        </dd>
+      </div>
+    </dl>
+
+    <h1 class="govuk-heading-m">Voucher's details</h1>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Full name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['voucherName']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Email address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['voucherEmail']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Role
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['voucherRole']}}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date of birth</span></a>
         </dd>
       </div>
     </dl>
 
     {{ govukButton({
-      text: "Confirm and continue"
+      text: "Confirm and continue",
+      href: "upload-id-video"
     }) }}
 
   </div>

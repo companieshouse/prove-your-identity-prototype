@@ -1,0 +1,74 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Confirm the identity verification statement – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/account-banner.html" %}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <!-- Check for error -->
+    {% if errorDeclaration %}
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: errorList
+      }) }}
+    {% endif %}
+      <form action="{{currentUrl}}" method="post">
+
+        <!-- Check for error -->
+        {% if errorDeclaration %}
+        <div class="govuk-form-group govuk-form-group--error">
+        {% else %}
+        <div class="govuk-form-group">
+        {% endif %} 
+          <fieldset class="govuk-fieldset" aria-describedby="declaration-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Confirm the video declaration
+              </h1>
+            </legend>
+            {% if errorDeclaration %}
+            <p id="declaration-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span>Select the declaration
+            </p>
+            {% endif %}
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="declaration" name="declaration" type="checkbox">
+                <label class="govuk-label govuk-checkboxes__label" for="declaration">
+                  I confirm that ...
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">
+          Confirm and submit
+        </button> 
+
+        {% if data['pscList'] == 'Paul Smith' %}
+          <input type="hidden" name="paul_smith" id="paul_smith" value="verified" />
+        {% endif %}
+
+        {% if data['pscList'] == 'Susan Robinson' %}
+          <input type="hidden" name="susan_robinson" id="susan_robinson" value="verified" />
+        {% endif %}
+
+        {% if data['pscList'] == 'Lisa Carr' %}
+          <input type="hidden" name="lisa_carr" id="lisa_carr" value="verified" />
+        {% endif %}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
