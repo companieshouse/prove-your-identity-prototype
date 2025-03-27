@@ -32,7 +32,7 @@ Confirm the identity verification statement – {{ serviceName }} – GOV.UK Pro
           <fieldset class="govuk-fieldset" aria-describedby="declaration-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
-                Confirm the video declaration
+                Declaration
               </h1>
             </legend>
             {% if errorDeclaration %}
@@ -44,7 +44,7 @@ Confirm the identity verification statement – {{ serviceName }} – GOV.UK Pro
               <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="declaration" name="declaration" type="checkbox">
                 <label class="govuk-label govuk-checkboxes__label" for="declaration">
-                  I confirm that ...
+                  I confirm that the video I've uploaded is...
                 </label>
               </div>
             </div>
@@ -52,7 +52,7 @@ Confirm the identity verification statement – {{ serviceName }} – GOV.UK Pro
         </div>
 
         <button class="govuk-button" data-module="govuk-button">
-          Confirm and submit
+          Confirm and continue
         </button> 
 
         {% if data['pscList'] == 'Paul Smith' %}
