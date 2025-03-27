@@ -283,7 +283,7 @@ router.post('/alt-routes-v1/post-one-login/secondary-id', function (req, res) {
   if (typeof req.session.data['secondaryId'] === 'undefined') {
     // No value so add error to array
     errors.push({
-      text: 'Select secondary identity documents',
+      text: 'Select one document you are going to upload',
       href: '#secondaryId'
     })
 
