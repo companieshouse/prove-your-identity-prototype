@@ -20,9 +20,9 @@
         errorList: errorList
       }) }}
     {% endif %}
-    <h1 class="govuk-heading-l">What are the vouchers's details?</h1>
+    <h1 class="govuk-heading-l">What are the details of the person who is vouching for you? </h1>
     <div id="H1-hint" class="govuk-hint">
-      Tell us the details of the voucher....
+      <!--Hint text-->
     </div>
 
     <form action="{{currentUrl}}" method="post">
@@ -39,7 +39,7 @@
         <!-- Check for error -->
         {% if errorVoucherName %}
           <p id="voucherName-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> Enter the voucher's name in full
+            <span class="govuk-visually-hidden">Error:</span> Enter the voucher's full name
           </p>
         {% endif %} 
         <input class="govuk-input" id="voucherName" name="voucherName" type="text" spellcheck="false" autocomplete="name">
@@ -57,7 +57,7 @@
           <!-- Check for error -->
         {% if errorVoucherEmail %}
           <p id="voucherEmail-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> Enter the voucher's email
+            <span class="govuk-visually-hidden">Error:</span> Enter the voucher's email address
           </p>
         {% endif %} 
           <input class="govuk-input" id="voucherEmail" name="voucherEmail" type="text">
@@ -75,14 +75,18 @@
           <!-- Check for error -->
         {% if errorVoucherRole %}
           <p id="voucherRole-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> Enter the role of the voucher
+            <span class="govuk-visually-hidden">Error:</span> Enter the voucher's role
           </p>
         {% endif %} 
+        <div id="H1-hint" class="govuk-hint">
+          For example, doctor
+        </div>
           <input class="govuk-input govuk-!-width-one-third" id="voucherRole" name="voucherRole" type="text">
+          
       </div>
 
       {{ govukButton({
-        text: "Continue"
+        text: "Save and continue"
       }) }}
 
     </form>
