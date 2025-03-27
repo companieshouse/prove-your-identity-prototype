@@ -32,16 +32,16 @@
           <fieldset class="govuk-fieldset" aria-describedby="primaryId-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
-                Select from the list of primary identity documents to upload
+              Which types of photo ID are you going to upload?
               </h1>
             </legend>
             <div id="primaryId-hint" class="govuk-hint">
-              Select one or two pieces of photographic id to upload.
+              Select one or two types of photo ID. 
             </div>
             <!-- Check for error -->
             {% if errorPrimaryId %}
             <p id="primaryId-error" class="govuk-error-message">
-              <span class="govuk-visually-hidden">Error:</span>Select primary identity documents
+              <span class="govuk-visually-hidden">Error:</span>Select at least one type of photo ID
             </p>
             {% endif %}
             <div class="govuk-checkboxes" data-module="govuk-checkboxes">
@@ -54,19 +54,19 @@
               <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="primaryId-2" name="primaryId" type="checkbox" value="primaryIdTwo">
                 <label class="govuk-label govuk-checkboxes__label" for="primaryId-2">
-                  Photographic ID 2
+                  Driving licence
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="primaryId-3" name="primaryId" type="checkbox" value="primaryIdThree">
                 <label class="govuk-label govuk-checkboxes__label" for="primaryId-3">
-                  Photographic ID 3
+                  Photo ID 3
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="primaryId-4" name="primaryId" type="checkbox" value="primaryIdFour">
                 <label class="govuk-label govuk-checkboxes__label" for="primaryId-4">
-                  Photographic ID 4
+                  Photo ID 4
                 </label>
               </div>
             </div>

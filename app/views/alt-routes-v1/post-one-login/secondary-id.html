@@ -32,16 +32,16 @@
         <fieldset class="govuk-fieldset" aria-describedby="secondaryId-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-            Select from the list of secondary ID documents
+              Which other document are you going to upload?
             </h1>
           </legend>
           <div id="secondaryId-hint" class="govuk-hint">
-            Select one piece of secondary id documentation
+           <!--Hint text-->
           </div>
           <!-- Check for error -->
           {% if errorSecondaryId %}
           <p id="secondaryId-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> Select from the list of secondary ID documents
+            <span class="govuk-visually-hidden">Error:</span> Select one document you are going to upload
           </p>
           {% endif %} 
 
@@ -49,25 +49,25 @@
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="secondaryId" name="secondaryId" type="radio" value="secondary1">
               <label class="govuk-label govuk-radios__label" for="secondaryId">
-                Non photographic ID 1
+                Utility bill
               </label>
             </div>
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="secondaryId-2" name="secondaryId" type="radio" value="secondary2">
               <label class="govuk-label govuk-radios__label" for="secondaryId-2">
-                Non photographic ID 2
+                Mortgage statement
               </label>
             </div>
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="secondaryId-3" name="secondaryId" type="radio" value="secondary3">
               <label class="govuk-label govuk-radios__label" for="secondaryId-3">
-                Non photographic ID 3
+                Other ID 3
               </label>
             </div>
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="secondaryId-4" name="secondaryId" type="radio" value="secondary4">
               <label class="govuk-label govuk-radios__label" for="secondaryId-4">
-                Non photographic ID 4
+                Other ID 4
               </label>
             </div>
           </div>
