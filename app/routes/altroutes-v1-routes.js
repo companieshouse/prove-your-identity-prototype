@@ -306,46 +306,9 @@ router.get('/alt-routes-v1/post-one-login/secondary-id-upload', function (req, r
 })
 
 router.post('/alt-routes-v1/post-one-login/secondary-id-upload', function (req, res) {
-  res.redirect('/alt-routes-v1/post-one-login/secondary-id-translations')
+  res.redirect('/alt-routes-v1/post-one-login/check-id-details')
 })
 
-
-// ******* post-one-login/secondary-id-translations javascript ********************************
-router.get('/alt-routes-v1/post-one-login/secondary-id-translations', function (req, res) {
-  // Set URl
-  res.render('alt-routes-v1/post-one-login/check-id-details', {
-    currentUrl: req.originalUrl
-  })
-})
-
-
-
-router.post('/alt-routes-v1/post-one-login/secondary-id-translations', function (req, res) {
-  // Create empty array
-  var errors = []
-
-  // Check if user has filled out a value
-  if (typeof req.session.data['secondaryTranslations'] === 'undefined') {
-    // No value so add error to array
-    errors.push({
-      text: 'Select yes if you are providing translations for the secondary ID documents',
-      href: '#secondaryTranslations'
-    })
-
-    // Re-show page with error value as true so errors will show
-    res.render('alt-routes-v1/post-one-login/secondary-id-translations', {
-      errorPaypal: true,
-      errorList: errors
-    })
-  } else {
-    if (req.session.data['paypal'] === 'yes') {
-      res.redirect('/alt-routes-v1/post-one-login/secondary-id-translations')
-    } else {
-      // User inputted value so move to next page
-      res.redirect('/alt-routes-v1/post-one-login/secondary-id-translations')
-    }
-  }
-})
 
 
 // ******* upload-id-video javascript ********************************
