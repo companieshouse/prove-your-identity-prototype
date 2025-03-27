@@ -376,7 +376,7 @@ router.post('/alt-routes-v1/post-one-login/voucher-details', function (req, res)
     voucherNameError = true
     detailsError = true
     errors.push({
-      text: 'Enter the vouchers name in full',
+      text: 'Enter the vouchers full name',
       href: '#voucherName'
     })
   }
@@ -387,7 +387,7 @@ router.post('/alt-routes-v1/post-one-login/voucher-details', function (req, res)
     voucherEmailError = true
     detailsError = true
     errors.push({
-      text: 'Enter the vouchers email',
+      text: 'Enter the vouchers email address',
       href: '#voucherEmail'
     })
   }
@@ -398,7 +398,7 @@ router.post('/alt-routes-v1/post-one-login/voucher-details', function (req, res)
       voucherRoleError = true
       detailsError = true
       errors.push({
-        text: 'Enter the role of the voucher',
+        text: 'Enter the vouchers role',
         href: '#voucherRole'
       })
     }
