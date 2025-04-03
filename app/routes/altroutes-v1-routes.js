@@ -110,6 +110,22 @@ router.post('/alt-routes-v1/one-login/one-login-start', function (req, res) {
   }
 })
 
+// ******* country-list validation ********************************
+router.get('/alt-routes-v1/post-one-login/country-list', function (req, res) {
+  // Set URl
+  res.render('alt-routes-v1/post-one-login/country-list', {
+    currentUrl: req.originalUrl
+  })
+})
+
+router.post('/alt-routes-v1/post-one-login/country-list', function (req, res) {
+  if (req.session.data['countryList'] === 'india') {
+    res.redirect('/alt-routes-v1/post-one-login/alt-route-start')
+  } else {
+    res.redirect('/alt-routes-v1/post-one-login/failure-evidence')
+  }
+})
+
 
 // ******* full name validation ********************************
 router.get('/alt-routes-v1/post-one-login/full-name', function (req, res) {
