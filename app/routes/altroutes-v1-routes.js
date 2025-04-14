@@ -110,16 +110,51 @@ router.post('/alt-routes-v1/one-login/one-login-start', function (req, res) {
   }
 })
 
-// ******* country-list validation ********************************
-router.get('/alt-routes-v1/post-one-login/country-list', function (req, res) {
+// ******* live-in-uk javascript ********************************
+router.get('/alt-routes-v1/post-one-login/live-in-uk', function (req, res) {
   // Set URl
-  res.render('alt-routes-v1/post-one-login/country-list', {
+  res.render('alt-routes-v1/post-one-login/live-in-uk', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/alt-routes-v1/post-one-login/country-list', function (req, res) {
-  if (req.session.data['countryList'] === 'india') {
+router.post('/alt-routes-v1/post-one-login/live-in-uk', function (req, res) {
+  // Create empty array
+  var errors = []
+
+  // Check if user has filled out a value
+  if (typeof req.session.data['liveInUk'] === 'undefined') {
+    // No value so add error to array
+    errors.push({
+      text: 'Select if you live in the UK',
+      href: '#liveInUk'
+    })
+
+    // Re-show page with error value as true so errors will show
+    res.render('alt-routes-v1/post-one-login/live-in-uk', {
+      errorLiveInUk: true,
+      errorList: errors
+    })
+  } else {
+    if (req.session.data['liveInUk'] === 'no') {
+      res.redirect('/alt-routes-v1/post-one-login/nationality')
+    } else {
+      res.redirect('/alt-routes-v1/post-one-login/failure-evidence')
+    }
+  }
+})
+
+
+// ******* country-list validation ********************************
+router.get('/alt-routes-v1/post-one-login/nationality', function (req, res) {
+  // Set URl
+  res.render('alt-routes-v1/post-one-login/nationality', {
+    currentUrl: req.originalUrl
+  })
+})
+
+router.post('/alt-routes-v1/post-one-login/nationality', function (req, res) {
+  if (req.session.data['nationalityOne'] === 'India') {
     res.redirect('/alt-routes-v1/post-one-login/failure-evidence-alt-route')
   } else {
     res.redirect('/alt-routes-v1/post-one-login/failure-evidence')
