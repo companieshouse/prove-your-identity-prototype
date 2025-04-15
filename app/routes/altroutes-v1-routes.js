@@ -291,7 +291,7 @@ router.post('/alt-routes-v1/post-one-login/primary-id', function (req, res) {
   if (typeof req.session.data['primaryId'] === 'undefined') {
     // No value so add error to array
     errors.push({
-      text: 'Select at least one type of photo ID',
+      text: 'Select at least one type of identity document',
       href: '#primaryId'
     })
 
