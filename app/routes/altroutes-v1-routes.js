@@ -390,7 +390,7 @@ router.post('/alt-routes-v1/post-one-login/declaration', function (req, res) {
   if (typeof req.session.data['declaration'] === 'undefined') {
     // No value so add error to array
     errors.push({
-      text: 'Select declaration',
+      text: 'Select the declaration',
       href: '#declaration'
     })
 
