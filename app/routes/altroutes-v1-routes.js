@@ -171,29 +171,47 @@ router.get('/alt-routes-v1/post-one-login/full-name', function (req, res) {
 })
 
 router.post('/alt-routes-v1/post-one-login/full-name', function (req, res) {
-  // Create empty array and set error variables to false
-  var errors = []
+    // Create empty array and set error variables to false
+    var errors = []
+    var firstNameError = false
+    var lastNameError = false
+    var detailsError = false
+  
+    // Check if user has filled out first name
+    if (req.session.data['firstName'] === '') {
+      // No value so add error to array
+      firstNameError = true
+      detailsError = true
+      errors.push({
+        text: 'Enter your first name in full',
+        href: '#firstName'
+      })
+    }
+  
+    // Check if user has filled out last name
+    if (req.session.data['lastName'] === '') {
+      // No value so add error to array
+      lastNameError = true
+      detailsError = true
+      errors.push({
+        text: 'Enter your last name in full',
+        href: '#lastName'
+      })
+    }
 
-  // Check if user has filled out a email
-  if (req.session.data['fullName'] === '') {
-    // No value so add error to array
-    errors.push({
-      text: 'Enter your full name',
-      href: '#fullName'
-    })
-  }
-
-  // Check if eother filed not filled out
-  if (req.session.data['fullName'] === '') {
-    // Re-show page with error value as true so errors will show
-    res.render('alt-routes-v1/post-one-login/full-name', {
-      errorFullName: true,
-      errorList: errors
-    })
-  } else {
-    // User inputted value so move to next page
-    res.redirect('/alt-routes-v1/post-one-login/dob')
-  }
+    // Check if eother filed not filled out
+    if (detailsError) {
+      // Re-show page with error value as true so errors will show
+      res.render('alt-routes-v1/post-one-login/full-name', {
+        errorFirstName: firstNameError,
+        errorLastName: lastNameError,
+        errorDetails: detailsError,
+        errorList: errors
+      })
+    } 
+    else {
+      res.redirect('/alt-routes-v1/post-one-login/dob')
+    }
 })
 
 
@@ -357,7 +375,7 @@ router.get('/alt-routes-v1/post-one-login/secondary-id-upload', function (req, r
 })
 
 router.post('/alt-routes-v1/post-one-login/secondary-id-upload', function (req, res) {
-  res.redirect('/alt-routes-v1/post-one-login/check-id-details')
+  res.redirect('/alt-routes-v1/post-one-login/upload-id-video')
 })
 
 

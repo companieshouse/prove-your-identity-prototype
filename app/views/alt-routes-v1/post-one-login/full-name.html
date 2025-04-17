@@ -15,35 +15,66 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <!-- Check for error -->
-    {% if errorFullName %}
+    {% if errorDetails %}
       {{ govukErrorSummary({
         titleText: "There is a problem",
         errorList: errorList
       }) }}
     {% endif %}
     <form action="{{currentUrl}}" method="post">
+      <h1 class="govuk-heading-l">What is your full name?</h1>
 
         <!-- Check for error -->
-        {% if errorFullName %}
-          <div class="govuk-form-group govuk-form-group--error">
-        {% else %}
-          <div class="govuk-form-group">
+      {% if errorFirstName%}
+        <div class="govuk-form-group govuk-form-group--error">
+      {% else %}
+        <div class="govuk-form-group">
+      {% endif %} 
+          <label class="govuk-label" for="firstName">
+            First name
+          </label>
+          <div id="firstName-hint" class="govuk-hint">
+            Enter first name in full, not just initials.
+        </div>
+          <!-- Check for error -->
+        {% if errorFirstName %}
+          <p id="firstName-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Enter your full first name
+          </p>
         {% endif %} 
-          <h1 class="govuk-label-wrapper">
-            <label class="govuk-label govuk-label--l" for="fullName">
-              What is your full name?
-            </label>
-          </h1>
-          <div id="fullName-hint" class="govuk-hint">
-           <!-- Enter your full name as it is shown on your identity documents-->
+          <input class="govuk-input govuk-!-width-one-half" id="firstName" name="firstName" type="text">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="middleName">
+          Middle names
+        </label>
+        <div id="middleName-hint" class="govuk-hint">
+          Enter any middle names in full, not just initials.
+        </div>
+          <input class="govuk-input govuk-!-width-one-half" id="middleName" name="middleName" type="text">
+      </div>
+
+      <!-- Check for error -->
+      {% if errorLastName%}
+        <div class="govuk-form-group govuk-form-group--error">
+      {% else %}
+        <div class="govuk-form-group">
+      {% endif %} 
+          <label class="govuk-label" for="lastName">
+            Last name
+          </label>
+          <div id="lastName-hint" class="govuk-hint">
+            Enter last name in full, not just initials.
           </div>
-            <!-- Check for error -->
-          {% if errorFullName %}
-            <p id="fullName-error" class="govuk-error-message">
-              <span class="govuk-visually-hidden">Error:</span> Enter your full name
-            </p>
-          {% endif %} 
-            <input class="govuk-input" id="fullName" name="fullName" type="text">
+          
+          <!-- Check for error -->
+        {% if errorLastName %}
+          <p id="lastName-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Enter your full last name
+          </p>
+        {% endif %} 
+          <input class="govuk-input govuk-!-width-one-half" id="lastName" name="lastName" type="text">
         </div>
 
       {{ govukButton({
