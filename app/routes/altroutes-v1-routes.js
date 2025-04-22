@@ -183,7 +183,7 @@ router.post('/alt-routes-v1/post-one-login/full-name', function (req, res) {
       firstNameError = true
       detailsError = true
       errors.push({
-        text: 'Enter your first name in full',
+        text: 'Enter your full first name',
         href: '#firstName'
       })
     }
@@ -194,7 +194,7 @@ router.post('/alt-routes-v1/post-one-login/full-name', function (req, res) {
       lastNameError = true
       detailsError = true
       errors.push({
-        text: 'Enter your last name in full',
+        text: 'Enter your full last name',
         href: '#lastName'
       })
     }
