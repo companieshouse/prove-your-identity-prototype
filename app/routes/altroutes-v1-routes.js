@@ -154,7 +154,7 @@ router.get('/alt-routes-v1/post-one-login/nationality', function (req, res) {
 })
 
 router.post('/alt-routes-v1/post-one-login/nationality', function (req, res) {
-  if (req.session.data['nationalityOne'] === 'India') {
+  if (req.session.data['nationalityOne'] === 'Indian') {
     res.redirect('/alt-routes-v1/post-one-login/failure-evidence-alt-route')
   } else {
     res.redirect('/alt-routes-v1/post-one-login/failure-evidence')
