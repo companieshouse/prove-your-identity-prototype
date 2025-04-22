@@ -23,6 +23,9 @@
     {% endif %}
     <form action="{{currentUrl}}" method="post">
       <h1 class="govuk-heading-l">What is your full name?</h1>
+      <div id="passport-issued-hint" class="govuk-hint">
+        Enter each name in full, not just initials.
+      </div>
 
         <!-- Check for error -->
       {% if errorFirstName%}
@@ -34,7 +37,7 @@
             First name
           </label>
           <div id="firstName-hint" class="govuk-hint">
-            Enter first name in full, not just initials.
+            This is also known as your given name.
         </div>
           <!-- Check for error -->
         {% if errorFirstName %}
@@ -50,7 +53,7 @@
           Middle names
         </label>
         <div id="middleName-hint" class="govuk-hint">
-          Enter any middle names in full, not just initials.
+          
         </div>
           <input class="govuk-input govuk-!-width-one-half" id="middleName" name="middleName" type="text">
       </div>
@@ -65,7 +68,7 @@
             Last name
           </label>
           <div id="lastName-hint" class="govuk-hint">
-            Enter last name in full, not just initials.
+            This is also known as your family name.
           </div>
           
           <!-- Check for error -->
