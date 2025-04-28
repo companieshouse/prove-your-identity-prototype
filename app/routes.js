@@ -40,6 +40,10 @@ router.use('/', require('./routes/rel2-v3-routes.js'))
 router.use('/', require('./routes/rel2-v4-routes.js'))
 router.use('/', require('./routes/rel2-v5-routes.js'))
 
+// release 3
+
+router.use('/', require('./routes/rel3-dev-v1-routes.js'))
+
 // code binding
 
 router.use('/', require('./routes/code-binding-v1-routes.js'))

@@ -1,0 +1,112 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start page – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="{{currentUrl}}" method="post">
+
+      <h1 class="govuk-heading-l">
+        Verify your identity for Companies House
+      </h1>
+      
+
+      <p class="govuk-body">You can verify yourself online with GOV.UK if you have one of the following types of photo ID:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>biometric passport from any country</li>
+        <li>UK photo driving licence (full or provisional)</li>
+        <li>UK <a href="https://www.gov.uk/biometric-residence-permits" class="govuk-link">biometric residence permit (BRP)</a></li>
+        <li>UK <a href="https://www.gov.uk/uk-residence-card" class="govuk-link">biometric residence card (BRC)</a></li>
+        <li>UK <a href="https://www.gov.uk/frontier-worker-permit" class="govuk-link">Frontier Worker permit (FWP)</a></li>
+      </ul>
+
+      <p class="govuk-body">You'll also need:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>your current address, and the year you moved in</li>
+        <li>to sign in to or create a GOV.UK One Login</li>
+      </ul>
+
+      <p>Your verified identity will be connected to your GOV.UK One Login. If other people use the same email address as you to access GOV.UK One Login, they'll need to create their own using a different email address. An email address can only be used once to verify an identity.</p>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            What is a biometric passport?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>Biometric passports have a small rectangular symbol on 
+            the front cover. You can use them to go through electronic 
+            gates at airports and international train stations.
+          </p>
+          <p>All UK passports issued after 2006 are biometric.</p>
+          <img src="/public/images/passport-logo.png" alt="passport-logo">
+        </div>
+      </details> 
+
+
+      <h3 class="govuk-heading-s">How to verify if you do not have these types of photo ID</h3>
+
+
+      <p class="govuk-body">If you do not have any of these types of photo ID but live in the UK, use this GOV.UK service to find out if you can verify in one of the following ways:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>in person at the Post Office</li>
+  <li>with bank or building society details - you'll then need to provide your National Insurance number and answer some security questions</li>
+</ul>
+
+      <p>Read the <a href="https://www.gov.uk/guidance/verifying-your-identity-for-companies-house" class="govuk-link">guidance about verifying your identity</a>.</p>
+
+      {{ govukButton({
+        text: "Verify your identity",
+        isStartButton: true
+      }) }}
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            I do not have any of the required identity documents or information to verify with GOV.UK or at the Post Office
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">You can ask an <a href="/release3-dev-v1/pre-one-login/acsp-route" class="govuk-link">Authorised Corporate Service Provider (ACSP)</a>, such as an accountant or solicitor, to verify your identity on your behalf. This is also known as a Companies House authorised agent.</p>
+
+            <p class="govuk-body">You’ll need to provide suitable identity documents.</p>
+        </div>
+      </details>
+
+      <div class="grey-box">
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-visually-hidden">Warning</span>
+            Fraud warning: do not let others use your identity
+          </strong>
+        </div>
+        <p class="govuk-body">Do not sell or give away your identity to enable people you don't trust to set up or run a company. Criminals can 
+          take out loans and other debt in your name, and you will be legally 
+          responsible.  
+        </p>
+      </div>
+      <br>
+      <p>
+        <a href="https://mcmw.abilitynet.org.uk/" class="govuk-link">Read advice from AbilityNet on how to adapt your device to meet your needs</a>.
+     For example, changing the background colour or text size.</p>
+
+    </form>
+  </div>
+</div>
+{% endblock %}
