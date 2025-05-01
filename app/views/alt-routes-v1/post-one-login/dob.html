@@ -38,11 +38,13 @@ Enter your email address to sign in – {{ serviceName }} – GOV.UK Prototype K
           <div id="dob-hint" class="govuk-hint">
             For example, 31 3 1980
           </div>
+          
           <!-- Check for error -->
           {% if errorDobDay or errorDobMonth or errorDobYear %}
           <p id="dob-error" class="govuk-error-message">
             <span class="govuk-visually-hidden">Error:</span> The date must include a day, month and year
           </p>
+          
           {% endif %} 
           <div class="govuk-date-input" id="dob">
             <div class="govuk-date-input__item">
@@ -86,6 +88,14 @@ Enter your email address to sign in – {{ serviceName }} – GOV.UK Prototype K
             </div>
           </div>
         </fieldset>
+      </div>
+
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          Make sure you enter the correct date of birth. If it is incorrect, you will not be able to verifiy your identity.
+        </strong>
       </div>
 
       {{ govukButton({
