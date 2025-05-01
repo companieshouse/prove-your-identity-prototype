@@ -24,7 +24,7 @@
     <form action="{{currentUrl}}" method="post">
       <h1 class="govuk-heading-l">What is your full name?</h1>
       <div id="passport-issued-hint" class="govuk-hint">
-        Enter each name in full, not just initials.
+        Enter your name as it's written on official documents, such as a passport or driving licence. 
       </div>
 
         <!-- Check for error -->
@@ -34,15 +34,15 @@
         <div class="govuk-form-group">
       {% endif %} 
           <label class="govuk-label" for="firstName">
-            First name
+            Given names
           </label>
-          <div id="firstName-hint" class="govuk-hint">
-            This is also known as your given name.
+          <div id="firstName-hint" class="govuk-hint">This may also be known as your first name.
+           
         </div>
           <!-- Check for error -->
         {% if errorFirstName %}
           <p id="firstName-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> Enter your full first name
+            <span class="govuk-visually-hidden">Error:</span> Enter your full given name
           </p>
         {% endif %} 
           <input class="govuk-input govuk-!-width-one-half" id="firstName" name="firstName" type="text">
@@ -65,16 +65,16 @@
         <div class="govuk-form-group">
       {% endif %} 
           <label class="govuk-label" for="lastName">
-            Last name
+            Family name
           </label>
-          <div id="lastName-hint" class="govuk-hint">
-            This is also known as your family name.
+          <div id="lastName-hint" class="govuk-hint">This may also be known as your last name.
+           
           </div>
           
           <!-- Check for error -->
         {% if errorLastName %}
           <p id="lastName-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> Enter your full last name
+            <span class="govuk-visually-hidden">Error:</span> Enter your full family name
           </p>
         {% endif %} 
           <input class="govuk-input govuk-!-width-one-half" id="lastName" name="lastName" type="text">
