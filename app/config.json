@@ -1,3 +1,8 @@
 {
-  "serviceName": "Verify your identity for Companies House"
+  "serviceName": "Verify your identity for Companies House",
+  "plugins": {
+    "govuk-frontend": {
+      "rebrand": true
+    }
+  }
 }
