@@ -155,9 +155,110 @@ router.get('/alt-routes-v1/post-one-login/nationality', function (req, res) {
 
 router.post('/alt-routes-v1/post-one-login/nationality', function (req, res) {
   if (req.session.data['nationalityOne'] === 'Indian') {
-    res.redirect('/alt-routes-v1/post-one-login/failure-evidence-alt-route')
+    res.redirect('/alt-routes-v1/post-one-login/alt-route-choice')
   } else {
     res.redirect('/alt-routes-v1/post-one-login/failure-evidence')
+  }
+})
+
+
+// ******* alt-route-choice javascript ********************************
+router.get('/alt-routes-v1/post-one-login/alt-route-choice', function (req, res) {
+  // Set URl
+  res.render('/alt-routes-v1/post-one-login/alt-route-choice', {
+    currentUrl: req.originalUrl
+  })
+})
+
+router.post('/alt-routes-v1/post-one-login/alt-route-choice', function (req, res) {
+  // Create empty array
+  var errors = []
+
+  // Check if user has filled out a value
+  if (typeof req.session.data['altRouteChoice'] === 'undefined') {
+    // No value so add error to array
+    errors.push({
+      text: 'Select another way to prove your identity',
+      href: '#altRouteChoice'
+    })
+
+    // Re-show page with error value as true so errors will show
+    res.render('alt-routes-v1/post-one-login/alt-route-choice', {
+      errorAltRouteChoice: true,
+      errorList: errors
+    })
+  } else {
+    if (req.session.data['altRouteChoice'] === 'acsp') {
+      res.redirect('/alt-routes-v1/post-one-login/acsp-route')
+    } else {
+      // User inputted value so move to next page
+      res.redirect('/alt-routes-v1/post-one-login/confirmation-date')
+    }
+  }
+})
+
+
+// ******* confirmation-date javascript ******************************
+router.get('/alt-routes-v1/post-one-login/confirmation-date', function (req, res) {
+  // Set URl
+  res.render('alt-routes-v1/post-one-login/confirmation-date', {
+    currentUrl: req.originalUrl
+  })
+})
+
+router.post('/alt-routes-v1/post-one-login/confirmation-date', function (req, res) {
+  // Create empty array and set error variables to false
+  var errors = []
+  var dayHasError = false
+  var monthHasError = false
+  var yearHasError = false
+  var detailsError = false
+
+  // Check if user has filled out a day
+  if (req.session.data['confirmation-date-day'] === '') {
+    // No value so add error to array
+    dayHasError = true
+    detailsError = true
+    errors.push({
+      text: 'The date must include a day',
+      href: '#confirmation-date-day'
+    })
+  }
+
+  // Check if user has filled out a month
+  if (req.session.data['confirmation-date-month'] === '') {
+    // No value so add error to array
+    monthHasError = true
+    detailsError = true
+    errors.push({
+      text: 'The date must include a month',
+      href: '#confirmation-date-month'
+    })
+  }
+
+  // Check if user has filled out a year
+  if (req.session.data['confirmation-date-year'] === '') {
+    // No value so add error to array
+    yearHasError = true
+    detailsError = true
+    errors.push({
+      text: 'The date must include a year',
+      href: '#confirmation-date-year'
+    })
+  }
+
+  // Check if eother filed not filled out
+  if (detailsError) {
+    // Re-show page with error value as true so errors will show
+    res.render('alt-routes-v1/post-one-login/confirmation-date', {
+      errorConfirmationDateDay: dayHasError,
+      errorConfirmationDateMonth: monthHasError,
+      errorConfirmationDateYear: yearHasError,
+      errorConfirmationDate: detailsError,
+      errorList: errors
+    })
+  } else {
+    res.redirect('/alt-routes-v1/post-one-login/triage-end')
   }
 })
 
