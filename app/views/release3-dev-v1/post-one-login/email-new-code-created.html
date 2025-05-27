@@ -1,0 +1,48 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation email – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    
+<p>Email subject line: <strong>Companies House personal code cancelled and new code created
+</strong></p>
+
+<br>
+
+<p>To Peter Hawkins,</p>
+
+<p>You've successfully cancelled your previous Companies House personal code, which was: X77-R2D2-C3PQ</p>
+
+<h1 class="govuk-heading-m">Your new personal code</h1>
+
+<p>Your new Companies House personal code is: <strong>X88-S3E3-D4QR</strong></p>
+
+<p>Keep your code safe. Only share it with people you trust to file on your behalf.</p>
+
+<br>
+
+<h2 class="govuk-heading-m">If you didn't cancel your personal code</h2>
+
+<p>Contact us as soon as possible.</p>
+
+<p><strong>Email:</strong> enquiries@companieshouse.gov.uk</p>
+
+<p><strong>Telephone:</strong> 0303 1234 500</p>
+
+<p>Monday to Friday, 8:30am to 6pm</p>
+
+<p>Find out about call charges: <a href="https://www.gov.uk/call-charges" class="govuk-link">https://www.gov.uk/call-charges</a></p>
+
+<br>
+<p>This email address was sent from an email address which cannot accept incoming mail. Do not reply directly to this message.</p>
+
+{% endblock %}
