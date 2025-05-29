@@ -34,8 +34,9 @@
         <fieldset class="govuk-fieldset" role="group" aria-describedby="confirmation-date-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              What is the date of your next confirmation statement?
+              When is your next confirmation statement due?
             </h1>
+
           </legend>
           <!-- Check for error -->
           {% if errorConfirmationDateDay or errorConfirmationDateMonth or errorConfirmationDateYear%}
@@ -44,7 +45,7 @@
           </p>
           {% endif %} 
           <div id="confirmation-date-hint" class="govuk-hint">
-            For example, 27 3 2007
+            For example, 27 3 2026
           </div>
           <div class="govuk-date-input" id="confirmation-date">
             <div class="govuk-date-input__item">
@@ -89,6 +90,41 @@
           </div>
         </fieldset>
       </div>
+
+    <details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      I am an officer of more than one company
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+   <p>Enter the date your next confirmation statement is due. </p> 
+   <p class="govuk-body">For example:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>COMPANY A LTD's statement is due on 23 April 2026</li>
+  <li>COMPANY B LTD's statement is due on 16 October 2026</li>
+</ul>
+<p>As COMPANY A LTD's statement is due next, you should enter 23 4 2026.</p>
+
+  </div>
+</details>
+
+<h2 class="govuk-heading-m">How to find the confirmation statement date</h2>
+
+<p class="govuk-body">You can find it by searching for the company on the 
+  <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">Companies House register (opens in a new tab)</a>.</p>
+
+  <div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+    If you need to check the Companies House register, do this in another tab or on a different device (if possible). If you close this page, you will have to start again.
+  </strong>
+</div>
+
+
+
+  
       
       {{ govukButton({
         text: "Continue"
