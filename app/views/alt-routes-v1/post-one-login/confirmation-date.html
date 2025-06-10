@@ -15,98 +15,105 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <!-- Check for error -->
-    {% if errorConfirmationDate %}
+    {% if errorKnowNextDate %}
     {{ govukErrorSummary({
       titleText: "There is a problem",
       errorList: errorList
     }) }}
     {% endif %}
-
  
     <form action="{{currentUrl}}" method="post">
-      
+
       <!-- Check for error -->
-      {% if errorConfirmationDateDay or errorConfirmationDateMonth or errorConfirmationDateYear%}
+      {% if errorKnowNextDate %}
       <div class="govuk-form-group govuk-form-group--error">
       {% else %}
       <div class="govuk-form-group">
       {% endif %} 
-        <fieldset class="govuk-fieldset" role="group" aria-describedby="confirmation-date-hint">
+        <fieldset class="govuk-fieldset" aria-describedby="knowNextDate-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              When is your next confirmation statement due?
+              Do you know the date of your next confirmation statement?
             </h1>
-
           </legend>
+          <div id="knowNextDate-hint" class="govuk-hint">
+            Hint text
+          </div>
           <!-- Check for error -->
-          {% if errorConfirmationDateDay or errorConfirmationDateMonth or errorConfirmationDateYear%}
-          <p id="directorDob-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> The date must include a day, month and year
+          {% if errorKnowNextDate %}
+          <p id="knowNextDate-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Select if you know the date of your next confirmation statement
           </p>
           {% endif %} 
-          <div id="confirmation-date-hint" class="govuk-hint">
-            For example, 27 8 2026. This information will help us process your application.
-          </div>
-          <div class="govuk-date-input" id="confirmation-date">
-            <div class="govuk-date-input__item">
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="knowNextDate" name="knowNextDate" type="radio" value="yes" data-aria-controls="conditional-knowNextDate">
+              <label class="govuk-label govuk-radios__label" for="knowNextDate">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-knowNextDate">
               <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="confirmation-date-day">
-                  Day
-                </label>
-                <!-- Check for error -->
-                {% if errorConfirmationDateDay %}
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" id="confirmation-date-day" name="confirmation-date-day" type="text" inputmode="numeric">
-                {% else %}
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="confirmation-date-day" name="confirmation-date-day" type="text" inputmode="numeric">
-                {% endif %} 
+                <fieldset class="govuk-fieldset" role="group" aria-describedby="confirmationDate-hint">
+                  <label class="govuk-label" for="confirmationDate">
+                    Confirmation statement date
+                  </label>
+                  <div class="govuk-date-input" id="confirmationDate">
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="confirmationDate-day">
+                          Day
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="confirmationDate-day" name="confirmationDate-day" type="text" inputmode="numeric">
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="confirmationDate-month">
+                          Month
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="confirmationDate-month" name="confirmationDate-month" type="text" inputmode="numeric">
+                      </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="confirmationDate-year">
+                          Year
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="confirmationDate-year" name="confirmationDate-year" type="text" inputmode="numeric">
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
               </div>
             </div>
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="confirmation-date-month">
-                  Month
-                </label>
-                <!-- Check for error -->
-                {% if errorConfirmationDateMonth %}
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" id="confirmation-date-month" name="confirmation-date-month" type="text" inputmode="numeric">
-                {% else %}
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="confirmation-date-month" name="confirmation-date-month" type="text" inputmode="numeric">
-                {% endif %} 
-              </div>
-            </div>
-            <div class="govuk-date-input__item">
-              <div class="govuk-form-group">
-                <label class="govuk-label govuk-date-input__label" for="confirmation-date-year">
-                  Year
-                </label>
-                <!-- Check for error -->
-                {% if errorConfirmationDateYear %}
-                <input class="govuk-input govuk-date-input__input govuk-input--width-4 govuk-input--error" id="confirmation-date-year" name="confirmation-date-year" type="text" inputmode="numeric">
-                {% else %}
-                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="confirmation-date-year" name="confirmation-date-year" type="text" inputmode="numeric">
-                {% endif %} 
-              </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="knowNextDate-2" name="knowNextDate" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="knowNextDate-2">
+                No
+              </label>
             </div>
           </div>
         </fieldset>
       </div>
 
-      <details class="govuk-details">
-    <summary class="govuk-details__summary">
-      <span class="govuk-details__summary-text">
-        I am an officer of more than one company
-      </span>
-    </summary>
-    <div class="govuk-details__text">
-    <p>Enter the date your next confirmation statement is due. </p> 
-    <p class="govuk-body">For example:</p>
-  <ul class="govuk-list govuk-list--bullet">
-    <li>COMPANY A LTD's confirmation statement is due on 23 April 2026</li>
-    <li>COMPANY B LTD's confirmation statement is due on 16 July 2026</li>
-  </ul>
-  <p>As COMPANY A LTD's confirmation statement is due next, you should enter 23 4 2026.</p>
 
-    </div>
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            I am an officer of more than one company
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>Enter the date your next confirmation statement is due. </p> 
+          <p class="govuk-body">For example:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>COMPANY A LTD's confirmation statement is due on 23 April 2026</li>
+            <li>COMPANY B LTD's confirmation statement is due on 16 July 2026</li>
+          </ul>
+          <p>As COMPANY A LTD's confirmation statement is due next, you should enter 23 4 2026.</p>
+        </div>
       </details>
 
       <h2 class="govuk-heading-m">How to find the confirmation statement date</h2>

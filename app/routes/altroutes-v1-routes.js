@@ -207,59 +207,25 @@ router.get('/alt-routes-v1/post-one-login/confirmation-date', function (req, res
 })
 
 router.post('/alt-routes-v1/post-one-login/confirmation-date', function (req, res) {
-  // Create empty array and set error variables to false
-  var errors = []
-  var dayHasError = false
-  var monthHasError = false
-  var yearHasError = false
-  var detailsError = false
+   // Create empty array
+   var errors = []
 
-  // Check if user has filled out a day
-  if (req.session.data['confirmation-date-day'] === '') {
-    // No value so add error to array
-    dayHasError = true
-    detailsError = true
-    errors.push({
-      text: 'The date must include a day',
-      href: '#confirmation-date-day'
-    })
-  }
-
-  // Check if user has filled out a month
-  if (req.session.data['confirmation-date-month'] === '') {
-    // No value so add error to array
-    monthHasError = true
-    detailsError = true
-    errors.push({
-      text: 'The date must include a month',
-      href: '#confirmation-date-month'
-    })
-  }
-
-  // Check if user has filled out a year
-  if (req.session.data['confirmation-date-year'] === '') {
-    // No value so add error to array
-    yearHasError = true
-    detailsError = true
-    errors.push({
-      text: 'The date must include a year',
-      href: '#confirmation-date-year'
-    })
-  }
-
-  // Check if eother filed not filled out
-  if (detailsError) {
-    // Re-show page with error value as true so errors will show
-    res.render('alt-routes-v1/post-one-login/confirmation-date', {
-      errorConfirmationDateDay: dayHasError,
-      errorConfirmationDateMonth: monthHasError,
-      errorConfirmationDateYear: yearHasError,
-      errorConfirmationDate: detailsError,
-      errorList: errors
-    })
-  } else {
+   // Check if user has filled out a value
+   if (typeof req.session.data['knowNextDate'] === 'undefined') {
+     // No value so add error to array
+     errors.push({
+       text: 'Select if you know the date of your next confirmation statement',
+       href: '#knowNextDate'
+     })
+ 
+     // Re-show page with error value as true so errors will show
+     res.render('alt-routes-v1/post-one-login/confirmation-date', {
+       errorKnowNextDate: true,
+       errorList: errors
+     })
+   } else {
     res.redirect('/alt-routes-v1/post-one-login/triage-end')
-  }
+   }
 })
 
 
