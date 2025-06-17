@@ -54,6 +54,18 @@
   </strong>
 </div>
 
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      You may be able to try and verify using GOV.UK One Login again
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    If you do not currently have a passport, you may be able to try and 
+  <a href="#" class="govuk-link">verify using GOV.UK One Login </a> again if you get one. 
+  </div>
+</details>
+
     <details class="govuk-details">
       <summary class="govuk-details__summary">
         <span class="govuk-details__summary-text">
@@ -94,6 +106,8 @@
       
     <form action="{{currentUrl}}" method="post">
       
+
+
       <!-- Check for error -->
       {% if errorAltRouteChoice %}
       <div class="govuk-form-group govuk-form-group--error">
