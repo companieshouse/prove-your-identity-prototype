@@ -192,7 +192,7 @@ router.post('/alt-routes-v1/post-one-login/alt-route-choice', function (req, res
       res.redirect('/alt-routes-v1/post-one-login/acsp-route')
     } else {
       // User inputted value so move to next page
-      res.redirect('/alt-routes-v1/post-one-login/confirmation-date')
+      res.redirect('/alt-routes-v1/post-one-login/additional-info')
     }
   }
 })
