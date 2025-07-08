@@ -198,34 +198,16 @@ router.post('/alt-routes-v1/post-one-login/alt-route-choice', function (req, res
 })
 
 
-// ******* confirmation-date javascript ******************************
-router.get('/alt-routes-v1/post-one-login/confirmation-date', function (req, res) {
+// ******* additional-info javascript ******************************
+router.get('/alt-routes-v1/post-one-login/additional-info', function (req, res) {
   // Set URl
-  res.render('alt-routes-v1/post-one-login/confirmation-date', {
+  res.render('alt-routes-v1/post-one-login/additional-info', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/alt-routes-v1/post-one-login/confirmation-date', function (req, res) {
-   // Create empty array
-   var errors = []
-
-   // Check if user has filled out a value
-   if (typeof req.session.data['knowNextDate'] === 'undefined') {
-     // No value so add error to array
-     errors.push({
-       text: 'Select if you know the date of your next confirmation statement',
-       href: '#knowNextDate'
-     })
- 
-     // Re-show page with error value as true so errors will show
-     res.render('alt-routes-v1/post-one-login/confirmation-date', {
-       errorKnowNextDate: true,
-       errorList: errors
-     })
-   } else {
+router.post('/alt-routes-v1/post-one-login/additional-info', function (req, res) {
     res.redirect('/alt-routes-v1/post-one-login/triage-end')
-   }
 })
 
 
