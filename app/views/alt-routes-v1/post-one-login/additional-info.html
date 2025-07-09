@@ -14,16 +14,18 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-l">Additional information</h1>
+    <h1 class="govuk-heading-l">Company information</h1>
 
-    <p class="govuk-body">Any information will help us process your application and contact you at the most appropriate time.</p>
+     <div id="passport-issued-hint" class="govuk-hint">
+      The following questions are optional. However, any information you are able to provide will help us process your application and contact you at the most appropriate time.
+    </div>
 
     <form action="{{currentUrl}}" method="post">
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="directorDifferentName-hint">
           <legend class="govuk-fieldset__legend">
-            Are you a company director? (Optional)
+           <strong> Are you a company director?</strong>
           </legend>
 
           <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
@@ -46,7 +48,7 @@
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" role="group" aria-describedby="confirmationDate-hint">
           <label class="govuk-label" for="confirmationDate">
-            When is your next confirmation statement due? (Optional)
+            <strong>When is your next confirmation statement due? </strong>
           </label>
           <div id="signIn-hint" class="govuk-hint">
             For example, 27 8 2026
@@ -83,15 +85,24 @@
       <details class="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
-            How to find the next confirmation statement date
+            How to find the date your next confirmation statement is due 
           </span>
         </summary>
         <div class="govuk-details__text">
 
           <p class="govuk-body">You can find it by searching for the company on the 
-            <a href="https://find-and-update.company-information.service.gov.uk/" class="govuk-link" rel="noreferrer noopener" target="_blank">Companies House register (opens in a new tab)</a>.
+            <a href="https://find-and-update.company-information.service.gov.uk/" class="govuk-link" rel="noreferrer noopener" target="_blank">Companies House register (opens in new tab)</a>.
           </p>
-          <p>If you are an officer of more than one company the enter the confirmation statement date that comes first.</p> 
+
+           <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+         Do not close this page. If you do, you will have to start again.
+        </strong>
+      </div>
+
+          <p>If you are an officer of more than one company, enter the confirmation statement date that comes first.</p> 
           <p class="govuk-body">For example:</p>
           <ul class="govuk-list govuk-list--bullet">
             <li>COMPANY A LTD's confirmation statement is due on 23 April 2026</li>
@@ -103,23 +114,39 @@
 
       <div class="govuk-form-group">
         <label class="govuk-label" for="event-name">
-          What is the company number for this company? (Optional)
+          <strong>Which company is the confirmation statement for? </strong>
         </label>
+         <div id="event-name-hint" class="govuk-hint">
+    Enter the company number.
+  </div>
         <input class="govuk-input govuk-!-width-one-quarter" id="event-name" name="eventName" type="text">
       </div>
 
-      {{ govukDetails({
-        summaryText: "How do I find the company number",
-        html: 'You can find this by searching for the company on the <a class="govuk-link" href="https://find-and-update.company-information.service.gov.uk/">Companies House register (Opens in a new tab)</a>.'
-      }) }}
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+     How to find the company number
+    </span>
+  </summary>
+  <div class="govuk-details__text"> <p class="govuk-body">
+   You can find this by searching for the company on the <a class="govuk-link" href="https://find-and-update.company-information.service.gov.uk/">Companies House register (opens in new tab)</a>.</p>
+   
 
-      <div class="govuk-warning-text">
+   
+           <div class="govuk-warning-text">
         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
         <strong class="govuk-warning-text__text">
           <span class="govuk-visually-hidden">Warning</span>
-         Do not close this tab. If you do, you will have to start again.
+         Do not close this page. If you do, you will have to start again.
         </strong>
       </div>
+  </div>
+  
+</details>
+
+  
+
+     
 
       {{ govukButton({
         text: "Submit"
