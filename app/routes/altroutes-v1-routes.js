@@ -192,21 +192,21 @@ router.post('/alt-routes-v1/post-one-login/alt-route-choice', function (req, res
       res.redirect('/alt-routes-v1/post-one-login/acsp-route')
     } else {
       // User inputted value so move to next page
-      res.redirect('/alt-routes-v1/post-one-login/additional-info')
+      res.redirect('/alt-routes-v1/post-one-login/company-information')
     }
   }
 })
 
 
-// ******* additional-info javascript ******************************
-router.get('/alt-routes-v1/post-one-login/additional-info', function (req, res) {
+// ******* company-information javascript ******************************
+router.get('/alt-routes-v1/post-one-login/company-information', function (req, res) {
   // Set URl
-  res.render('alt-routes-v1/post-one-login/additional-info', {
+  res.render('alt-routes-v1/post-one-login/company-information', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/alt-routes-v1/post-one-login/additional-info', function (req, res) {
+router.post('/alt-routes-v1/post-one-login/company-information', function (req, res) {
     res.redirect('/alt-routes-v1/post-one-login/triage-end')
 })
 

@@ -47,6 +47,17 @@
       </div>
 
       <div class="govuk-form-group">
+        <label class="govuk-label" for="directorNumber">
+          <h2 class="govuk-heading-s">How many companies are you a director for?</h2>
+          
+        </label>
+         <div id="directorNumber-hint" class="govuk-hint">
+          Enter the number of companies.
+        </div>
+        <input class="govuk-input govuk-input--width-4" id="directorNumber" name="directorNumber" type="text">
+      </div>
+
+      <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" role="group" aria-describedby="confirmationDate-hint">
           <label class="govuk-label" for="confirmationDate">
             <h2 class="govuk-heading-s">When is your next confirmation statement due?</h2>
@@ -115,41 +126,37 @@
       </details>
 
       <div class="govuk-form-group">
-        <label class="govuk-label" for="event-name">
+        <label class="govuk-label" for="companyNumber">
           <h2 class="govuk-heading-s">Which company is the confirmation statement for?</h2>
           
         </label>
-         <div id="event-name-hint" class="govuk-hint">
-    Enter the company number.
-  </div>
-        <input class="govuk-input govuk-!-width-one-quarter" id="event-name" name="eventName" type="text">
+         <div id="companyNumber-hint" class="govuk-hint">
+          Enter the company number.
+        </div>
+        <input class="govuk-input govuk-!-width-one-quarter" id="companyNumber" name="companyNumber" type="text">
       </div>
 
-<details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-     How to find the company number
-    </span>
-  </summary>
-  <div class="govuk-details__text"> <p class="govuk-body">
-   You can find this by searching for the company on the <a class="govuk-link" href="https://find-and-update.company-information.service.gov.uk/">Companies House register (opens in new tab)</a>.</p>
-   
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+          How to find the company number
+          </span>
+        </summary>
+        <div class="govuk-details__text"> <p class="govuk-body">
+        You can find this by searching for the company on the <a class="govuk-link" href="https://find-and-update.company-information.service.gov.uk/">Companies House register (opens in new tab)</a>.</p>
+        
 
-   
-           <div class="govuk-warning-text">
-        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-        <strong class="govuk-warning-text__text">
-          <span class="govuk-visually-hidden">Warning</span>
-         Do not close this page. If you do, you will have to start again.
-        </strong>
-      </div>
-  </div>
-  
-</details>
-
-  
-
-     
+        
+                <div class="govuk-warning-text">
+              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+              <strong class="govuk-warning-text__text">
+                <span class="govuk-visually-hidden">Warning</span>
+              Do not close this page. If you do, you will have to start again.
+              </strong>
+            </div>
+        </div>
+        
+      </details>
 
       {{ govukButton({
         text: "Submit"
