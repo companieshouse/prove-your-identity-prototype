@@ -16,7 +16,9 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      
+      <H1 class="govuk-heading-l">
+        Find another way to prove your identity
+      </H1>
 
       <form class="form" action="/path/of/next/page" method="post">
 
@@ -26,9 +28,9 @@
   name: "findAnotherWay",
   fieldset: {
     legend: {
-      text: "Find another way to prove your identity",
+      text: "What would you like to do?",
       isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
+      classes: "govuk-fieldset__legend--m"
     }
   },
   items: [
@@ -46,6 +48,10 @@
         {{ govukButton({
           text: "Continue"
         }) }}
+
+
+        <p class="govuk-body"><a href="#">Contact the GOV.UK One Login team (opens in a new tab)</a></p>
+         
 
       </form>
 
