@@ -92,6 +92,7 @@ router.post('/alt-routes-v1/pre-one-login/sign-in-password', function (req, res)
   }
 })
 
+
 // ******* one-login-start javascript ********************************
 router.get('/alt-routes-v1/one-login/one-login-start', function (req, res) {
   // Set URl
@@ -101,14 +102,26 @@ router.get('/alt-routes-v1/one-login/one-login-start', function (req, res) {
 })
 
 router.post('/alt-routes-v1/one-login/one-login-start', function (req, res) {
-  if (req.session.data['version'] === 'sole-trader') {
-    // ACSP
-    res.redirect('/alt-routes-v1/one-login/one-login-id')
+  res.redirect('/alt-routes-v1/one-login/one-login-working')
+})
+
+
+// ******* find-another-way-UR javascript ********************************
+router.get('/alt-routes-v1/one-login/find-another-way-UR', function (req, res) {
+  // Set URl
+  res.render('alt-routes-v1/one-login/find-another-way-UR', {
+    currentUrl: req.originalUrl
+  })
+})
+
+router.post('/alt-routes-v1/one-login/find-another-way-UR', function (req, res) {
+  if (req.session.data['findAnotherWay'] === 'continue') {
+    res.redirect('/alt-routes-v1/post-one-login/alt-route-triage')
   } else {
-    // General
-    res.redirect('https://govuk-one-login-prototype-6d2545e2d700.herokuapp.com/page-index/ipv-core/id-screener')
+    res.redirect('/alt-routes-v1/pre-one-login/start')
   }
 })
+
 
 // ******* live-in-uk javascript ********************************
 router.get('/alt-routes-v1/post-one-login/live-in-uk', function (req, res) {
