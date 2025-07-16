@@ -4,11 +4,13 @@
 Find another way to prove your identity– {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
 {% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
+  {% include "includes/phase-banner.html" %}
 {% endblock %}
 
 {% block content %}
