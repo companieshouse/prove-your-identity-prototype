@@ -223,9 +223,41 @@ router.get('/alt-routes-v2/post-one-login/company-information', function (req, r
   })
 })
 
+
+// company info to triage end with date pulled through attempt - commenting out this 
+// router.post('/alt-routes-v2/post-one-login/company-information', function (req, res) {
+//     res.redirect('/alt-routes-v2/post-one-login/triage-end')
+// })
+
 router.post('/alt-routes-v2/post-one-login/company-information', function (req, res) {
-    res.redirect('/alt-routes-v2/post-one-login/triage-end')
-})
+  // Get the date parts from the form
+  const day = req.body['confirmationDate-day'];
+  const month = req.body['confirmationDate-month'];
+  const year = req.body['confirmationDate-year'];
+
+  // If any part of the date is missing, redirect to the no date page
+  if (!day || !month || !year) {
+    return res.redirect('/alt-routes-v2/post-one-login/triage-end-no-cs-date');
+  }
+
+  // Convert month number to month name
+  const monthNames = [
+    '', // so that monthNames[1] is January
+    'January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December'
+  ];
+  const monthName = monthNames[parseInt(month, 10)];
+
+  // Otherwise, save the date and continue as normal
+  req.session.data['confirmationDate'] = { day, month, monthName, year };
+  res.redirect('/alt-routes-v2/post-one-login/triage-end');
+});
+
+// second step in pulling date
+router.get('/alt-routes-v2/post-one-login/triage-end', function(req, res) {
+  const confirmationDate = req.session.data['confirmationDate'];
+  res.render('alt-routes-v2/post-one-login/triage-end', { confirmationDate });
+});
 
 
 // ******* full name validation ********************************
