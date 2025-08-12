@@ -1,0 +1,156 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Ways you can verify your identity for Companies House – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/account-banner.html" %}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <!-- Check for error -->
+    {% if errorAltRouteChoice %}
+    {{ govukErrorSummary({
+      titleText: "There is a problem",
+      errorList: errorList
+    }) }}
+    {% endif %}
+
+    <h1 class="govuk-heading-l">Ways you can verify your identity for Companies House</h1>
+
+    <p class="govuk-body">Based on your answers, here are the ways you can verify your identity.</p>
+
+    <h2 class="govuk-heading-m">Use an Authorised Corporate Service Provider (ACSP)</h2>
+
+    <p class="govuk-body">You can ask an ACSP to verify your identity on your behalf. For example, an accountant or solicitor. This is also known as a Companies House authorised agent.</p> <p class="govuk-body">You can 
+      do this from any country, but your agent must register with Companies House in order to become 
+      authorised. You’ll 
+      need to provide suitable identity documents.
+    </p> 
+
+    <p class="govuk-body">It can be quicker to verify your identity using an ACSP.</p>
+
+    <h2 class="govuk-heading-m">If you do not want to use an ACSP </h2>
+
+<p class="govuk-body">You can provide evidence of your identity to Companies House instead. </p>
+
+    <p class="govuk-body">You'll need to upload evidence such as:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>photos of your identity documents</li>
+         <li>a video of yourself</li>
+        <li>certified translations (if your documents are in a language other than English)</li>
+      </ul> 
+
+          <div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+    It could take a while to verify your identity this way. We are unable to say how long it will take.
+  </strong>
+</div>
+
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      You may be able to try and verify using GOV.UK One Login again
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    If you do not currently have a passport, but are able to get one, you may be able to 
+  <a href="#" class="govuk-link" rel="noreferrer noopener" target="_blank">try and verify using GOV.UK One Login again (opens in a new tab)</a>. 
+  </div>
+</details>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          What happens if you do not verify your identity
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body">
+          There will be a transition period for existing directors and people with significant control (PSCs), so that you have time to do what the regulations require. <a href="https://www.gov.uk/guidance/when-you-need-to-verify-your-identity-for-companies-house" class="govuk-link" rel="noreferrer noopener" target="_blank"> 
+          Find out when you need to verify your identity (opens in a new tab)</a>.
+        </p>
+    
+        {{ govukWarningText({
+          text: "If you do not comply with identity verification requirements on time, you may be committing an offence and may have to pay a financial penalty or fine.",
+          iconFallbackText: "Warning"
+        }) }}
+    
+        <p class="govuk-body">You will also be unable to:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>make any filings for your company or entity</li>
+          <li>start a new company or entity</li>
+          <li>register as a Companies House authorised agent</li>
+        </ul>
+    
+        <h3 class="govuk-heading-s">Directors</h3>
+    
+        <p class="govuk-body">
+          If you continue to act as a director after the deadline without verifying, you will be committing an offence. The company (or entity) and all directors may also be committing an offence.
+        </p>
+    
+        <h3 class="govuk-heading-s">People with significant control (PSCs)</h3>
+    
+        <p class="govuk-body">
+          If you continue to be a PSC after the deadline without verifying, you may be committing an offence.
+        </p>
+      </div>
+    </details>
+      
+    <form action="{{currentUrl}}" method="post">
+      
+
+
+      <!-- Check for error -->
+      {% if errorAltRouteChoice %}
+      <div class="govuk-form-group govuk-form-group--error">
+      {% else %}
+      <div class="govuk-form-group">
+      {% endif %} 
+        <fieldset class="govuk-fieldset" aria-describedby="altRouteChoice-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              How do you want to verify your identity?
+            </h2>
+          </legend>
+          <!-- Check for error -->
+          {% if errorAltRouteChoice %}
+          <p id="altRouteChoice-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Select another way to verify your identity
+          </p>
+          {% endif %} 
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="altRouteChoice" name="altRouteChoice" type="radio" value="acsp">
+              <label class="govuk-label govuk-radios__label" for="altRouteChoice">
+                Use an Authorised Corporate Service Provider (ACSP)
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="altRouteChoice-2" name="altRouteChoice" type="radio" value="altRoute">
+              <label class="govuk-label govuk-radios__label" for="altRouteChoice-2">
+                Provide evidence of my identity to Companies House
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
