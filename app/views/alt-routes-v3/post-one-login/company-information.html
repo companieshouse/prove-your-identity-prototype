@@ -103,10 +103,21 @@
         </fieldset>
       </div>
 
-      <details class="govuk-details">
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="companyNumber">
+          <h2 class="govuk-heading-m">Which company is the confirmation statement for?</h2>
+          
+        </label>
+         <div id="companyNumber-hint" class="govuk-hint">
+          Enter the company number.
+        </div>
+        <input class="govuk-input govuk-!-width-one-quarter" id="companyNumber" name="companyNumber" type="text">
+      </div>
+        
+        <details class="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
-            How to find the date your next confirmation statement is due 
+            How to find your company number and the date your next confirmation statement is due 
           </span>
         </summary>
         <div class="govuk-details__text">
@@ -115,7 +126,7 @@
   <li>Search for the company on the 
             <a href="https://find-and-update.company-information.service.gov.uk/" class="govuk-link" rel="noreferrer noopener" target="_blank">Companies House register (opens in a new tab)</a>.</li>
   <li>Select the company name.</li>
-  <li>You'll find the confirmation statement due date in the 'overview' tab.</li>
+  <li>You'll find the confirmation statement due date in the 'overview' tab. The company number is also on this screen.</li>
 </ol>
 
            <div class="govuk-warning-text">
@@ -134,40 +145,7 @@
           </ul>
           <p>As ABC LTD's confirmation statement is due first, you would need to enter 23 4 2026.</p>
         </div>
-      </details>
-
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="companyNumber">
-          <h2 class="govuk-heading-m">Which company is the confirmation statement for?</h2>
-          
-        </label>
-         <div id="companyNumber-hint" class="govuk-hint">
-          Enter the company number.
-        </div>
-        <input class="govuk-input govuk-!-width-one-quarter" id="companyNumber" name="companyNumber" type="text">
-      </div>
-
-      <details class="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-          How to find the company number
-          </span>
-        </summary>
-        <div class="govuk-details__text"> <p class="govuk-body">
-        You can find this by searching for the company on the <a class="govuk-link" href="https://find-and-update.company-information.service.gov.uk/">Companies House register (opens in new tab)</a>.</p>
-        
-
-        
-                <div class="govuk-warning-text">
-              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-              <strong class="govuk-warning-text__text">
-                <span class="govuk-visually-hidden">Warning</span>
-              Do not close this page. If you do, you will have to start again.
-              </strong>
-            </div>
-        </div>
-        
-      </details>
+      </details>         
 
       {{ govukButton({
         text: "Submit"
