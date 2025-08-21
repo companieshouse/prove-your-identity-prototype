@@ -3,33 +3,33 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 
 // ******* start validation ********************************
-router.get('/alt-routes-v2/pre-one-login/start', function (req, res) {
+router.get('/alt-routes-v3/pre-one-login/start', function (req, res) {
   // Set URl
-  res.render('alt-routes-v2/pre-one-login/start', {
+  res.render('alt-routes-v3/pre-one-login/start', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/alt-routes-v2/pre-one-login/start', function (req, res) {
+router.post('/alt-routes-v3/pre-one-login/start', function (req, res) {
   if (req.session.data['version'] === 'sole-trader') {
     // ACSP
-    res.redirect('/alt-routes-v2/pre-one-login/one-login-intro')
+    res.redirect('/alt-routes-v3/pre-one-login/one-login-intro')
   } else {
     // General
-    res.redirect('/alt-routes-v2/pre-one-login/create-or-sign-in')
+    res.redirect('/alt-routes-v3/pre-one-login/create-or-sign-in')
   }
 })
 
 
 // ******* Sign in email validation ********************************
-router.get('/alt-routes-v2/pre-one-login/sign-in-email', function (req, res) {
+router.get('/alt-routes-v3/pre-one-login/sign-in-email', function (req, res) {
   // Set URl
-  res.render('alt-routes-v2/pre-one-login/sign-in-email', {
+  res.render('alt-routes-v3/pre-one-login/sign-in-email', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/alt-routes-v2/pre-one-login/sign-in-email', function (req, res) {
+router.post('/alt-routes-v3/pre-one-login/sign-in-email', function (req, res) {
   // Create empty array and set error variables to false
   var errors = []
 
@@ -46,26 +46,26 @@ router.post('/alt-routes-v2/pre-one-login/sign-in-email', function (req, res) {
   // Check if eother filed not filled out
   if (req.session.data['signin-email'] === '') {
     // Re-show page with error value as true so errors will show
-    res.render('alt-routes-v2/pre-one-login/sign-in-email', {
+    res.render('alt-routes-v3/pre-one-login/sign-in-email', {
       errorSigninEmail: true,
       errorList: errors
     })
   } else {
     // User inputted value so move to next page
-    res.redirect('/alt-routes-v2/pre-one-login/sign-in-password')
+    res.redirect('/alt-routes-v3/pre-one-login/sign-in-password')
   }
 })
 
 
 // ******* Sign in password validation ********************************
-router.get('/alt-routes-v2/pre-one-login/sign-in-password', function (req, res) {
+router.get('/alt-routes-v3/pre-one-login/sign-in-password', function (req, res) {
   // Set URl
-  res.render('alt-routes-v2/pre-one-login/sign-in-password', {
+  res.render('alt-routes-v3/pre-one-login/sign-in-password', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/alt-routes-v2/pre-one-login/sign-in-password', function (req, res) {
+router.post('/alt-routes-v3/pre-one-login/sign-in-password', function (req, res) {
   // Create empty array and set error variables to false
   var errors = []
 
@@ -82,56 +82,56 @@ router.post('/alt-routes-v2/pre-one-login/sign-in-password', function (req, res)
   // Check if eother filed not filled out
   if (req.session.data['signin-password'] === '') {
     // Re-show page with error value as true so errors will show
-    res.render('alt-routes-v2/pre-one-login/sign-in-password', {
+    res.render('alt-routes-v3/pre-one-login/sign-in-password', {
       errorSigninPassword: true,
       errorList: errors
     })
   } else {
     // User inputted value so move to next page
-    res.redirect('/alt-routes-v2/pre-one-login/one-login-intro')
+    res.redirect('/alt-routes-v3/pre-one-login/one-login-intro')
   }
 })
 
 
 // ******* one-login-start javascript ********************************
-router.get('/alt-routes-v2/one-login/one-login-start', function (req, res) {
+router.get('/alt-routes-v3/one-login/one-login-start', function (req, res) {
   // Set URl
-  res.render('alt-routes-v2/one-login/one-login-start', {
+  res.render('alt-routes-v3/one-login/one-login-start', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/alt-routes-v2/one-login/one-login-start', function (req, res) {
-  res.redirect('/alt-routes-v2/one-login/one-login-working')
+router.post('/alt-routes-v3/one-login/one-login-start', function (req, res) {
+  res.redirect('/alt-routes-v3/one-login/one-login-working')
 })
 
 
 // ******* find-another-way-UR javascript ********************************
-router.get('/alt-routes-v2/one-login/find-another-way-UR', function (req, res) {
+router.get('/alt-routes-v3/one-login/find-another-way-UR', function (req, res) {
   // Set URl
-  res.render('alt-routes-v2/one-login/find-another-way-UR', {
+  res.render('alt-routes-v3/one-login/find-another-way-UR', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/alt-routes-v2/one-login/find-another-way-UR', function (req, res) {
+router.post('/alt-routes-v3/one-login/find-another-way-UR', function (req, res) {
   if (req.session.data['findAnotherWay'] === 'continue') {
-    res.redirect('/alt-routes-v2/post-one-login/alt-route-triage')
+    res.redirect('/alt-routes-v3/post-one-login/alt-route-triage')
   } else {
-    res.redirect('/alt-routes-v2/pre-one-login/start')
+    res.redirect('/alt-routes-v3/pre-one-login/start')
   }
 })
 
 
 // ******* live-in-uk javascript ********************************
-router.get('/alt-routes-v2/post-one-login/live-in-uk', function (req, res) {
+router.get('/alt-routes-v3/post-one-login/live-in-uk', function (req, res) {
   // Set URl
-  res.render('alt-routes-v2/post-one-login/live-in-uk', {
+  res.render('alt-routes-v3/post-one-login/live-in-uk', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/alt-routes-v2/post-one-login/live-in-uk', function (req, res) {
+router.post('/alt-routes-v3/post-one-login/live-in-uk', function (req, res) {
   // Create empty array
   var errors = []
 
@@ -144,50 +144,50 @@ router.post('/alt-routes-v2/post-one-login/live-in-uk', function (req, res) {
     })
 
     // Re-show page with error value as true so errors will show
-    res.render('alt-routes-v2/post-one-login/live-in-uk', {
+    res.render('alt-routes-v3/post-one-login/live-in-uk', {
       errorLiveInUk: true,
       errorList: errors
     })
   } else {
     if (req.session.data['liveInUk'] === 'no') {
-      res.redirect('/alt-routes-v2/post-one-login/nationality')
+      res.redirect('/alt-routes-v3/post-one-login/nationality')
     } else {
-      res.redirect('/alt-routes-v2/post-one-login/failure-evidence')
+      res.redirect('/alt-routes-v3/post-one-login/failure-evidence')
     }
   }
 })
 
 
 // ******* country-list validation ********************************
-router.get('/alt-routes-v2/post-one-login/nationality', function (req, res) {
+router.get('/alt-routes-v3/post-one-login/nationality', function (req, res) {
   // Set URl
-  res.render('alt-routes-v2/post-one-login/nationality', {
+  res.render('alt-routes-v3/post-one-login/nationality', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/alt-routes-v2/post-one-login/nationality', function (req, res) {
+router.post('/alt-routes-v3/post-one-login/nationality', function (req, res) {
   if (req.session.data['nationalityOne'] === 'Indian') {
-    res.redirect('/alt-routes-v2/post-one-login/alt-route-choice')
+    res.redirect('/alt-routes-v3/post-one-login/alt-route-choice')
   } 
   else if (req.session.data['nationalityOne'] === 'Pakistani') {
-    res.redirect('/alt-routes-v2/post-one-login/alt-route-choice')
+    res.redirect('/alt-routes-v3/post-one-login/alt-route-choice')
   }
   else {
-    res.redirect('/alt-routes-v2/post-one-login/failure-evidence')
+    res.redirect('/alt-routes-v3/post-one-login/failure-evidence')
   }
 })
 
 
 // ******* alt-route-choice javascript ********************************
-router.get('/alt-routes-v2/post-one-login/alt-route-choice', function (req, res) {
+router.get('/alt-routes-v3/post-one-login/alt-route-choice', function (req, res) {
   // Set URl
-  res.render('/alt-routes-v2/post-one-login/alt-route-choice', {
+  res.render('/alt-routes-v3/post-one-login/alt-route-choice', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/alt-routes-v2/post-one-login/alt-route-choice', function (req, res) {
+router.post('/alt-routes-v3/post-one-login/alt-route-choice', function (req, res) {
   // Create empty array
   var errors = []
 
@@ -200,36 +200,36 @@ router.post('/alt-routes-v2/post-one-login/alt-route-choice', function (req, res
     })
 
     // Re-show page with error value as true so errors will show
-    res.render('alt-routes-v2/post-one-login/alt-route-choice', {
+    res.render('alt-routes-v3/post-one-login/alt-route-choice', {
       errorAltRouteChoice: true,
       errorList: errors
     })
   } else {
     if (req.session.data['altRouteChoice'] === 'acsp') {
-      res.redirect('/alt-routes-v2/post-one-login/acsp-route')
+      res.redirect('/alt-routes-v3/post-one-login/acsp-route')
     } else {
       // User inputted value so move to next page
-      res.redirect('/alt-routes-v2/post-one-login/company-information')
+      res.redirect('/alt-routes-v3/post-one-login/company-information')
     }
   }
 })
 
 
 // ******* company-information javascript ******************************
-router.get('/alt-routes-v2/post-one-login/company-information', function (req, res) {
+router.get('/alt-routes-v3/post-one-login/company-information', function (req, res) {
   // Set URl
-  res.render('alt-routes-v2/post-one-login/company-information', {
+  res.render('alt-routes-v3/post-one-login/company-information', {
     currentUrl: req.originalUrl
   })
 })
 
 
 // company info to triage end with date pulled through attempt - commenting out this 
-// router.post('/alt-routes-v2/post-one-login/company-information', function (req, res) {
-//     res.redirect('/alt-routes-v2/post-one-login/triage-end')
+// router.post('/alt-routes-v3/post-one-login/company-information', function (req, res) {
+//     res.redirect('/alt-routes-v3/post-one-login/triage-end')
 // })
 
-router.post('/alt-routes-v2/post-one-login/company-information', function (req, res) {
+router.post('/alt-routes-v3/post-one-login/company-information', function (req, res) {
   // Get the date parts from the form
   const day = req.body['confirmationDate-day'];
   const month = req.body['confirmationDate-month'];
@@ -237,7 +237,7 @@ router.post('/alt-routes-v2/post-one-login/company-information', function (req, 
 
   // If any part of the date is missing, redirect to the no date page
   if (!day || !month || !year) {
-    return res.redirect('/alt-routes-v2/post-one-login/triage-end-no-cs-date');
+    return res.redirect('/alt-routes-v3/post-one-login/triage-end-no-cs-date');
   }
 
   // Convert month number to month name
@@ -250,25 +250,28 @@ router.post('/alt-routes-v2/post-one-login/company-information', function (req, 
 
   // Otherwise, save the date and continue as normal
   req.session.data['confirmationDate'] = { day, month, monthName, year };
-  res.redirect('/alt-routes-v2/post-one-login/triage-end');
+  res.redirect('/alt-routes-v3/post-one-login/triage-end');
 });
 
 // second step in pulling date
-router.get('/alt-routes-v2/post-one-login/triage-end', function(req, res) {
+router.get('/alt-routes-v3/post-one-login/triage-end', function(req, res) {
   const confirmationDate = req.session.data['confirmationDate'];
-  res.render('alt-routes-v2/post-one-login/triage-end', { confirmationDate });
+  res.render('alt-routes-v3/post-one-login/triage-end', { confirmationDate });
 });
+
+//PHOEBE NOTE - adapted the v3 routes up to here
+
 
 
 // ******* full name validation ********************************
-router.get('/alt-routes-v2/post-one-login/full-name', function (req, res) {
+router.get('/alt-routes-v3/post-one-login/full-name', function (req, res) {
   // Set URl
-  res.render('alt-routes-v2/post-one-login/full-name', {
+  res.render('alt-routes-v3/post-one-login/full-name', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/alt-routes-v2/post-one-login/full-name', function (req, res) {
+router.post('/alt-routes-v3/post-one-login/full-name', function (req, res) {
     // Create empty array and set error variables to false
     var errors = []
     var firstNameError = false
@@ -300,7 +303,7 @@ router.post('/alt-routes-v2/post-one-login/full-name', function (req, res) {
     // Check if eother filed not filled out
     if (detailsError) {
       // Re-show page with error value as true so errors will show
-      res.render('alt-routes-v2/post-one-login/full-name', {
+      res.render('alt-routes-v3/post-one-login/full-name', {
         errorFirstName: firstNameError,
         errorLastName: lastNameError,
         errorDetails: detailsError,
@@ -308,20 +311,20 @@ router.post('/alt-routes-v2/post-one-login/full-name', function (req, res) {
       })
     } 
     else {
-      res.redirect('/alt-routes-v2/post-one-login/dob')
+      res.redirect('/alt-routes-v3/post-one-login/dob')
     }
 })
 
 
 // ******* director-details javascript ******************************
-router.get('/alt-routes-v2/post-one-login/dob', function (req, res) {
+router.get('/alt-routes-v3/post-one-login/dob', function (req, res) {
   // Set URl
-  res.render('alt-routes-v2/post-one-login/dob', {
+  res.render('alt-routes-v3/post-one-login/dob', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/alt-routes-v2/post-one-login/dob', function (req, res) {
+router.post('/alt-routes-v3/post-one-login/dob', function (req, res) {
   // Create empty array and set error variables to false
   var errors = []
   var dayHasError = false
@@ -365,7 +368,7 @@ router.post('/alt-routes-v2/post-one-login/dob', function (req, res) {
   // Check if other filed not filled out
   if (dobError) {
     // Re-show page with error value as true so errors will show
-    res.render('alt-routes-v2/post-one-login/dob', {
+    res.render('alt-routes-v3/post-one-login/dob', {
       errorDobDay: dayHasError,
       errorDobMonth: monthHasError,
       errorDobYear: yearHasError,
@@ -373,33 +376,33 @@ router.post('/alt-routes-v2/post-one-login/dob', function (req, res) {
       errorList: errors
     })
   } else {
-    res.redirect('/alt-routes-v2/post-one-login/address')
+    res.redirect('/alt-routes-v3/post-one-login/address')
   }
 })
 
 
 // ******* address validation ********************************
-router.get('/alt-routes-v2/post-one-login/address', function (req, res) {
+router.get('/alt-routes-v3/post-one-login/address', function (req, res) {
   // Set URl
-  res.render('alt-routes-v2/post-one-login/address', {
+  res.render('alt-routes-v3/post-one-login/address', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/alt-routes-v2/post-one-login/address', function (req, res) {
-    res.redirect('/alt-routes-v2/post-one-login/address-confirm')
+router.post('/alt-routes-v3/post-one-login/address', function (req, res) {
+    res.redirect('/alt-routes-v3/post-one-login/address-confirm')
 })
 
 
 // ******* primary-id javascript ********************************
-router.get('/alt-routes-v2/post-one-login/primary-id', function (req, res) {
+router.get('/alt-routes-v3/post-one-login/primary-id', function (req, res) {
   // Set URl
-  res.render('alt-routes-v2/post-one-login/primary-id', {
+  res.render('alt-routes-v3/post-one-login/primary-id', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/alt-routes-v2/post-one-login/primary-id', function (req, res) {
+router.post('/alt-routes-v3/post-one-login/primary-id', function (req, res) {
   // Create empty array
   var errors = []
 
@@ -412,37 +415,37 @@ router.post('/alt-routes-v2/post-one-login/primary-id', function (req, res) {
     })
 
     // Re-show page with error value as true so errors will show
-    res.render('alt-routes-v2/post-one-login/primary-id', {
+    res.render('alt-routes-v3/post-one-login/primary-id', {
       errorPrimaryId: true,
       errorList: errors
     })
   } else {
-    res.redirect('/alt-routes-v2/post-one-login/primary-id-upload')
+    res.redirect('/alt-routes-v3/post-one-login/primary-id-upload')
   }
 })
 
 // ******* primary-id-upload javascript ********************************
-router.get('/alt-routes-v2/post-one-login/primary-id-upload', function (req, res) {
+router.get('/alt-routes-v3/post-one-login/primary-id-upload', function (req, res) {
   // Set URl
-  res.render('alt-routes-v2/post-one-login/primary-id-upload', {
+  res.render('alt-routes-v3/post-one-login/primary-id-upload', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/alt-routes-v2/post-one-login/primary-id-upload', function (req, res) {
-  res.redirect('/alt-routes-v2/post-one-login/secondary-id')
+router.post('/alt-routes-v3/post-one-login/primary-id-upload', function (req, res) {
+  res.redirect('/alt-routes-v3/post-one-login/secondary-id')
 })
 
 
 // ******* secondary-id javascript ********************************
-router.get('/alt-routes-v2/post-one-login/secondary-id', function (req, res) {
+router.get('/alt-routes-v3/post-one-login/secondary-id', function (req, res) {
   // Set URl
-  res.render('alt-routes-v2/post-one-login/secondary-id', {
+  res.render('alt-routes-v3/post-one-login/secondary-id', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/alt-routes-v2/post-one-login/secondary-id', function (req, res) {
+router.post('/alt-routes-v3/post-one-login/secondary-id', function (req, res) {
   // Create empty array
   var errors = []
 
@@ -455,51 +458,51 @@ router.post('/alt-routes-v2/post-one-login/secondary-id', function (req, res) {
     })
 
     // Re-show page with error value as true so errors will show
-    res.render('alt-routes-v2/post-one-login/secondary-id', {
+    res.render('alt-routes-v3/post-one-login/secondary-id', {
       errorSecondaryId: true,
       errorList: errors
     })
   } else {
-    res.redirect('/alt-routes-v2/post-one-login/secondary-id-upload')
+    res.redirect('/alt-routes-v3/post-one-login/secondary-id-upload')
   }
 })
 
 // ******* secondary-id-upload javascript ********************************
-router.get('/alt-routes-v2/post-one-login/secondary-id-upload', function (req, res) {
+router.get('/alt-routes-v3/post-one-login/secondary-id-upload', function (req, res) {
   // Set URl
-  res.render('alt-routes-v2/post-one-login/secondary-id-upload', {
+  res.render('alt-routes-v3/post-one-login/secondary-id-upload', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/alt-routes-v2/post-one-login/secondary-id-upload', function (req, res) {
-  res.redirect('/alt-routes-v2/post-one-login/upload-id-video')
+router.post('/alt-routes-v3/post-one-login/secondary-id-upload', function (req, res) {
+  res.redirect('/alt-routes-v3/post-one-login/upload-id-video')
 })
 
 
 
 // ******* upload-id-video javascript ********************************
-router.get('/alt-routes-v2/post-one-login/upload-id-video', function (req, res) {
+router.get('/alt-routes-v3/post-one-login/upload-id-video', function (req, res) {
   // Set URl
-  res.render('alt-routes-v2/post-one-login/upload-id-video', {
+  res.render('alt-routes-v3/post-one-login/upload-id-video', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/alt-routes-v2/post-one-login/upload-id-video', function (req, res) {
-  res.redirect('/alt-routes-v2/post-one-login/declaration')
+router.post('/alt-routes-v3/post-one-login/upload-id-video', function (req, res) {
+  res.redirect('/alt-routes-v3/post-one-login/declaration')
 })
 
 
 // ******* declaration javascript ********************************
-router.get('/alt-routes-v2/post-one-login/declaration', function (req, res) {
+router.get('/alt-routes-v3/post-one-login/declaration', function (req, res) {
   // Set URl
-  res.render('/alt-routes-v2/post-one-login/declaration', {
+  res.render('/alt-routes-v3/post-one-login/declaration', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/alt-routes-v2/post-one-login/declaration', function (req, res) {
+router.post('/alt-routes-v3/post-one-login/declaration', function (req, res) {
   // Create empty array
   var errors = []
 
@@ -511,25 +514,25 @@ router.post('/alt-routes-v2/post-one-login/declaration', function (req, res) {
     })
 
     // Re-show page with error value as true so errors will show
-    res.render('/alt-routes-v2/post-one-login/declaration', {
+    res.render('/alt-routes-v3/post-one-login/declaration', {
       errorDeclaration: true,
       errorList: errors
     })
   } else {
-      res.redirect('/alt-routes-v2/post-one-login/vouching-intro')
+      res.redirect('/alt-routes-v3/post-one-login/vouching-intro')
   }
 })
 
 
 // ******* applicant-details javascript ******************************
-router.get('/alt-routes-v2/post-one-login/voucher-details', function (req, res) {
+router.get('/alt-routes-v3/post-one-login/voucher-details', function (req, res) {
   // Set URl
-  res.render('alt-routes-v2/post-one-login/voucher-details', {
+  res.render('alt-routes-v3/post-one-login/voucher-details', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/alt-routes-v2/post-one-login/voucher-details', function (req, res) {
+router.post('/alt-routes-v3/post-one-login/voucher-details', function (req, res) {
   // Create empty array and set error variables to false
   var errors = []
   var voucherNameError = false
@@ -573,7 +576,7 @@ router.post('/alt-routes-v2/post-one-login/voucher-details', function (req, res)
   // Check if eother filed not filled out
   if (detailsError) {
     // Re-show page with error value as true so errors will show
-    res.render('alt-routes-v2/post-one-login/voucher-details', {
+    res.render('alt-routes-v3/post-one-login/voucher-details', {
       errorVoucherName: voucherNameError,
       errorVoucherEmail: voucherEmailError,
       errorVoucherRole: voucherRoleError,
@@ -582,7 +585,7 @@ router.post('/alt-routes-v2/post-one-login/voucher-details', function (req, res)
     })
   } 
   else  
-  {res.redirect('/alt-routes-v2/post-one-login/check-details')}
+  {res.redirect('/alt-routes-v3/post-one-login/check-details')}
 })
 
 
