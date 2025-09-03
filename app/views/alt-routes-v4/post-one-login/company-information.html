@@ -1,0 +1,158 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Company information – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/account-banner.html" %}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Company information</h1>
+
+         <div id="passport-issued-hint" class="govuk-hint">
+    The following questions are optional. However, your answers will help us process your application and contact you at the most appropriate time.
+    </div>
+ 
+
+    <form action="{{currentUrl}}" method="post">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="directorDifferentName-hint">
+          <legend class="govuk-fieldset__legend">
+          <h2 class="govuk-heading-m">Are you a director of a UK company?</h2>
+       
+
+          </legend>
+ <p class="govuk-body">This includes if you are:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>an existing director</li>
+  <li>going to be a director of an existing UK company</li>
+  <li>going to be a director of a UK company that hasn't been incorporated yet</li>
+</ul>
+          <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="directorDifferentName" name="directorDifferentName" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="directorDifferentName">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="directorDifferentName-2" name="directorDifferentName" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="directorDifferentName-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+<h2 class="govuk-heading-l">If you're an existing director, or going to be a director of an existing UK company</h2>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="directorNumber">
+          <h2 class="govuk-heading-m">How many UK companies are you a director of?</h2>
+          
+        </label>
+         <div id="directorNumber-hint" class="govuk-hint">
+          
+        </div>
+        <input class="govuk-input govuk-input--width-4" id="directorNumber" name="directorNumber" type="text">
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="confirmationDate-hint">
+          <label class="govuk-label" for="confirmationDate">
+            <h2 class="govuk-heading-m">When is your next confirmation statement due?</h2>
+            
+          </label>
+          <div id="signIn-hint" class="govuk-hint">
+            For example, 27 8 2026
+          </div>
+          <div class="govuk-date-input" id="confirmationDate">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="confirmationDate-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="confirmationDate-day" name="confirmationDate-day" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="confirmationDate-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="confirmationDate-month" name="confirmationDate-month" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="confirmationDate-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="confirmationDate-year" name="confirmationDate-year" type="text" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="companyNumber">
+          <h2 class="govuk-heading-m">Which company is the confirmation statement for?</h2>
+          
+        </label>
+         <div id="companyNumber-hint" class="govuk-hint">
+          Enter the company number.
+        </div>
+        <input class="govuk-input govuk-!-width-one-quarter" id="companyNumber" name="companyNumber" type="text">
+      </div>
+        
+        <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            How to find your company number and the date your next confirmation statement is due 
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+
+          <ol class="govuk-list govuk-list--number">
+  <li>Search for the company name on the 
+            <a href="https://find-and-update.company-information.service.gov.uk/" class="govuk-link" rel="noreferrer noopener" target="_blank">Companies House register (opens in a new tab)</a>.</li>
+  <li>Select the company name.</li>
+  <li>You'll find the confirmation statement due date in the 'overview' tab. The company number is also on this screen.</li>
+</ol>
+
+           <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+         Do not close this page. If you do, you will have to start again.
+        </strong>
+      </div>
+
+          <p>If you are a director of more than one company, enter the confirmation statement date that comes first.</p> 
+          <p class="govuk-body">For example:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>ABC LTD's confirmation statement is due on 23 April 2026</li>
+            <li>XYZ LTD's confirmation statement is due on 16 July 2026</li>
+          </ul>
+          <p>As ABC LTD's confirmation statement is due first, you would need to enter 23 4 2026.</p>
+        </div>
+      </details>         
+
+      {{ govukButton({
+        text: "Submit"
+      }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
