@@ -1,0 +1,76 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+You've told us you want to provide evidence – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{# {% include "includes/back-link.html" %} #}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        You've told us you want to provide evidence of your identity to Companies House
+      </h1>
+
+      <div class="govuk-inset-text">
+  <strong>Your case reference number:</strong> HW123456 <br><br> Make a note of this number and keep it somewhere safe.
+</div>
+
+          <h2 class="govuk-heading-m">
+       What happens next
+      </h2>
+  
+<p class="govuk-body">We’ll email you at <strong>example@email.com</strong> with information about verifying your identity.</p>
+
+<h3 class="govuk-heading-s">When we’ll email you</h3>
+
+    <p class="govuk-body">You’ve told us your confirmation statement due date is {{ confirmationDate.day }} {{ confirmationDate.monthName }} {{ confirmationDate.year }}. If this date has not passed yet, we’ll aim to email you by then with information about how to verify your identity. </p>
+
+ <p class="govuk-body">If this date has already passed, we’ll email you as soon as we are able to.</p>
+
+  <p class="govuk-body">You should check your inbox regularly, including your spam folder. We cannot guarantee we'll be able to contact you by the date of your next confirmation statement.</p>
+
+<h3 class="govuk-heading-s">What information the email will include</h3>
+
+ <p class="govuk-body">The email will let you know what identity documents and information you need to provide, and how to provide them. You'll be able to use a passport if you have one. If you do not already have a passport, and you are able to get one, you may wish to start the passport application process now.</p>
+
+    <div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+     It could take up to 10 working days before we email you. Print or save this page so that you can refer back to this information.
+  </strong>
+</div>
+
+{{ govukButton({
+  text: "Print this page",
+  classes: "govuk-button--secondary "
+}) }}
+
+<h2 class="govuk-heading-m">What happens if you successfully verify your identity</h2>
+  
+       <p class="govuk-body">You’ll get a unique identifier known as a Companies House personal code. The code is personal to you, not your company or a company you work for. You'll need the code to comply with identity verification requirements.</p>
+
+      <h2 class="govuk-heading-m">You can still verify using an Authorised Corporate Service Provider (ACSP)</h2>
+
+      <p class="govuk-body">If you do not want to wait to verify by providing evidence to Companies House, you can
+   <a href="https://prove-your-identity-prototype.herokuapp.com/alt-routes-v1/post-one-login/acsp-route" class="govuk-link">use an ACSP instead</a>. This is also known as a Companies House authorised agent. </p>
+
+   <p class="govuk-body">It can be quicker to verify your identity using an ACSP.</p>
+
+   <!--
+     <h2 class="govuk-heading-m">If you're a person with significant control (PSC)</h2>
+
+      <p class="govuk-body">If you're not going to be able to verify in time, use the  
+   <a href="https://submit-psc-statement-prototype-8cf558a5f32b.herokuapp.com/v13/start-v2" class="govuk-link" rel="noreferrer noopener" target="_blank">Provide identity verification details for a PSC service to request an extension (opens in new tab)</a>. This will give you more time to provide your personal code and verification statement to us.</p>-->
+
+    </div>
+  </div>
+  
+  {% endblock %}
