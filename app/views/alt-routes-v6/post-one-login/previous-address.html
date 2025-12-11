@@ -1,0 +1,134 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+What was your previous address? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/welsh-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+<h1 class="govuk-heading-l">What was your previous address?</h1>
+        <div id="event-name-hint" class="govuk-hint">
+            Tell us your previous home address. Only give a business address if you also lived there.
+        </div>
+
+      <div class="govuk-form-group">
+  <label class="govuk-label" for="propertyName">
+    Property name or number
+  </label>
+
+  <div id="propertyName-hint" class="govuk-hint">
+    For example, &#39;The Mill&#39;, &#39;116&#39; or &#39;Flat 37a&#39;
+  </div>
+
+<input class="govuk-input" id="propertyName" name="propertyName" type="text" aria-describedby="propertyName-hint">
+
+</div>
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="addressOne">
+    Address line 1
+  </label>
+
+<input class="govuk-input" id="addressOne" name="addressOne" type="text">
+
+</div>
+        
+<div class="govuk-form-group">
+  <label class="govuk-label" for="addressTwo">
+    Address line 2 (optional)
+  </label>
+
+<input class="govuk-input" id="addressTwo" name="addressTwo" type="text">
+
+</div>
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="town">
+    City or town
+  </label>
+
+<input class="govuk-input" id="town" name="town" type="text">
+
+</div>
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="county">
+    County, state, province or region (optional)
+  </label>
+
+<input class="govuk-input" id="county" name="county" type="text">
+
+</div>
+
+<div class="govuk-form-group">
+          <label class="govuk-label" for="autocomplete-default" >Country</label>
+          <p class="govuk-hint">Start typing a country, then choose from the list.</p>
+          <div class="autocomplete-wrapper" id="country"></div>
+
+        </div>
+
+        <div class="govuk-form-group">
+  <label class="govuk-label" for="postcode">
+    Postcode or ZIP
+  </label>
+
+<input class="govuk-input govuk-input--width-10" id="postcode" name="postcode" type="text">
+
+    </div>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" role="group" aria-describedby="previous-address-date-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h1 class="govuk-fieldset__heading">
+        When did you move out of this address?
+      </h1>
+    </legend>
+    <div id="previous-address-date-hint" class="govuk-hint">
+      For example, 03 2007
+    </div>
+    <div class="govuk-date-input" id="previous-address-date">
+      
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="previous-address-date-month">
+            Month
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="previous-address-date-month" name="previous-address-date-month" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="previous-address-date-year">
+            Year
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="previous-address-date-year" name="previous-address-date-year" type="text" inputmode="numeric">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+ {{ govukButton({
+        text: "Continue"
+      }) }}
+
+
+
+  
+</div>
+</div>
+
+
+<script src="/public/javascripts/accessible-autocomplete.js"></script>
+<script src="/public/javascripts/country.js"></script>
+
+{% endblock %}
