@@ -1,0 +1,58 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Alternative provider – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        How to verify using an Authorised Corporate Service Provider (ACSP) 
+      </h1>
+  
+  <p class="govuk-body">You will need to find an ACSP to verify your identity. This is also known as an authorised agent. </p>
+  
+      <p class="govuk-body">You can do this from any country, but your agent must register with Companies House in order to become authorised.</p>
+
+        <h2 class="govuk-heading-m">Who can be an ACSP</h2>
+
+           <p class="govuk-body">An ACSP is a person or organisation that is registered with a UK Anti-Money Laundering (AML) supervisory body. For example:
+            <ul class="govuk-list govuk-list--bullet">
+  <li>company formation agents</li>
+  <li>accountants</li>
+  <li>solicitors</li>
+</ul>
+      </p>
+
+
+      <h2 class="govuk-heading-m">How to find an ACSP</h2>
+
+         <p class="govuk-body">If you have an existing accountant or solicitor (or any other AML-supervised professional), you can ask them if they are registered with Companies House as an ACSP. If not, you'll need to find one. For example, by doing an online search.
+      </p>
+  
+<h2 class="govuk-heading-m">What happens next</h2>
+
+   <p class="govuk-body">When an ACSP has agreed to verify your identity, you will need to provide documents from an approved list as evidence of your identity. They may charge a fee for their services.
+      </p>
+     
+  
+  <!--
+  
+      <h3 class="govuk-heading-s">What happens next</h3>
+  
+      <p class="govuk-body">When your authorised agent has agreed to verify your identity on your behalf, they will ask you to provide proof of your address and identity. </p>
+  -->
+        
+  
+    </div>
+  </div>
+  
+  {% endblock %}
