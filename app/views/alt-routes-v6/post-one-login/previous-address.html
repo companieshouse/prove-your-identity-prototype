@@ -89,14 +89,21 @@ What was your previous address? – {{ serviceName }} – GOV.UK Prototype Kit
   <fieldset class="govuk-fieldset" role="group" aria-describedby="previous-address-date-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
       <h1 class="govuk-fieldset__heading">
-        When did you move out of this address?
+        When did you leave your previous address?
       </h1>
     </legend>
     <div id="previous-address-date-hint" class="govuk-hint">
-      For example, 03 2007
+      For example, 3 March 2007
     </div>
     <div class="govuk-date-input" id="previous-address-date">
-      
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="previous-address-date-day">
+            Day
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="previous-address-date-day" name="previous-address-date-day" type="text" inputmode="numeric">
+        </div>
+      </div>
       <div class="govuk-date-input__item">
         <div class="govuk-form-group">
           <label class="govuk-label govuk-date-input__label" for="previous-address-date-month">
@@ -120,7 +127,6 @@ What was your previous address? – {{ serviceName }} – GOV.UK Prototype Kit
  {{ govukButton({
         text: "Continue"
       }) }}
-
 
 
   
