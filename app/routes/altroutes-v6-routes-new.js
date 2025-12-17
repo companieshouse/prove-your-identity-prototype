@@ -128,7 +128,7 @@ router.post('/alt-routes-v6/post-one-login/nationality', function (req, res) {
 })
 
 
-//ALT ROUTE CHOICE TO ACSP OR COMPANY INFO
+//ALT ROUTE CHOICE TO ACSP OR CURRENT ADDRESS
 
 router.post('/alt-routes-v6/post-one-login/alt-route-choice', function (req, res) {
   // Create empty array
@@ -152,10 +152,44 @@ router.post('/alt-routes-v6/post-one-login/alt-route-choice', function (req, res
       res.redirect('/alt-routes-v6/post-one-login/acsp-route')
     } else {
       // User inputted value so move to next page
-      res.redirect('/alt-routes-v6/post-one-login/company-information')
+      res.redirect('/alt-routes-v6/post-one-login/current-address')
     }
   }
 })
+
+
+//CURRENT ADDRESS TO PREVIOUS ADDRESS OR COMPANY INFO
+// router.post('/alt-routes-v6/post-one-login/current-address', function (req, res) {
+//   res.redirect('/alt-routes-v6/post-one-login/company-information')
+// })
+
+
+router.post('/alt-routes-v6/post-one-login/current-address', function (req, res) {
+  const answer = req.session.data['currentAddress']; 
+
+  if (answer === 'yes') {
+    res.redirect('/alt-routes-v6/post-one-login/company-information');
+  } else if (answer === 'no') {
+    res.redirect('/alt-routes-v6/post-one-login/previous-address');
+  } else {
+    const errors = [{
+      text: 'Select if you have lived at your current address for more than 12 months or not',
+      href: '#currentAddress-yes'
+    }];
+    res.render('alt-routes-v6/post-one-login/current-address', {
+      errorCurrentAddress: true,
+      errorList: errors
+    });
+  }
+});
+
+
+//PREVIOUS ADDRESS TO COMPANY INFO
+router.post('/alt-routes-v6/post-one-login/previous-address', function (req, res) {
+  res.redirect('/alt-routes-v6/post-one-login/company-information')
+})
+
+
 
 //COMPANY INFO TO TRIAGE END WITH DATE PULLED THROUGH
 
