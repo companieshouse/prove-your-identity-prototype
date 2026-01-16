@@ -122,6 +122,9 @@ router.post('/alt-routes-v6/post-one-login/nationality', function (req, res) {
   else if (req.session.data['nationalityOne'] === 'Pakistani') {
     res.redirect('/alt-routes-v6/post-one-login/alt-route-choice')
   }
+  else if (req.session.data['nationalityOne'] === 'South African') {
+    res.redirect('/alt-routes-v6/post-one-login/alt-route-choice')
+  }
   else {
     res.redirect('/alt-routes-v6/post-one-login/failure-evidence')
   }
