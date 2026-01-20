@@ -72,11 +72,20 @@ What was your previous address? – {{ serviceName }} – GOV.UK Prototype Kit
 </div>
 
 <div class="govuk-form-group">
-          <label class="govuk-label" for="autocomplete-default" >Country</label>
-          <p class="govuk-hint">Start typing a country, then choose from the list.</p>
-          <div class="autocomplete-wrapper" id="country"></div>
-
-        </div>
+  <label class="govuk-label" for="location">
+    Country
+  </label>
+  <div id="location-hint" class="govuk-hint">
+    Select country from the dropdown below
+  </div>
+  <select class="govuk-select" id="location" name="location" aria-describedby="location-hint">
+    <option value="choose" selected>Choose country</option>
+    <option value="eastmidlands">Algeria</option>
+    <option value="eastofengland">Brazil</option>
+    <option value="london">Columbia</option>
+    <option value="northeast">United States of America</option>
+   </select>
+</div>
 
         <div class="govuk-form-group">
   <label class="govuk-label" for="postcode">
