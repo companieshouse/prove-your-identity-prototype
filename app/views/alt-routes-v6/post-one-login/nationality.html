@@ -22,45 +22,63 @@ What is your nationality? – {{ serviceName }} – GOV.UK Prototype Kit
       }) }}
     {% endif %}
     <form action="{{currentUrl}}" method="post">
+      
       <div class="govuk-form-group">
         <h1 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--l" for="nationalityOne">
             What is your nationality?
           </label>
         </h1>
-        <div id="nationalityOne-hint" class="govuk-hint">
-          Start typing a nationality, then choose from the list
+        
+        <div class="govuk-form-group">
+          <select class="govuk-select" id="nationalityOne" name="nationalityOne" aria-describedby="nationalityOne-hint">
+            <option value="choose" selected>Choose nationality
+            </option>
+            <option value="American">American</option>
+            <option value="Andorran">Andorran</option>
+            <option value="Armenian">Armenian</option>
+            <option value="Austrian">Austrian</option>
+            <option value="Belgian">Belgian</option>
+            <option value="Bolivian">Bolivian</option>
+            <option value="Brazilian">Brazilian</option>
+            <option value="Bulgarian">Bulgarian</option>
+            <option value="Canadian">Canadian</option>
+            <option value="Chinese">Chinese</option>
+            <option value="Columbian">Columbian</option>
+            <option value="Croatian">Croatian</option>
+            <option value="Danish">Danish</option>
+            <option value="Dutch">Dutch</option>
+            <option value="Estonian">Estonian</option>
+            <option value="French">French</option>
+            <option value="Georgian">Georgian</option>
+            <option value="German">German</option>
+            <option value="Greek">Greek</option>
+            <option value="Hungarian">Hungarian</option>
+            <option value="Icelandic">Icelandic</option>
+            <option value="Indian">Indian</option>
+            <option value="Iranian">Iranian</option>
+            <option value="Irish">Irish</option>
+            <option value="Italian">Italian</option>
+            <option value="Japanese">Japanese</option>
+            <option value="Latvian">Latvian</option>
+            <option value="Luxembourgian">Luxembourgian</option>
+            <option value="Norwegian">Norwegian</option>
+            <option value="Pakistani">Pakistani</option>
+            <option value="Peruvian">Peruvian</option>
+            <option value="Polish">Polish</option>
+            <option value="Portuguese">Portuguese</option>
+            <option value="Romanian">Romanian</option>
+            <option value="Serbian">Serbian</option>
+            <option value="Slovakian">Slovakian</option>
+            <option value="South African">South African</option>
+            <option value="Spanish">Spanish</option>
+            <option value="Swedish">Swedish</option>
+            <option value="Swiss">Swiss</option>
+            <option value="Turkish">Turkish</option>
+            <option value="Ukrainian">Ukrainian</option>
+          </select>
         </div>
-        <select class="govuk-select" id="nationalityOne" name="nationalityOne"
-          data-module="autocomplete" data-autoselect="" data-display-menu="" data-min-length="" data-show-all-values="" data-show-no-options-found="">
-          <option value="" selected disabled>Select an option</option>
-          <option value="Austrian">Austrian</option>
-          <option value="Belgiun">Belgian</option>
-          <option value="Bulgarian">Bulgarian</option>
-          <option value="Croatian">Croatian</option>
-          <option value="Czech">Czech</option>
-          <option value="Danish">Danish</option>
-          <option value="Estonian">Estonian</option>
-          <option value="Finish">Finnish</option>
-          <option value="French">French</option>
-          <option value="German">German</option>
-          <option value="Greek">Greek</option>
-          <option value="Hungarian">Hungarian</option>
-          <option value="Indian">Indian</option>
-          <option value="Irish">Irish</option>
-          <option value="Italian">Italian</option>
-          <option value="Latvian">Latvian</option>
-          <option value="Lithuanian">Lithuanian</option>
-          <option value="Dutch">Dutch</option>
-          <option value="Pakistani">Pakistani</option>
-          <option value="Polish">Polish</option>
-          <option value="portuguese">Portuguese</option>
-          <option value="Romanian">Romanian</option>
-          <option value="Slovakian">Slovakian</option>
-          <option value="Slovenian">Slovenian</option>
-          <option value="Spanish">Spanish</option>
-          <option value="Swedish">Swedish</option>
-        </select>
+       
       </div>
 
     
@@ -73,34 +91,51 @@ What is your nationality? – {{ serviceName }} – GOV.UK Prototype Kit
           <div id="nationalityTwo-hint" class="govuk-hint">
             Dual citizenship (also known as dual nationality) is allowed in some countries. This means you can be a citizen of 2 countries at the same time.
           </div>
-          <select class="govuk-select" id="nationalityTwo" name="nationalityTwo"
-            data-module="autocomplete" data-autoselect="" data-display-menu="" data-min-length="" data-show-all-values="" data-show-no-options-found="">
-            <option value="" selected disabled>Select an option</option>
-            <option value="Austria">Austrian</option>
-            <option value="Belgium">Belgian</option>
-            <option value="Bulgaria">Bulgarian</option>
-            <option value="Croatia">Croatian</option>
-            <option value="Czech Republic">Czech</option>
-            <option value="Denmark">Danish</option>
-            <option value="Estonia">Estonian</option>
-            <option value="Finland">Finnish</option>
-            <option value="France">French</option>
-            <option value="Germany">German</option>
-            <option value="Greece">Greek</option>
-            <option value="Hungary">Hungarian</option>
-            <option value="India">Indian</option>
-            <option value="Ireland">Irish</option>
-            <option value="Italy">Italian</option>
-            <option value="Latvia">Latvian</option>
-            <option value="Lithuania">Lithuanian</option>
-            <option value="Netherlands">Dutch</option>
-            <option value="Poland">Polish</option>
-            <option value="Portugal">Portuguese</option>
-            <option value="Romania">Romanian</option>
-            <option value="Slovakia">Slovakian</option>
-            <option value="Slovenia">Slovenian</option>
-            <option value="Spain">Spanish</option>
-            <option value="Sweden">Swedish</option>
+          <select class="govuk-select" id="nationalityTwo" name="nationalityTwo" aria-describedby="nationalityTwo-hint">
+            <option value="choose" selected>Choose nationality
+            </option>
+            <option value="American">American</option>
+            <option value="Andorran">Andorran</option>
+            <option value="Armenian">Armenian</option>
+            <option value="Austrian">Austrian</option>
+            <option value="Belgian">Belgian</option>
+            <option value="Bolivian">Bolivian</option>
+            <option value="Brazilian">Brazilian</option>
+            <option value="Bulgarian">Bulgarian</option>
+            <option value="Canadian">Canadian</option>
+            <option value="Chinese">Chinese</option>
+            <option value="Columbian">Columbian</option>
+            <option value="Croatian">Croatian</option>
+            <option value="Danish">Danish</option>
+            <option value="Dutch">Dutch</option>
+            <option value="Estonian">Estonian</option>
+            <option value="French">French</option>
+            <option value="Georgian">Georgian</option>
+            <option value="German">German</option>
+            <option value="Greek">Greek</option>
+            <option value="Hungarian">Hungarian</option>
+            <option value="Icelandic">Icelandic</option>
+            <option value="Indian">Indian</option>
+            <option value="Iranian">Iranian</option>
+            <option value="Irish">Irish</option>
+            <option value="Italian">Italian</option>
+            <option value="Japanese">Japanese</option>
+            <option value="Latvian">Latvian</option>
+            <option value="Luxembourgian">Luxembourgian</option>
+            <option value="Norwegian">Norwegian</option>
+            <option value="Pakistani">Pakistani</option>
+            <option value="Peruvian">Peruvian</option>
+            <option value="Polish">Polish</option>
+            <option value="Portuguese">Portuguese</option>
+            <option value="Romanian">Romanian</option>
+            <option value="Serbian">Serbian</option>
+            <option value="Slovakian">Slovakian</option>
+            <option value="South African">South African</option>
+            <option value="Spanish">Spanish</option>
+            <option value="Swedish">Swedish</option>
+            <option value="Swiss">Swiss</option>
+            <option value="Turkish">Turkish</option>
+            <option value="Ukrainian">Ukrainian</option>
           </select>
         </div>
 
@@ -113,34 +148,51 @@ What is your nationality? – {{ serviceName }} – GOV.UK Prototype Kit
           <div id="nationalityThree-hint" class="govuk-hint">
             Multiple citizenship (also known as multiple nationality) is allowed in some countries. This means you can be a citizen of 3 countries at the same time.
           </div>
-          <select class="govuk-select" id="nationalityThree" name="nationalityThree"
-            data-module="autocomplete" data-autoselect="" data-display-menu="" data-min-length="" data-show-all-values="" data-show-no-options-found="">
-            <option value="" selected disabled>Select an option</option>
-            <option value="Austria">Austrian</option>
-            <option value="Belgium">Belgian</option>
-            <option value="Bulgaria">Bulgarian</option>
-            <option value="Croatia">Croatian</option>
-            <option value="Czech Republic">Czech</option>
-            <option value="Denmark">Danish</option>
-            <option value="Estonia">Estonian</option>
-            <option value="Finland">Finnish</option>
-            <option value="France">French</option>
-            <option value="Germany">German</option>
-            <option value="Greece">Greek</option>
-            <option value="Hungary">Hungarian</option>
-            <option value="India">Indian</option>
-            <option value="Ireland">Irish</option>
-            <option value="Italy">Italian</option>
-            <option value="Latvia">Latvian</option>
-            <option value="Lithuania">Lithuanian</option>
-            <option value="Netherlands">Dutch</option>
-            <option value="Poland">Polish</option>
-            <option value="Portugal">Portuguese</option>
-            <option value="Romania">Romanian</option>
-            <option value="Slovakia">Slovakian</option>
-            <option value="Slovenia">Slovenian</option>
-            <option value="Spain">Spanish</option>
-            <option value="Sweden">Swedish</option>
+          <select class="govuk-select" id="nationalityThree" name="nationalityThree" aria-describedby="nationalityThree-hint">
+            <option value="choose" selected>Choose nationality
+            </option>
+            <option value="American">American</option>
+            <option value="Andorran">Andorran</option>
+            <option value="Armenian">Armenian</option>
+            <option value="Austrian">Austrian</option>
+            <option value="Belgian">Belgian</option>
+            <option value="Bolivian">Bolivian</option>
+            <option value="Brazilian">Brazilian</option>
+            <option value="Bulgarian">Bulgarian</option>
+            <option value="Canadian">Canadian</option>
+            <option value="Chinese">Chinese</option>
+            <option value="Columbian">Columbian</option>
+            <option value="Croatian">Croatian</option>
+            <option value="Danish">Danish</option>
+            <option value="Dutch">Dutch</option>
+            <option value="Estonian">Estonian</option>
+            <option value="French">French</option>
+            <option value="Georgian">Georgian</option>
+            <option value="German">German</option>
+            <option value="Greek">Greek</option>
+            <option value="Hungarian">Hungarian</option>
+            <option value="Icelandic">Icelandic</option>
+            <option value="Indian">Indian</option>
+            <option value="Iranian">Iranian</option>
+            <option value="Irish">Irish</option>
+            <option value="Italian">Italian</option>
+            <option value="Japanese">Japanese</option>
+            <option value="Latvian">Latvian</option>
+            <option value="Luxembourgian">Luxembourgian</option>
+            <option value="Norwegian">Norwegian</option>
+            <option value="Pakistani">Pakistani</option>
+            <option value="Peruvian">Peruvian</option>
+            <option value="Polish">Polish</option>
+            <option value="Portuguese">Portuguese</option>
+            <option value="Romanian">Romanian</option>
+            <option value="Serbian">Serbian</option>
+            <option value="Slovakian">Slovakian</option>
+            <option value="South African">South African</option>
+            <option value="Spanish">Spanish</option>
+            <option value="Swedish">Swedish</option>
+            <option value="Swiss">Swiss</option>
+            <option value="Turkish">Turkish</option>
+            <option value="Ukrainian">Ukrainian</option>
           </select>
         </div>
       </div>

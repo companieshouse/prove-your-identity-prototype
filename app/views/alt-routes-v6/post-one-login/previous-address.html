@@ -24,7 +24,7 @@ What was your previous address? – {{ serviceName }} – GOV.UK Prototype Kit
 
       <div class="govuk-form-group">
   <label class="govuk-label" for="propertyName">
-    Property name or number
+    Property name or number (optional)
   </label>
 
   <div id="propertyName-hint" class="govuk-hint">
@@ -55,7 +55,7 @@ What was your previous address? – {{ serviceName }} – GOV.UK Prototype Kit
 
 <div class="govuk-form-group">
   <label class="govuk-label" for="town">
-    City or town
+    City or town (optional)
   </label>
 
 <input class="govuk-input" id="town" name="town" type="text">
@@ -72,15 +72,68 @@ What was your previous address? – {{ serviceName }} – GOV.UK Prototype Kit
 </div>
 
 <div class="govuk-form-group">
-          <label class="govuk-label" for="autocomplete-default" >Country</label>
-          <p class="govuk-hint">Start typing a country, then choose from the list.</p>
-          <div class="autocomplete-wrapper" id="country"></div>
-
-        </div>
+  <label class="govuk-label" for="location">
+    Country
+  </label>
+  <select class="govuk-select" id="location" name="location" aria-describedby="location-hint">
+    <option value="choose" selected>Choose country</option>
+    <option value="eastmidlands">Albania</option>
+    <option value="eastofengland">Andorra</option>
+    <option value="london">Armenia</option>
+    <option value="northeast">Austria</option>
+    <option value="eastofengland">Azerbaijan</option>
+    <option value="london">Belarus</option>
+    <option value="northeast">Belgium</option>
+    <option value="eastmidlands">Bulgaria</option>
+    <option value="eastofengland">Croatia</option>
+    <option value="london">Columbia</option>
+    <option value="northeast">Cyprus</option>
+    <option value="eastofengland">Czech Republic</option>
+    <option value="london">Denmark</option>
+    <option value="northeast">Estonia</option>
+    <option value="eastmidlands">Finland</option>
+    <option value="eastofengland">France</option>
+    <option value="london">Georgia</option>
+    <option value="northeast">Germany</option>
+    <option value="eastofengland">Greece</option>
+    <option value="london">Hungary</option>
+    <option value="northeast">Iceland</option>
+    <option value="london">India</option>
+    <option value="eastmidlands">Ireland</option>
+    <option value="eastofengland">Italy</option>
+    <option value="london">Kosovo</option>
+    <option value="northeast">Latvia</option>
+    <option value="eastofengland">Lithuania</option>
+    <option value="london">Luxembourg</option>
+    <option value="northeast">Macedonia</option>
+    <option value="eastmidlands">Malta</option>
+    <option value="london">Moldova</option>
+    <option value="northeast">Monaco</option>
+    <option value="eastofengland">Montenegro</option>
+    <option value="london">Netherlands</option>
+    <option value="northeast">Norway</option>
+    <option value="london">Pakistan</option>
+    <option value="eastmidlands">Poland</option>
+    <option value="eastofengland">Portugal</option>
+    <option value="london">Romania</option>
+    <option value="northeast">San Marino</option>
+    <option value="eastofengland">Serbia</option>
+    <option value="london">Slovakia</option>
+    <option value="london">South Africa</option>
+    <option value="northeast">Spain</option>
+    <option value="eastmidlands">Sweden</option>
+    <option value="eastofengland">Switzerland</option>
+    <option value="london">Turkey</option>
+    <option value="northeast">Ukraine</option>
+    <option value="northeast">United States of America</option>
+     <option value="eastofengland">Vatican City</option>
+   
+   </select>
+</div>
 
         <div class="govuk-form-group">
   <label class="govuk-label" for="postcode">
-    Postcode or ZIP
+    Postcode or ZIP (optional)
   </label>
 
 <input class="govuk-input govuk-input--width-10" id="postcode" name="postcode" type="text">
