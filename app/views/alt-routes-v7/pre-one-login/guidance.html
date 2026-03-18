@@ -1,0 +1,281 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start - Prove your identity 
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for this page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Guidance</span>
+      <h1 class="govuk-heading-l">Verifying your identity for Companies House</h1>
+
+      <p class="govuk-body-l">You need to prove who you are to set up, run, own or control a company in the UK. </p>
+
+      <aside class="govuk-prototype-kit-common-templates-mainstream-guide-contents-list" role="complementary">
+        <nav class="govuk-prototype-kit-common-templates-contents-list" aria-label="Pages in this guide" role="navigation">
+          <h2 class="govuk-prototype-kit-common-templates-contents-list__title">
+            Contents
+          </h2>
+          <ol class="govuk-prototype-kit-common-templates-contents-list__list">
+            <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed govuk-prototype-kit-common-templates-contents-list__list-item--active">
+              <a href="#content-1">
+                Why you need to verify your identity
+              </a>
+            </li>
+            <li class="govuk-prototype-kit-common-templates-contents-list__list-item  govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+              <a href="#content-2">
+                Who needs to verify
+              </a>
+            </li>
+            <li class="govuk-prototype-kit-common-templates-contents-list__list-item  govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+              <a href="#content-3">
+                When you need to verify
+              </a>
+            </li>
+            <li class="govuk-prototype-kit-common-templates-contents-list__list-item govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+              <a href="#content-4">
+                How to verify your identity
+              </a>
+            </li>
+            
+            <li class="govuk-prototype-kit-common-templates-contents-list__list-item
+            govuk-prototype-kit-common-templates-contents-list__list-item--dashed 
+            
+            govuk-prototype-kit-common-templates-contents-list__list-item--active">
+              <a href="#content-5">
+                What happens when you verify
+              </a>
+            </li>
+
+            <li class="govuk-prototype-kit-common-templates-contents-list__list-item
+            govuk-prototype-kit-common-templates-contents-list__list-item--dashed 
+            
+            govuk-prototype-kit-common-templates-contents-list__list-item--active">
+              <a href="#content-6">
+                What you need to do with your Companies House personal code
+              </a>
+            </li>
+
+            <li class="govuk-prototype-kit-common-templates-contents-list__list-item 
+            govuk-prototype-kit-common-templates-contents-list__list-item--dashed">
+              <a href="#content-7">
+                What happens if you do not verify
+              </a>
+            </li>
+
+          </ol>
+        </nav>
+      </aside>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds govuk-prototype-kit-common-templates-mainstream-guide-body">
+
+
+      <!-- *********** Why you need to verify your identity **************-->
+      <h2 id="content-1" class="govuk-heading-m">Why you need to verify your identity</h2>
+
+      <p>Identity verification is a new legal requirement. It will help to deter people intending to use companies for illegal purposes.  </p>
+
+      <p>By law, you will need to verify your identity to confirm you are who you claim to be.</p>
+
+      <p class="govuk-body">This will:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>reduce the risk of fraud </li>
+        <li>improve transparency, trust and accuracy of information on the Companies House register</li>
+      </ul>
+      <!-- ***************************************************************-->
+
+
+
+    <!-- ************* Who needs to verify their identity **************-->
+
+    <h2 id="content-2" class="govuk-heading-m">Who needs to verify</h2>
+
+    <p class="govuk-body">You'll need to verify your identity if you are: </p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>a director</li>
+      <li>the equivalent of a director – this includes members, general partners and managing officers</li>
+      <li>a <a href="https://www.gov.uk/guidance/people-with-significant-control-pscs" class="govuk-link">person with significant control (PSC)</a></li>
+      <li>an Authorised Corporate Service Provider (ACSP) - also known as a Companies House authorised agent</li>
+      <li>someone who files for a company - for example, a company secretary</li>
+    </ul>
+    <p>In most cases, you'll only need to verify your identity once. You must not verify again unless we tell you to.</p>
+
+    <!-- ***************************************************************-->
+
+     <!-- ************* When you need to verify **************-->
+
+     <h2 id="content-3" class="govuk-heading-m">When you need to verify</h2>
+
+     <p class="govuk-body">This depends on your role, and when you started that role. </p>
+ <p><a href="../pre-one-login/guidance-when-acsps-only" class="govuk-link">Find out when you need to verify</a>.</p>   
+ 
+     <!-- ***************************************************************-->
+
+    <!-- ************* How to verify your identity **************-->
+    <h2 id="content-4" class="govuk-heading-m">How to verify your identity</h2>
+
+    <h3 class="govuk-heading-s">Online </h3>
+
+    <p>You can verify online if you have the identity documents or information required. This route uses GOV.UK One Login to verify your identity and is free of charge.</p>
+
+    <p class="govuk-body">You'll need one of the following types of photo ID:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>biometric passport from any country</li>
+      <li>UK photo driving licence (full or provisional)</li>
+      <li>UK <a href="https://www.gov.uk/biometric-residence-permits" class="govuk-link">biometric residence permit (BRP)</a></li>
+      <li>UK <a href="https://www.gov.uk/uk-residence-card" class="govuk-link">biometric residence card (BRC)</a></li>
+      <li>UK <a href="https://www.gov.uk/frontier-worker-permit" class="govuk-link">Frontier Worker permit (FWP)</a></li>
+    </ul>
+
+    <p>GOV.UK One Login will ask you some simple questions to find the best way for you to verify your identity online. Depending on your answers, you’ll then be guided to verify using a GOV.UK mobile phone app or in your web browser.</p>
+
+    <p class="govuk-body">If you do not have any of these types of ID but live in the UK, you may be able to verify with bank or building society details instead. You'll need to use the 'Verify your identity for Companies House' service to find out if you can verify this way.</p>
+
+    <p class="govuk-body grey-box"><b><a class="govuk-link govuk-link--no-visited-state" href="start.html">
+      Verify your identity for Companies House</a></b>
+    </p>
+
+    <h3 class="govuk-heading-s">In person at a Post Office </h3>
+
+    <p>If you cannot verify online and you live in the UK, you may be able to verify your identity in person at a Post Office. You'll need to use the <a href="start.html" class="govuk-link">Verify your identity for Companies House</a> service first to find out if you can verify this way. This route uses GOV.UK One Login to verify your identity and is free of charge.</p>
+
+    <p class="govuk-body"><a href="https://www.gov.uk/using-your-gov-uk-one-login/proving-your-identity" class="govuk-link">Find out more about verifying at a Post Office</a>, including what you'll need.</p>
+
+    <!-- <p class="govuk-body">You'll need one type of photo ID, such as a:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>passport</li>
+      <li>UK or EU photo driving licence (full or provisional)</li>
+      <li>UK <a href="https://www.gov.uk/biometric-residence-permits" class="govuk-link">biometric residence permit (BRP)</a></li>
+      <li>national identity photocard from the EU, Norway, Iceland and Liechtenstein</li>
+    </ul> -->
+
+    <h3 class="govuk-heading-s">Using an Authorised Corporate Service Provider (ACSP) </h3>
+
+    <p class="govuk-body">From spring 2025, you'll be able to ask a <a href="/release1-dev-v3/post-one-login/acsp-route" class="govuk-link">Authorised Corporate Service Provider (ACSP)</a> to verify your identity on your behalf. For example, an accountant or solicitor. This is also known as a Companies House authorised agent.</p>
+      
+      <p class="govuk-body">You can do this from any country, 
+    but your agent must register with Companies House in order to become authorised. They must be registered with a UK Anti-Money Laundering (AML) supervisory body. </p> 
+    
+    <p class="govuk-body">Your agent will let you know which documents you must provide as evidence to verify your identity. They may charge a fee for their services.</p> 
+   
+
+  
+
+    <!-- ***************************************************************-->
+
+ 
+
+    <!-- ************* What happens when you verify **************-->
+
+      <h2 id="content-5" class="govuk-heading-m">What happens when you verify</h2>
+      
+      <p class="govuk-body">When you have successfully verified, you'll get a unique identifier known as a Companies House personal code. The code is personal to you, not your company or a company you work for.
+        
+        <p>From [date], you'll need it for various reasons. For example:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>when you file your <a href="https://www.gov.uk/running-a-limited-company/confirmation-statement" class="govuk-link">confirmation statement</a></li>
+        <li>if you are appointed as a director</li>
+        <li>if you become a 
+          <a href="https://www.gov.uk/guidance/people-with-significant-control-pscs" class="govuk-link">person with significant control (PSC)</a>
+        </li>
+      </ul>
+
+      <p class="govuk-body">If you are currently a director or a PSC, you'll need to use your Companies House personal code to connect your verified identity to our records. This is a legal requirement, and will ensure that we know the correct identity is linked to any roles you hold.
+      </p>
+
+      <h3 class="govuk-heading-s">Only share the personal code with people you trust </h3>
+
+      <p class="govuk-body">You may need to share this code with people you trust to file on your behalf, or for your company. Keep this information secure, as you would with other unique codes such as your Unique Taxpayer Reference (UTR) for HMRC.</p> 
+      <p class="govuk-body">Identity verification makes it much more difficult for criminals to impersonate someone, but not impossible.
+        </p>
+
+        <h3 class="govuk-heading-s">How your information is stored and used </h3>
+
+        <p class="govuk-body">To find out how your information is stored and used when you verify your identity with GOV.UK One Login, check the
+          <a href="https://signin.account.gov.uk/privacy-notice?_ga=2.168315681.1845253638.1708680239-839239228.1680594407" class="govuk-link">GOV.UK One Login privacy notice</a>.
+        </p>
+
+
+
+<!-- *********** What you need to do with your Companies House personal code **************-->
+
+<h2 id="content-6" class="govuk-heading-m">What you need to do with your Companies House personal code</h2>
+
+<p>This depends on your role, and when you started that role.</p>
+
+<p>If you’re a director or a PSC, you'll need to use your Companies House personal code to connect your verified identity to our records. This is part of the legal requirement to verify your identity for Companies House.</p>
+
+<h3 class="govuk-heading-s">Directors</h3>
+
+      <p>If you’re currently a director, from [date] you’ll need to provide your personal code as part of your company’s next confirmation statement filing. </p>
+
+<p> If you become a director after [date], you’ll need to provide it as part of your appointment filing or when you incorporate a company.</p>
+
+<h3 class="govuk-heading-s">People with significant control (PSCs)</h3>
+
+<p>If you’re currently a PSC, from [date] you'll need to provide your personal code using the <a href="#" class="govuk-link">Provide verification details for a PSC</a> service. You’ll have 14 days from the date of the company’s next confirmation statement.</p>
+
+<p>If you become a PSC after [date], you’ll be given the option to provide your personal code when you’re registered at Companies House. If you do not, you’ll have 14 days from the date you’re registered to provide your code using the <a href="#" class="govuk-link">Provide verification details for a PSC</a> service.</p>
+
+<h3 class="govuk-heading-s">Authorised Corporate Service Providers (ACSPs)</h3>
+
+      <p>These are also known as Companies House authorised agents. From [date], you'll need to provide your personal code to register as an authorised agent. From [date], you'll also need to provide it as part of some filings.</p>
+
+<!-- *********** What happens if you do not verify **************-->
+
+<h2 id="content-7" class="govuk-heading-m">What happens if you do not verify</h2>
+<!--
+<p class="govuk-body">
+  There will be a transition period for existing directors and people with significant control (PSCs), so that you have time to do what the regulations require.
+</p>
+
+<p><a href="../pre-one-login/guidance-when" class="govuk-link">
+ Find out when you need to verify your identity</a></p> -->
+
+{{ govukWarningText({
+  text: "If you do not comply with identity verification requirements on time, you will be committing an offence and may have to pay a financial penalty or fine.",
+  iconFallbackText: "Warning"
+}) }}
+
+<p class="govuk-body">You will not be able to:</p>
+<ul class="govuk-list govuk-list--bullet">
+<li>make any filings</li>
+<li>start a new company or entity</li>
+<li>register as an ACSP (also known as a Companies House authorised agent)</li>
+</ul>
+
+<h3 class="govuk-heading-s">Directors</h3>
+
+<p class="govuk-body">
+  If you continue to act as a director without verifying after it becomes a legal requirement, you will be committing an offence and could be disqualified. The company (or entity) and all directors may also be committing an offence. 
+</p>
+
+<h3 class="govuk-heading-s">People with significant control (PSCs)</h3>
+
+<p class="govuk-body">
+  If you are (or were) a PSC without verifying after it becomes a legal requirement, you will be committing an offence.
+</p>
+
+<!-- ***************************************************************-->
+
+    </div>
+
+
+    
+  </div>
+{% endblock %}
