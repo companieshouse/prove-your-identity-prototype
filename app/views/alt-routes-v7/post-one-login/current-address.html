@@ -79,7 +79,7 @@ We will store your home address as part of your verification record. It will not
     Country
   </label>
 
-  <select class="govuk-select" id="location" name="location" aria-describedby="location-hint">
+  <select class="govuk-select" id="country" name="country" aria-describedby="location-hint">
     <option value="choose" selected>Choose country</option>
     <option value="eastmidlands">Albania</option>
     <option value="eastofengland">Andorra</option>
@@ -129,6 +129,7 @@ We will store your home address as part of your verification record. It will not
     <option value="eastofengland">Switzerland</option>
     <option value="london">Turkey</option>
     <option value="northeast">Ukraine</option>
+    <option value="unitedkingdom">United Kingdom</option>
     <option value="northeast">United States of America</option>
     <option value="eastofengland">Vatican City</option>
    
@@ -149,13 +150,14 @@ We will store your home address as part of your verification record. It will not
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <!-- Check for error -->
-    {% if errorCurrentAddress %}
-      {{ govukErrorSummary({
-        titleText: "There is a problem",
-        errorList: errorList
-      }) }}
-    {% endif %}
+  
     <form action="{{currentUrl}}" method="post">
+
+ {% if errorCurrentAddress %}
+      <div class="govuk-form-group govuk-form-group--error">
+      {% else %}
+      <div class="govuk-form-group">
+      {% endif %} 
 
       <!-- Check for error -->
       {% if errorCurrentAddress %}
