@@ -15,6 +15,14 @@ What is your current address? – {{ serviceName }} – GOV.UK Prototype Kit
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
+    <!-- Check for error -->
+    {% if errorCurrentAddress %}
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: errorList
+      }) }}
+    {% endif %}
+
 <h1 class="govuk-heading-l">What is your current home address?</h1>
         <div id="event-name-hint" class="govuk-hint">
             Tell us where you live. Only give a business address if you also live there.
@@ -137,24 +145,18 @@ We will store your home address as part of your verification record. It will not
 
 
 
-        <div class="govuk-form-group">
-  <label class="govuk-label" for="postcode">
-    Postcode or ZIP (optional)
-  </label>
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="postcode">
+        Postcode or ZIP (optional)
+      </label>
 
-<input class="govuk-input govuk-input--width-10" id="postcode" name="postcode" type="text">
+      <input class="govuk-input govuk-input--width-10" id="postcode" name="postcode" type="text">
 
-</div>
+    </div>
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <!-- Check for error -->
-    {% if errorCurrentAddress %}
-      {{ govukErrorSummary({
-        titleText: "There is a problem",
-        errorList: errorList
-      }) }}
-    {% endif %}
+
+
     <form action="{{currentUrl}}" method="post">
 
       <!-- Check for error -->
@@ -198,7 +200,7 @@ We will store your home address as part of your verification record. It will not
       }) }}
 
     </form>
-  </div>
+
 </div>
 </div>
 </div>
