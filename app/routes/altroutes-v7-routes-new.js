@@ -176,25 +176,43 @@ router.get('/alt-routes-v7/post-one-login/current-address', function (req, res) 
   })
 })
 
-router.post('/alt-routes-v7/post-one-login/current-address', function (req, res) {
-  const answer = req.session.data['currentAddress']; 
 
-  if (answer === 'yes') {
-    res.redirect('/alt-routes-v7/post-one-login/company-information');
-  } else if (answer === 'no') {
-    res.redirect('/alt-routes-v7/post-one-login/previous-address');
-  } 
-  
+
+
+router.post('/alt-routes-v7/post-one-login/current-address', function (req, res) {
+  const addressLineOne = req.session.data['addressOne'];
+  var errorAddressOne = false
+  var errors = []
+
+
+  if (req.session.data['currentAddress'] === 'yes') {
+
+    req.session.data['currentAddress'] = undefined;
+
+    res.redirect('/alt-routes-v7/post-one-login/company-information2');
+
+  }
+
+  else if (req.session.data['currentAddress'] === 'no') {
+
+    req.session.data['currentAddress'] = undefined;
+
+    res.redirect('/alt-routes-v7/post-one-login/company-information3');
+  }
+
   else {
-    const errors = [{
-      text: 'Select if you have lived at your current address for more than 12 months or not',
-      href: '#currentAddress-yes'
-    }];
-    res.render('alt-routes-v7/post-one-login/current-address', {
+
+    errors.push({
+      text: 'Select if you have lived at your current address for more than 12 months',
+      href: '#declaration'
+    });
+
+    res.render('/alt-routes-v7/post-one-login/current-address', {
       errorCurrentAddress: true,
       errorList: errors
     });
   }
+
 });
 
 

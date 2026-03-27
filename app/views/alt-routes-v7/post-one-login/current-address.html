@@ -30,13 +30,13 @@ What is your current address? – {{ serviceName }} – GOV.UK Prototype Kit
         </div>
 
         <div class="govuk-inset-text">
-We will store your home address as part of your verification record. It will not be used for any other reason.
-</div>
+        We will store your home address as part of your verification record. It will not be used for any other reason.
+        </div>
 
       <div class="govuk-form-group">
-  <label class="govuk-label" for="propertyName">
-    Property name or number (optional)
-  </label>
+      <label class="govuk-label" for="propertyName">
+        Property name or number (optional)
+      </label>
 
   <div id="propertyName-hint" class="govuk-hint">
     For example, &#39;The Mill&#39;, &#39;116&#39; or &#39;Flat 37a&#39;
@@ -46,14 +46,30 @@ We will store your home address as part of your verification record. It will not
 
 </div>
 
-<div class="govuk-form-group">
-  <label class="govuk-label" for="addressOne">
-    Address line 1
-  </label>
 
-<input class="govuk-input" id="addressOne" name="addressOne" type="text">
+<!-- Address Line One -->
+
+<div class="govuk-form-group govuk-form-group--error">
+
+
+  <label class="govuk-label" for="addressOne"> Address line 1 </label>
+
+
+      <p id="addressOne-error" class="govuk-error-message">
+        
+        <span class="govuk-visually-hidden">Error:</span> Enter address line one
+
+      </p>
+
+      <input class="govuk-input govuk-input--error" id="addressOne" name="addressOne" type="text" aria-describedby="addressOne-error" autocomplete="address-line1">
+
+
+    <!--   <input class="govuk-input" id="addressOne" name="addressOne" type="text">-->
+
+
 
 </div>
+
         
 <div class="govuk-form-group">
   <label class="govuk-label" for="addressTwo">
@@ -73,9 +89,11 @@ We will store your home address as part of your verification record. It will not
 
 </div>
 
-<div class="govuk-form-group">
+
+
+ <div class="govuk-form-group"> 
   <label class="govuk-label" for="county">
-    County, state, province or region (optional)
+    Country, state, province or region (optional)
   </label>
 
 <input class="govuk-input" id="county" name="county" type="text">
@@ -83,12 +101,21 @@ We will store your home address as part of your verification record. It will not
 </div>
 
 
-<div class="govuk-form-group">
+<div class="govuk-form-group govuk-form-group--error"> 
+
+
+<p id="county-error" class="govuk-error-message">
+    <span class="govuk-visually-hidden">Error:</span> Select a country
+  </p> 
+
   <label class="govuk-label" for="location">
     Country
   </label>
 
-  <select class="govuk-select" id="country" name="country" aria-describedby="location-hint">
+  <select class="govuk-select govuk-select--error" id="country" name="country" aria-describedby="country-hint location-error">
+
+
+ <!--  <select class="govuk-select" id="country" name="country" aria-describedby="location-hint"> -->
     <option value="choose" selected>Choose country</option>
     <option value="unitedkingdom">United Kingdom</option>
     <option value="eastmidlands">Albania</option>
@@ -167,7 +194,7 @@ We will store your home address as part of your verification record. It will not
       <div class="govuk-form-group">
       {% endif %} 
 
-        <fieldset class="govuk-fieldset" aria-describedby="curretnAddress-hint">
+        <fieldset class="govuk-fieldset" aria-describedby="currentAddress-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
             <h1 class="govuk-fieldset__heading">
               Have you lived at your current address for more than 12 months?
