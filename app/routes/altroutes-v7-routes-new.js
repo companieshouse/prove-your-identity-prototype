@@ -183,7 +183,9 @@ router.post('/alt-routes-v7/post-one-login/current-address', function (req, res)
     res.redirect('/alt-routes-v7/post-one-login/company-information');
   } else if (answer === 'no') {
     res.redirect('/alt-routes-v7/post-one-login/previous-address');
-  } else {
+  } 
+  
+  else {
     const errors = [{
       text: 'Select if you have lived at your current address for more than 12 months or not',
       href: '#currentAddress-yes'

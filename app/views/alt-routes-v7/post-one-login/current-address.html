@@ -156,10 +156,9 @@ We will store your home address as part of your verification record. It will not
 
 </div>
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <!-- Check for error -->
-  
+
+
+
 
 
  {% if errorCurrentAddress %}
@@ -168,12 +167,6 @@ We will store your home address as part of your verification record. It will not
       <div class="govuk-form-group">
       {% endif %} 
 
-      <!-- Check for error -->
-      {% if errorCurrentAddress %}
-      <div class="govuk-form-group govuk-form-group--error">
-      {% else %}
-      <div class="govuk-form-group">
-      {% endif %} 
         <fieldset class="govuk-fieldset" aria-describedby="curretnAddress-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
             <h1 class="govuk-fieldset__heading">
@@ -203,7 +196,8 @@ We will store your home address as part of your verification record. It will not
           </div>
         </fieldset>
       </div>
-      </div>
+
+
 
       {{ govukButton({
         text: "Continue"
