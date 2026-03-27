@@ -13,9 +13,18 @@ What is your current address? – {{ serviceName }} – GOV.UK Prototype Kit
 {% block content %}
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds-from-desktop">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+    <form action="{{currentUrl}}" method="post">
 
-<h1 class="govuk-heading-l">What is your current home address?</h1>
+    <!-- Check for error -->
+    {% if errorCurrentAddress %}
+      {{ govukErrorSummary({
+        titleText: "There is a problem",
+        errorList: errorList
+      }) }}
+    {% endif %}
+
+      <h1 class="govuk-heading-l">What is your current home address?</h1>
         <div id="event-name-hint" class="govuk-hint">
             Tell us where you live. Only give a business address if you also live there.
         </div>
@@ -81,6 +90,7 @@ We will store your home address as part of your verification record. It will not
 
   <select class="govuk-select" id="country" name="country" aria-describedby="location-hint">
     <option value="choose" selected>Choose country</option>
+    <option value="unitedkingdom">United Kingdom</option>
     <option value="eastmidlands">Albania</option>
     <option value="eastofengland">Andorra</option>
     <option value="london">Armenia</option>
@@ -129,7 +139,6 @@ We will store your home address as part of your verification record. It will not
     <option value="eastofengland">Switzerland</option>
     <option value="london">Turkey</option>
     <option value="northeast">Ukraine</option>
-    <option value="unitedkingdom">United Kingdom</option>
     <option value="northeast">United States of America</option>
     <option value="eastofengland">Vatican City</option>
    
@@ -138,7 +147,7 @@ We will store your home address as part of your verification record. It will not
 
 
 
-        <div class="govuk-form-group">
+  <div class="govuk-form-group">
   <label class="govuk-label" for="postcode">
     Postcode or ZIP (optional)
   </label>
@@ -151,7 +160,7 @@ We will store your home address as part of your verification record. It will not
   <div class="govuk-grid-column-two-thirds">
     <!-- Check for error -->
   
-    <form action="{{currentUrl}}" method="post">
+
 
  {% if errorCurrentAddress %}
       <div class="govuk-form-group govuk-form-group--error">
@@ -193,6 +202,7 @@ We will store your home address as part of your verification record. It will not
             </div>
           </div>
         </fieldset>
+      </div>
       </div>
 
       {{ govukButton({

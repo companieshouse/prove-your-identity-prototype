@@ -167,6 +167,15 @@ router.post('/alt-routes-v7/post-one-login/alt-route-choice', function (req, res
 // })
 
 
+
+// ******* current address ********************************
+router.get('/alt-routes-v7/post-one-login/current-address', function (req, res) {
+  // Set URl
+  res.render('/alt-routes-v7/post-one-login/current-address', {
+    currentUrl: req.originalUrl
+  })
+})
+
 router.post('/alt-routes-v7/post-one-login/current-address', function (req, res) {
   const answer = req.session.data['currentAddress']; 
 
