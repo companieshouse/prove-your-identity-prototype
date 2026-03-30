@@ -214,16 +214,7 @@ router.post('/alt-routes-v7/post-one-login/current-address', function (req, res)
         href: '#adressOne'
       });
     }
-  /*
-   * User has not selected current address 
-   */
-    if (req.session.data['currentAddress'] === undefined){
-      currentAddressError = true
-      errors.push({
-        text: 'Select if you have lived at your current address for more than 12 months',
-        href: '#currentAddress'
-      });
-    }
+  
   /*
    * If the user has not selected an address and the default is shown
    */
@@ -235,6 +226,16 @@ router.post('/alt-routes-v7/post-one-login/current-address', function (req, res)
       });
     }
 
+    /*
+   * User has not selected current address 
+   */
+    if (req.session.data['currentAddress'] === undefined){
+      currentAddressError = true
+      errors.push({
+        text: 'Select if you have lived at your current address for more than 12 months',
+        href: '#currentAddress'
+      });
+    }
   /*
    * If one or more errors is thrown
    */
@@ -243,8 +244,8 @@ router.post('/alt-routes-v7/post-one-login/current-address', function (req, res)
       req.session.data['country'][0] = 'choose'
       res.render('/alt-routes-v7/post-one-login/current-address', {
         errorAddressOne: addressLineOneError,
-        errorCurrentAddress: currentAddressError,
         errorCountry: chooseCountryError,
+        errorCurrentAddress: currentAddressError,
         errorList: errors
       })
     }
