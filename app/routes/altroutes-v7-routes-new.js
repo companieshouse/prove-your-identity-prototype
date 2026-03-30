@@ -170,9 +170,16 @@ router.post('/alt-routes-v7/post-one-login/alt-route-choice', function (req, res
 
 // ******* current address ********************************
 router.get('/alt-routes-v7/post-one-login/current-address', function (req, res) {
-  // Set URl
+  
+  // Set the country to undefined
+  req.session.data['currentAddress'] = undefined;
+  req.session.data['country'][0] = 'choose'
+         
+// Set URl
   res.render('/alt-routes-v7/post-one-login/current-address', {
     currentUrl: req.originalUrl
+
+
   })
 })
 
@@ -180,39 +187,78 @@ router.get('/alt-routes-v7/post-one-login/current-address', function (req, res) 
 
 
 router.post('/alt-routes-v7/post-one-login/current-address', function (req, res) {
-  const addressLineOne = req.session.data['addressOne'];
-  var errorAddressOne = false
+
   var errors = []
+  var addressLineOneError = false
+  var currentAddressError = false
+  var chooseCountryError = false
 
+  console.log(req.session.data["country"])
+  console.log(req.session.data['currentAddress'])
+  console.log(req.session.data['addressOne'])
 
-  if (req.session.data['currentAddress'] === 'yes') {
-
-    req.session.data['currentAddress'] = undefined;
-
-    res.redirect('/alt-routes-v7/post-one-login/company-information2');
-
+  /*
+   * United Kingdom - take the user to the Ways you can prove your identity for Companies House page
+   */
+  if (req.session.data['country'].includes('unitedkingdom')) {
+    res.redirect('/alt-routes-v7/post-one-login/failure-evidence');
   }
+  /*
+   * Address line one is empty
+   */
+  else{ 
+    if (req.session.data['addressOne'] === '') {
+      addressLineOneError = true
+      errors.push({
+        text: 'Enter address line one',
+        href: '#adressOne'
+      });
+    }
+  /*
+   * User has not selected current address 
+   */
+    if (req.session.data['currentAddress'] === undefined){
+      currentAddressError = true
+      errors.push({
+        text: 'Select if you have lived at your current address for more than 12 months',
+        href: '#currentAddress'
+      });
+    }
+  /*
+   * If the user has not selected an address and the default is shown
+   */
+    if (req.session.data['country'][0] === 'choose'){
+      chooseCountryError = true
+      errors.push({
+        text: 'Select a country',
+        href: '#country'
+      });
+    }
 
-  else if (req.session.data['currentAddress'] === 'no') {
+  /*
+   * If one or more errors is thrown
+   */
+    if(addressLineOneError || currentAddressError || chooseCountryError){
+      req.session.data['currentAddress'] = undefined;
+      req.session.data['country'][0] = 'choose'
+      res.render('/alt-routes-v7/post-one-login/current-address', {
+        errorAddressOne: addressLineOneError,
+        errorCurrentAddress: currentAddressError,
+        errorCountry: chooseCountryError,
+        errorList: errors
+      })
+    }
 
-    req.session.data['currentAddress'] = undefined;
-
-    res.redirect('/alt-routes-v7/post-one-login/company-information3');
+  /*
+   * If no errors are shown, take the user to the corresponding page depending on current address selection
+   */
+    else if (req.session.data['currentAddress'] === 'yes') {
+      res.redirect('/alt-routes-v7/post-one-login/company-information');
+    }
+    else if(req.session.data['currentAddress'] === 'no') {
+      res.redirect('/alt-routes-v7/post-one-login/previous-address');
+    }
   }
-
-  else {
-
-    errors.push({
-      text: 'Select if you have lived at your current address for more than 12 months',
-      href: '#declaration'
-    });
-
-    res.render('/alt-routes-v7/post-one-login/current-address', {
-      errorCurrentAddress: true,
-      errorList: errors
-    });
-  }
-
 });
 
 

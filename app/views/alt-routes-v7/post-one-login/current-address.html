@@ -17,7 +17,7 @@ What is your current address? – {{ serviceName }} – GOV.UK Prototype Kit
     <form action="{{currentUrl}}" method="post">
 
     <!-- Check for error -->
-    {% if errorCurrentAddress %}
+    {% if errorList.length > 0 %}
       {{ govukErrorSummary({
         titleText: "There is a problem",
         errorList: errorList
@@ -49,11 +49,10 @@ What is your current address? – {{ serviceName }} – GOV.UK Prototype Kit
 
 <!-- Address Line One -->
 
+{% if errorAddressOne %}
 <div class="govuk-form-group govuk-form-group--error">
 
-
   <label class="govuk-label" for="addressOne"> Address line 1 </label>
-
 
       <p id="addressOne-error" class="govuk-error-message">
         
@@ -62,13 +61,15 @@ What is your current address? – {{ serviceName }} – GOV.UK Prototype Kit
       </p>
 
       <input class="govuk-input govuk-input--error" id="addressOne" name="addressOne" type="text" aria-describedby="addressOne-error" autocomplete="address-line1">
-
-
-    <!--   <input class="govuk-input" id="addressOne" name="addressOne" type="text">-->
-
-
-
 </div>
+{% else %}
+<div class="govuk-form-group">
+      <label class="govuk-label" for="addressOne"> Address line 1 </label>
+      <input class="govuk-input" id="addressOne" name="addressOne" type="text">
+</div>
+{% endif %}
+
+
 
         
 <div class="govuk-form-group">
@@ -101,31 +102,32 @@ What is your current address? – {{ serviceName }} – GOV.UK Prototype Kit
 </div>
 
 
-<div class="govuk-form-group govuk-form-group--error"> 
 
 
-<p id="county-error" class="govuk-error-message">
-    <span class="govuk-visually-hidden">Error:</span> Select a country
-  </p> 
+<!-- Select dropdown for country -->
 
-  <label class="govuk-label" for="location">
-    Country
-  </label>
+{% if errorCountry %}
+    <div class="govuk-form-group govuk-form-group--error">
 
-  <select class="govuk-select govuk-select--error" id="country" name="country" aria-describedby="country-hint location-error">
+    <label class="govuk-label" for="country">
+      Choose country
+    </label>
+
+    <p id="country-error" class="govuk-error-message">
+      <span class="govuk-visually-hidden">Error:</span> Select a country
+    </p>
+    <select class="govuk-select govuk-select--error" id="country" name="country" aria-describedby="country-hint country-error">
 
 
- <!--  <select class="govuk-select" id="country" name="country" aria-describedby="location-hint"> -->
     <option value="choose" selected>Choose country</option>
-    <option value="unitedkingdom">United Kingdom</option>
-    <option value="eastmidlands">Albania</option>
-    <option value="eastofengland">Andorra</option>
-    <option value="london">Armenia</option>
-    <option value="northeast">Austria</option>
-    <option value="eastofengland">Azerbaijan</option>
-    <option value="london">Belarus</option>
-    <option value="northeast">Belgium</option>
-    <option value="eastmidlands">Bulgaria</option>
+    <option value="albania">Albania</option>
+    <option value="andorra">Andorra</option>
+    <option value="armenia">Armenia</option>
+    <option value="austria">Austria</option>
+    <option value="azerbaijan">Azerbaijan</option>
+    <option value="belarus">Belarus</option>
+    <option value="belgium">Belgium</option>
+    <option value="bulgaria">Bulgaria</option>
     <option value="eastofengland">Croatia</option>
     <option value="london">Columbia</option>
     <option value="northeast">Cyprus</option>
@@ -166,11 +168,87 @@ What is your current address? – {{ serviceName }} – GOV.UK Prototype Kit
     <option value="eastofengland">Switzerland</option>
     <option value="london">Turkey</option>
     <option value="northeast">Ukraine</option>
+    <option value="unitedkingdom">United Kingdom</option>
+    <option name="unitedkingdom" value="northeast">United States of America</option>
+    <option value="eastofengland">Vatican City</option>
+   
+   </select>
+</div>
+
+
+    {% else %}
+
+      <div class="govuk-form-group">
+
+
+      <label class="govuk-label" for="country">
+        Country
+      </label>
+
+
+      <select class="govuk-select" id="country" name="country" aria-describedby="country-hint"> 
+
+
+    <option value="choose" selected>Choose country</option>
+    <option value="albania">Albania</option>
+    <option value="andorra">Andorra</option>
+    <option value="armenia">Armenia</option>
+    <option value="austria">Austria</option>
+    <option value="azerbaijan">Azerbaijan</option>
+    <option value="belarus">Belarus</option>
+    <option value="belgium">Belgium</option>
+    <option value="bulgaria">Bulgaria</option>
+    <option value="eastofengland">Croatia</option>
+    <option value="london">Columbia</option>
+    <option value="northeast">Cyprus</option>
+    <option value="eastofengland">Czech Republic</option>
+    <option value="london">Denmark</option>
+    <option value="northeast">Estonia</option>
+    <option value="eastmidlands">Finland</option>
+    <option value="eastofengland">France</option>
+    <option value="london">Georgia</option>
+    <option value="northeast">Germany</option>
+    <option value="eastofengland">Greece</option>
+    <option value="london">Hungary</option>
+    <option value="northeast">Iceland</option>
+    <option value="london">India</option>
+    <option value="eastmidlands">Ireland</option>
+    <option value="eastofengland">Italy</option>
+    <option value="london">Kosovo</option>
+    <option value="northeast">Latvia</option>
+    <option value="eastofengland">Lithuania</option>
+    <option value="london">Luxembourg</option>
+    <option value="northeast">Macedonia</option>
+    <option value="eastmidlands">Malta</option>
+    <option value="london">Moldova</option>
+    <option value="northeast">Monaco</option>
+    <option value="eastofengland">Montenegro</option>
+    <option value="london">Netherlands</option>
+    <option value="northeast">Norway</option>
+    <option value="london">Pakistan</option>
+    <option value="eastmidlands">Poland</option>
+    <option value="eastofengland">Portugal</option>
+    <option value="london">Romania</option>
+    <option value="northeast">San Marino</option>
+    <option value="eastofengland">Serbia</option>
+    <option value="london">Slovakia</option>
+    <option value="london">South Africa</option>
+    <option value="northeast">Spain</option>
+    <option value="eastmidlands">Sweden</option>
+    <option value="eastofengland">Switzerland</option>
+    <option value="london">Turkey</option>
+    <option value="northeast">Ukraine</option>
+    <option value="unitedkingdom">United Kingdom</option>
     <option value="northeast">United States of America</option>
     <option value="eastofengland">Vatican City</option>
    
    </select>
 </div>
+
+
+    {% endif %} 
+
+
 
 
 
