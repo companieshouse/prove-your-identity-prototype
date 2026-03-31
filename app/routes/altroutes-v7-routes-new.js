@@ -173,7 +173,7 @@ router.get('/alt-routes-v7/post-one-login/current-address', function (req, res) 
   
   // Set the country to undefined
   req.session.data['currentAddress'] = undefined;
-  req.session.data['country'][0] = 'choose'
+//  req.session.data['country'][0] = 'choose'
          
 // Set URl
   res.render('/alt-routes-v7/post-one-login/current-address', {
