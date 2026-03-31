@@ -218,13 +218,13 @@ router.post('/alt-routes-v7/post-one-login/current-address', function (req, res)
   /*
    * If the user has not selected an address and the default is shown
    */
-    if (req.session.data['country'][0] === 'choose'){
+    /* if (req.session.data['country'][0] === 'choose'){
       chooseCountryError = true
       errors.push({
         text: 'Select a country',
         href: '#country'
       });
-    }
+    } */
 
     /*
    * User has not selected current address 
