@@ -1,0 +1,70 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation email – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    
+<p><strong>Email subject line: </strong>Identity verified: check if you have more steps to complete verification requirements</p>
+
+<br>
+
+<h1 class="govuk-heading-l">Identity verified: check if you have more steps to complete verification requirements</h1>
+
+<p class="govuk-body">You've successfully verified your identity for Companies House. This email contains your Companies House personal code, and important information about whether there's more you need to do to complete all identity verification requirements.</p>
+
+<div class="highlight-box"> 
+      <p class="govuk-body">Companies House personal code: <strong>XXX-9999-9999</strong></p>
+
+      <p class="govuk-body">Keep your code safe. You can share it with people if they file on your behalf. For example, if you use an agent like an accountant or company secretary provider.</p>
+  </div>
+
+  <h2 class="govuk-heading-m">Next steps</h2>
+
+<h3 class="govuk-heading-s">Save your personal code</h3>
+
+        <p class="govuk-body">We recommend that you save your personal code to a Companies House account. This only takes a couple of minutes and means you’ll be able to access it when you need to.</p>
+
+      <div class="govuk-inset-text">
+  <p class="govuk-body">To do this, you’ll need to:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>sign in or create sign in details using <strong>email@example.com</strong></li>
+  <li>enter your Companies House personal code</li>
+  <li>enter your date of birth</li>
+</ul>
+<p class="govuk-body">
+  <a href="https://identity.company-information.service.gov.uk/identity-verification/has-identity-been-verified" class="govuk-link govuk-link--no-visited-state">https://identity.company-information.service.gov.uk/identity-verification/has-identity-been-verified</a>
+</p>
+</div>
+
+<h3 class="govuk-heading-s">If you are a director or PSC (or both)</h3>
+
+   <p class="govuk-body">What you need to do next depends on your role, and when you started that role.</p>
+
+   <p class="govuk-body">You'll need to use your Companies House personal code to connect your verified identity to our records for each role you hold. This is part of the legal requirement to verify your identity for Companies House.</p>
+
+    <p class="govuk-body">For more information, read the 'How to use your personal code' section of the personal code guidance:</p>
+
+     <p class="govuk-body"><a href="https://www.gov.uk/guidance/companies-house-personal-codes-for-identity-verification" class="govuk-link govuk-link--no-visited-state">https://www.gov.uk/guidance/companies-house-personal-codes-for-identity-verification</a></p>
+
+     <h3 class="govuk-heading-s">If you are an Authorised Corporate Service Provider (ACSP)</h3>
+     
+    <p class="govuk-body">You have completed verification requirements. You can now register as an ACSP (this is also known as an authorised agent):</p>
+
+     <p class="govuk-body"><a href="https://www.gov.uk/guidance/applying-to-register-as-a-companies-house-authorised-agent" class="govuk-link govuk-link--no-visited-state">https://www.gov.uk/guidance/applying-to-register-as-a-companies-house-authorised-agent </a></p>
+      <br>
+      <p class="govuk-body">This email was sent from an email address which cannot accept incoming mail. Do not reply directly to this message.</p>
+
+  
+
+
+
+{% endblock %}
