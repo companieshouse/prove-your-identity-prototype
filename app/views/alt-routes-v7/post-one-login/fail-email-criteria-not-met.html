@@ -1,30 +1,95 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/main.html" %} {% block pageTitle %} Confirmation email – {{
+serviceName }} – GOV.UK Prototype Kit {% endblock %} {% block beforeContent %}
+{% include "includes/phase-banner.html" %} {% endblock %} {% block content %}
 
-{% block pageTitle %}
-  Confirmation email – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <p>
+      <strong>Email subject line: </strong>Identity verification for Companies
+      House outcome
+    </p>
 
-{% block beforeContent %}
-{% include "includes/phase-banner.html" %}
-{% endblock %}
+    <br />
 
-{% block content %}
+    <h1 class="govuk-heading-l">
+      Identity verification for Companies House outcome
+    </h1>
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-    
-<p><strong>Email subject line: </strong>Placeholder</p>
+    <p class="govuk-body">
+      <strong>Your case reference number:</strong> HW123456
+    </p>
 
-<br>
+    <p class="govuk-body">
+      We have reviewed the information you submitted when you applied to verify
+      your identity.
+    </p>
 
-<h1 class="govuk-heading-l">H1</h1>
+    <p class="govuk-body">Outcome: <strong>Unsuccessful</strong></p>
 
-<p class="govuk-body">Placeholder</p>
+    <p class="govuk-body">
+      You have not been able to verify your identity for Companies House. For
+      security reasons, we cannot tell you the reason why.
+    </p>
 
- <h2 class="govuk-heading-m">H2</h2>
+    <p class="govuk-body">
+      You will not be able to try to verify your identity using the ‘Provide
+      evidence of your identity to Companies House’ service again.
+    </p>
 
-  <p class="govuk-body">Placeholder</p>
+    <h2 class="govuk-heading-m">Next steps</h2>
 
-  
+    <p class="govuk-body">
+      You’ll need to find a different way to try and verify your identity. You
+      have 2 options.
+    </p>
 
-{% endblock %}
+    <h3 class="govuk-heading-s">Option 1</h3>
+
+    <p class="govuk-body">
+      Use the ‘Verify your identity for Companies House’ service, which uses
+      GOV.UK One Login to verify your identity. It is free of charge.
+    </p>
+
+    <p class="govuk-body">
+      GOV.UK One Login will ask you some simple questions to find the best way
+      for you to verify your identity. You must provide answers about yourself,
+      not your company. Depending on your answers, you’ll then be guided to
+      verify in one of the following ways:
+    </p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>with an app</li>
+      <li>by answering security questions online</li>
+      <li>
+        by entering your details from your photo ID on GOV.UK One Login first,
+        then going to a participating Post Office
+      </li>
+    </ul>
+
+    <p class="govuk-body">
+      Go to the ‘Verify your identity for Companies House’ service: <br /><a
+        href="https://www.gov.uk/guidance/verify-your-identity-for-companies-house"
+        class="govuk-link govuk-link--no-visited-state"
+        >lhttps://www.gov.uk/guidance/verify-your-identity-for-companies-house</a
+      >
+    </p>
+
+    <h3 class="govuk-heading-m">Option 2</h3>
+
+    <p class="govuk-body">
+      Ask an Authorised Corporate Service Provider (ACSP) if they can verify
+      your identity. This is also known as an authorised agent.
+    </p>
+
+    <p class="govuk-body">
+      Find out more about verifying using an ACSP: <br />
+
+      <a
+        href="https://identity.company-information.service.gov.uk/identity-verification/verifying-with-authorised-corporate-service-provider"
+        class="govuk-link govuk-link--no-visited-state"
+        >https://identity.company-information.service.gov.uk/identity-verification/verifying-with-authorised-corporate-service-provider</a
+      >
+    </p>
+
+    {% endblock %}
+  </div>
+</div>
