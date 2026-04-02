@@ -1,30 +1,53 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/main.html" %} {% block pageTitle %} Confirmation email – {{
+serviceName }} – GOV.UK Prototype Kit {% endblock %} {% block beforeContent %}
+{% include "includes/phase-banner.html" %} {% endblock %} {% block content %}
 
-{% block pageTitle %}
-  Confirmation email – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <p>
+      <strong>Email subject line: </strong>Identity verification for Companies
+      House outcome
+    </p>
 
-{% block beforeContent %}
-{% include "includes/phase-banner.html" %}
-{% endblock %}
+    <br />
 
-{% block content %}
+    <h1 class="govuk-heading-l">
+      Identity verification for Companies House outcome
+    </h1>
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-    
-<p><strong>Email subject line: </strong>Placeholder</p>
+    <p class="govuk-body">
+      <strong>Your case reference number:</strong> HW123456
+    </p>
 
-<br>
+    <p class="govuk-body">
+      We have reviewed the information you submitted when you applied to verify
+      your identity.
+    </p>
 
-<h1 class="govuk-heading-l">H1</h1>
+    <p class="govuk-body">Outcome: <strong>Unsuccessful</strong></p>
 
-<p class="govuk-body">Placeholder</p>
+    <p class="govuk-body">
+      Based on the information you supplied, you have not been able to prove who
+      you are to Companies House. For security reasons, we cannot tell you the
+      reason why.
+    </p>
 
- <h2 class="govuk-heading-m">H2</h2>
+    <p class="govuk-body">
+      You will not be able to try and verify your identity using the 'Provide
+      evidence of your identity to Companies House' service again.
+    </p>
 
-  <p class="govuk-body">Placeholder</p>
+    <h2 class="govuk-heading-m">Next steps</h2>
 
-  
+    <p class="govuk-body">
+      Check the guidance and select 'Ways to verify your identity' to find other
+      ways you can try and verify: <br /><a
+        href="https://www.gov.uk/guidance/verifying-your-identity-for-companies-house"
+        class="govuk-link govuk-link--no-visited-state"
+        >https://www.gov.uk/guidance/verifying-your-identity-for-companies-house</a
+      >
+    </p>
 
-{% endblock %}
+    {% endblock %}
+  </div>
+</div>
