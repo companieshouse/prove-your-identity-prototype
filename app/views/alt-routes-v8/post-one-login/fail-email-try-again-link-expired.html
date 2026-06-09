@@ -1,0 +1,48 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation email – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    
+<p><strong>Email subject line: </strong>Link expired to verify your identity for Companies House</p>
+
+<br>
+
+<h1 class="govuk-heading-l">Link expired to verify your identity for Companies House</h1>
+
+
+<p class="govuk-body">Your case reference number: HW123456</p>
+
+  <p class="govuk-body">We recently sent you an email that contained a link, so that you could verify your identity. </p>
+
+    <p class="govuk-body">The link has now expired. </p>
+
+ <h2 class="govuk-heading-m">Next steps</h2>
+
+  <p class="govuk-body">You have 2 options to try and verify your identity.</p>
+
+   <h3 class="govuk-heading-s">Option 1</h3>
+
+  <p class="govuk-body">Use the 'Verify your identity for Companies House' service to go through the process again: <br><a href="https://www.gov.uk/guidance/verify-your-identity-for-companies-house " class="govuk-link govuk-link--no-visited-state">https://www.gov.uk/guidance/verify-your-identity-for-companies-house </a></p>
+
+   <h3 class="govuk-heading-s">Option 2</h3>
+
+<p class="govuk-body">Ask an Authorised Corporate Service Provider (ACSP) if they can verify your identity. This is also known as an authorised agent.</p>
+
+    <p class="govuk-body">Find out more about verifying using an ACSP:<br>
+      
+  <a href="https://identity.company-information.service.gov.uk/identity-verification/verifying-with-authorised-corporate-service-provider" class="govuk-link govuk-link--no-visited-state">https://identity.company-information.service.gov.uk/identity-verification/verifying-with-authorised-corporate-service-provider</a>
+
+</p>
+
+
+{% endblock %}
