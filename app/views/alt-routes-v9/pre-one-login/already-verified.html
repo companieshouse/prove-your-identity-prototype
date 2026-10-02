@@ -1,0 +1,55 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Identity verification complete – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/account-banner.html" %}
+{% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">You have already verified your identity for Companies House</h1>
+
+      <p class="govuk-body">You can use all Companies House services that require you to verify your identity.</p>
+
+      <p class="govuk-body">If you need your personal code, you can find it in the <a href="https://find-update-company-info.herokuapp.com/v5/chs-one-login-settings" class="govuk-link" rel="noreferrer noopener" target="_blank">Manage account (opens in a new tab)</a> section of your Companies House account.
+      </p>
+
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            What a Companies House personal code is
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">This is an 11 character code that is given to a person once they’ve verified their identity. You need to use your Companies House personal code to connect your verified identity to our records. This is a requirement, and will ensure that we know the correct person is linked to the name we have on file.
+          </p>
+    
+          <p class="govuk-body">
+           You'll need your personal code for various reasons. For example:
+          </p>
+    
+          <ul class="govuk-list govuk-list--bullet">
+            <li>as part of some company filings, such as the
+              <a href="https://www.gov.uk/running-a-limited-company/confirmation-statement" class="govuk-link">confirmation statement</a>
+            </li>
+            <li>if you are appointed as a director</li>
+            <li>if you become a 
+              <a href="https://www.gov.uk/guidance/people-with-significant-control-pscs" class="govuk-link">person with significant control (PSC)</a>
+            </li>
+          </ul>
+        
+        </div>
+      </details>
+
+    </div>
+  </div>
+
+{% endblock %}

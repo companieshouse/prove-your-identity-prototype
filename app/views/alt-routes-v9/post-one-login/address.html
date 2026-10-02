@@ -1,0 +1,69 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  What is the correspondence address? – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/phase-banner.html" %}
+  {% include "includes/welsh-banner.html" %}
+  {% include "includes/back-link.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="{{currentUrl}}" method="post">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            What is your home address?
+          </h1>
+        </legend>
+        <div id="event-name-hint" class="govuk-hint">
+         <!-- hint text?-->
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="addressLine1">
+            Address line 1
+          </label>
+          <input class="govuk-input" id="addressLine1" name="addressLine1" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="addressLine2">
+            Address line 2 (optional)
+          </label>
+          <input class="govuk-input" id="addressLine2" name="addressLine2" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="addressTown">
+            Town or city
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="addressTown" name="addressTown" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="addressCountry">
+            Country
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="addressCountry" name="addressCountry" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="addressPostcode">
+            Postcode
+          </label>
+          <input class="govuk-input govuk-input--width-10" id="addressPostcode" name="addressPostcode" type="text" autocomplete="postal-code">
+        </div>
+      </fieldset>
+
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}
