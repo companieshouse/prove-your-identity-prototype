@@ -3,20 +3,20 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 
 // START TO SIGN IN
-router.post('/alt-routes-v7/pre-one-login/start', function (req, res) {
+router.post('/alt-routes-v8/pre-one-login/start', function (req, res) {
   if (req.session.data['version'] === 'sole-trader') {
     // ACSP
-    res.redirect('/alt-routes-v7/pre-one-login/one-login-intro')
+    res.redirect('/alt-routes-v8/pre-one-login/one-login-intro')
   } else {
     // General
-    res.redirect('/alt-routes-v7/pre-one-login/create-or-sign-in')
+    res.redirect('/alt-routes-v8/pre-one-login/create-or-sign-in')
   }
 })
 
 
 // EMAIL TO PASSWORD
 
-router.post('/alt-routes-v7/pre-one-login/sign-in-email', function (req, res) {
+router.post('/alt-routes-v8/pre-one-login/sign-in-email', function (req, res) {
   // Create empty array and set error variables to false
   var errors = []
 
@@ -33,19 +33,19 @@ router.post('/alt-routes-v7/pre-one-login/sign-in-email', function (req, res) {
   // Check if eother filed not filled out
   if (req.session.data['signin-email'] === '') {
     // Re-show page with error value as true so errors will show
-    res.render('alt-routes-v7/pre-one-login/sign-in-email', {
+    res.render('alt-routes-v8/pre-one-login/sign-in-email', {
       errorSigninEmail: true,
       errorList: errors
     })
   } else {
     // User inputted value so move to next page
-    res.redirect('/alt-routes-v7/pre-one-login/sign-in-password')
+    res.redirect('/alt-routes-v8/pre-one-login/sign-in-password')
   }
 })
 
 // PASSWORD TO ONE LOG IN INTRO
 
-router.post('/alt-routes-v7/pre-one-login/sign-in-password', function (req, res) {
+router.post('/alt-routes-v8/pre-one-login/sign-in-password', function (req, res) {
   // Create empty array and set error variables to false
   var errors = []
 
@@ -62,32 +62,32 @@ router.post('/alt-routes-v7/pre-one-login/sign-in-password', function (req, res)
   // Check if eother filed not filled out
   if (req.session.data['signin-password'] === '') {
     // Re-show page with error value as true so errors will show
-    res.render('alt-routes-v7/pre-one-login/sign-in-password', {
+    res.render('alt-routes-v8/pre-one-login/sign-in-password', {
       errorSigninPassword: true,
       errorList: errors
     })
   } else {
     // User inputted value so move to next page
-    res.redirect('/alt-routes-v7/pre-one-login/one-login-intro')
+    res.redirect('/alt-routes-v8/pre-one-login/one-login-intro')
   }
 })
 
 //ONE LOG IN INTRO TO ONE LOG IN START
-router.post('/alt-routes-v7/one-login/one-login-start', function (req, res) {
-  res.redirect('/alt-routes-v7/one-login/one-login-working')
+router.post('/alt-routes-v8/one-login/one-login-start', function (req, res) {
+  res.redirect('/alt-routes-v8/one-login/one-login-working')
 })
 
 // FIND ANOTHER WAY TO TRIAGE OR PRE-ONE LOG IN START
-router.post('/alt-routes-v7/one-login/find-another-way-UR', function (req, res) {
+router.post('/alt-routes-v8/one-login/find-another-way-UR', function (req, res) {
   if (req.session.data['findAnotherWay'] === 'continue') {
-    res.redirect('/alt-routes-v7/post-one-login/alt-route-triage')
+    res.redirect('/alt-routes-v8/post-one-login/alt-route-triage')
   } else {
-    res.redirect('/alt-routes-v7/pre-one-login/start')
+    res.redirect('/alt-routes-v8/pre-one-login/start')
   }
 })
 
 // LIVE IN UK to NATIONALITY OR FAILURE
-router.post('/alt-routes-v7/post-one-login/live-in-uk', function (req, res) {
+router.post('/alt-routes-v8/post-one-login/live-in-uk', function (req, res) {
   // Create empty array
   var errors = []
 
@@ -100,40 +100,40 @@ router.post('/alt-routes-v7/post-one-login/live-in-uk', function (req, res) {
     })
 
     // Re-show page with error value as true so errors will show
-    res.render('alt-routes-v7/post-one-login/live-in-uk', {
+    res.render('alt-routes-v8/post-one-login/live-in-uk', {
       errorLiveInUk: true,
       errorList: errors
     })
   } else {
     if (req.session.data['liveInUk'] === 'no') {
-      res.redirect('/alt-routes-v7/post-one-login/nationality')
+      res.redirect('/alt-routes-v8/post-one-login/nationality')
     } else {
-      res.redirect('/alt-routes-v7/post-one-login/failure-evidence')
+      res.redirect('/alt-routes-v8/post-one-login/failure-evidence')
     }
   }
 })
 
 //NATIONALITY TO ALT ROUTE CHOICE or FAILURE
 
-router.post('/alt-routes-v7/post-one-login/nationality', function (req, res) {
+router.post('/alt-routes-v8/post-one-login/nationality', function (req, res) {
   if (req.session.data['nationalityOne'] === 'Indian') {
-    res.redirect('/alt-routes-v7/post-one-login/alt-route-choice')
+    res.redirect('/alt-routes-v8/post-one-login/alt-route-choice')
   } 
   else if (req.session.data['nationalityOne'] === 'Pakistani') {
-    res.redirect('/alt-routes-v7/post-one-login/alt-route-choice')
+    res.redirect('/alt-routes-v8/post-one-login/alt-route-choice')
   }
   else if (req.session.data['nationalityOne'] === 'South African') {
-    res.redirect('/alt-routes-v7/post-one-login/alt-route-choice')
+    res.redirect('/alt-routes-v8/post-one-login/alt-route-choice')
   }
   else {
-    res.redirect('/alt-routes-v7/post-one-login/failure-evidence')
+    res.redirect('/alt-routes-v8/post-one-login/failure-evidence')
   }
 })
 
 
 //ALT ROUTE CHOICE TO ACSP OR CURRENT ADDRESS
 
-router.post('/alt-routes-v7/post-one-login/alt-route-choice', function (req, res) {
+router.post('/alt-routes-v8/post-one-login/alt-route-choice', function (req, res) {
   // Create empty array
   var errors = []
 
@@ -146,16 +146,16 @@ router.post('/alt-routes-v7/post-one-login/alt-route-choice', function (req, res
     })
 
     // Re-show page with error value as true so errors will show
-    res.render('alt-routes-v7/post-one-login/alt-route-choice', {
+    res.render('alt-routes-v8/post-one-login/alt-route-choice', {
       errorAltRouteChoice: true,
       errorList: errors
     })
   } else {
     if (req.session.data['altRouteChoice'] === 'acsp') {
-      res.redirect('/alt-routes-v7/post-one-login/acsp-route')
+      res.redirect('/alt-routes-v8/post-one-login/acsp-route')
     } else {
       // User inputted value so move to next page
-      res.redirect('/alt-routes-v7/post-one-login/current-address')
+      res.redirect('/alt-routes-v8/post-one-login/current-address')
     }
   }
 })
@@ -169,14 +169,14 @@ router.post('/alt-routes-v7/post-one-login/alt-route-choice', function (req, res
 
 
 // ******* current address ********************************
-router.get('/alt-routes-v7/post-one-login/current-address', function (req, res) {
+router.get('/alt-routes-v8/post-one-login/current-address', function (req, res) {
   
   // Set the country to undefined
   req.session.data['currentAddress'] = undefined;
 //  req.session.data['country'][0] = 'choose'
          
 // Set URl
-  res.render('/alt-routes-v7/post-one-login/current-address', {
+  res.render('/alt-routes-v8/post-one-login/current-address', {
     currentUrl: req.originalUrl
 
 
@@ -186,7 +186,7 @@ router.get('/alt-routes-v7/post-one-login/current-address', function (req, res) 
 
 
 
-router.post('/alt-routes-v7/post-one-login/current-address', function (req, res) {
+router.post('/alt-routes-v8/post-one-login/current-address', function (req, res) {
 
   var errors = []
   var addressLineOneError = false
@@ -201,7 +201,7 @@ router.post('/alt-routes-v7/post-one-login/current-address', function (req, res)
    * United Kingdom - take the user to the Ways you can prove your identity for Companies House page
    */
   if (req.session.data['country'].includes('unitedkingdom')) {
-    res.redirect('/alt-routes-v7/post-one-login/failure-evidence');
+    res.redirect('/alt-routes-v8/post-one-login/failure-evidence');
   }
   /*
    * Address line one is empty
@@ -242,7 +242,7 @@ router.post('/alt-routes-v7/post-one-login/current-address', function (req, res)
     if(addressLineOneError || currentAddressError || chooseCountryError){
       req.session.data['currentAddress'] = undefined;
       req.session.data['country'][0] = 'choose'
-      res.render('/alt-routes-v7/post-one-login/current-address', {
+      res.render('/alt-routes-v8/post-one-login/current-address', {
         errorAddressOne: addressLineOneError,
         errorCountry: chooseCountryError,
         errorCurrentAddress: currentAddressError,
@@ -254,25 +254,25 @@ router.post('/alt-routes-v7/post-one-login/current-address', function (req, res)
    * If no errors are shown, take the user to the corresponding page depending on current address selection
    */
     else if (req.session.data['currentAddress'] === 'yes') {
-      res.redirect('/alt-routes-v7/post-one-login/company-information');
+      res.redirect('/alt-routes-v8/post-one-login/company-information');
     }
     else if(req.session.data['currentAddress'] === 'no') {
-      res.redirect('/alt-routes-v7/post-one-login/previous-address');
+      res.redirect('/alt-routes-v8/post-one-login/previous-address');
     }
   }
 });
 
 
 //PREVIOUS ADDRESS TO COMPANY INFO
-router.post('/alt-routes-v7/post-one-login/previous-address', function (req, res) {
-  res.redirect('/alt-routes-v7/post-one-login/company-information')
+router.post('/alt-routes-v8/post-one-login/previous-address', function (req, res) {
+  res.redirect('/alt-routes-v8/post-one-login/company-information')
 })
 
 
 
 //COMPANY INFO TO TRIAGE END WITH DATE PULLED THROUGH
 
-router.post('/alt-routes-v7/post-one-login/company-information', function (req, res) {
+router.post('/alt-routes-v8/post-one-login/company-information', function (req, res) {
   // Get the date parts from the form
   const day = req.body['confirmationDate-day'];
   const month = req.body['confirmationDate-month'];
@@ -280,7 +280,7 @@ router.post('/alt-routes-v7/post-one-login/company-information', function (req, 
 
   // If any part of the date is missing, redirect to the no date page
   if (!day || !month || !year) {
-    return res.redirect('/alt-routes-v7/post-one-login/triage-end-no-cs-date');
+    return res.redirect('/alt-routes-v8/post-one-login/triage-end-no-cs-date');
   }
 
   // Convert month number to month name
@@ -293,27 +293,27 @@ router.post('/alt-routes-v7/post-one-login/company-information', function (req, 
 
   // Otherwise, save the date and continue as normal
   req.session.data['confirmationDate'] = { day, month, monthName, year };
-  res.redirect('/alt-routes-v7/post-one-login/triage-end');
+  res.redirect('/alt-routes-v8/post-one-login/triage-end');
 });
 
 // second step in pulling date
-router.get('/alt-routes-v7/post-one-login/triage-end', function(req, res) {
+router.get('/alt-routes-v8/post-one-login/triage-end', function(req, res) {
   const confirmationDate = req.session.data['confirmationDate'];
-  res.render('alt-routes-v7/post-one-login/triage-end', { confirmationDate });
+  res.render('alt-routes-v8/post-one-login/triage-end', { confirmationDate });
 });
 
 
 //PHOEBE NOTE - adapted the routing up to here, validation routing that follows is just a pure copy 
 
 // ******* full name validation ********************************
-router.get('/alt-routes-v7/post-one-login/full-name', function (req, res) {
+router.get('/alt-routes-v8/post-one-login/full-name', function (req, res) {
   // Set URl
-  res.render('alt-routes-v7/post-one-login/full-name', {
+  res.render('alt-routes-v8/post-one-login/full-name', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/alt-routes-v7/post-one-login/full-name', function (req, res) {
+router.post('/alt-routes-v8/post-one-login/full-name', function (req, res) {
     // Create empty array and set error variables to false
     var errors = []
     var firstNameError = false
@@ -345,7 +345,7 @@ router.post('/alt-routes-v7/post-one-login/full-name', function (req, res) {
     // Check if eother filed not filled out
     if (detailsError) {
       // Re-show page with error value as true so errors will show
-      res.render('alt-routes-v7/post-one-login/full-name', {
+      res.render('alt-routes-v8/post-one-login/full-name', {
         errorFirstName: firstNameError,
         errorLastName: lastNameError,
         errorDetails: detailsError,
@@ -353,20 +353,20 @@ router.post('/alt-routes-v7/post-one-login/full-name', function (req, res) {
       })
     } 
     else {
-      res.redirect('/alt-routes-v7/post-one-login/dob')
+      res.redirect('/alt-routes-v8/post-one-login/dob')
     }
 })
 
 
 // ******* director-details javascript ******************************
-router.get('/alt-routes-v7/post-one-login/dob', function (req, res) {
+router.get('/alt-routes-v8/post-one-login/dob', function (req, res) {
   // Set URl
-  res.render('alt-routes-v7/post-one-login/dob', {
+  res.render('alt-routes-v8/post-one-login/dob', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/alt-routes-v7/post-one-login/dob', function (req, res) {
+router.post('/alt-routes-v8/post-one-login/dob', function (req, res) {
   // Create empty array and set error variables to false
   var errors = []
   var dayHasError = false
@@ -410,7 +410,7 @@ router.post('/alt-routes-v7/post-one-login/dob', function (req, res) {
   // Check if other filed not filled out
   if (dobError) {
     // Re-show page with error value as true so errors will show
-    res.render('alt-routes-v7/post-one-login/dob', {
+    res.render('alt-routes-v8/post-one-login/dob', {
       errorDobDay: dayHasError,
       errorDobMonth: monthHasError,
       errorDobYear: yearHasError,
@@ -418,33 +418,33 @@ router.post('/alt-routes-v7/post-one-login/dob', function (req, res) {
       errorList: errors
     })
   } else {
-    res.redirect('/alt-routes-v7/post-one-login/address')
+    res.redirect('/alt-routes-v8/post-one-login/address')
   }
 })
 
 
 // ******* address validation ********************************
-router.get('/alt-routes-v7/post-one-login/address', function (req, res) {
+router.get('/alt-routes-v8/post-one-login/address', function (req, res) {
   // Set URl
-  res.render('alt-routes-v7/post-one-login/address', {
+  res.render('alt-routes-v8/post-one-login/address', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/alt-routes-v7/post-one-login/address', function (req, res) {
-    res.redirect('/alt-routes-v7/post-one-login/address-confirm')
+router.post('/alt-routes-v8/post-one-login/address', function (req, res) {
+    res.redirect('/alt-routes-v8/post-one-login/address-confirm')
 })
 
 
 // ******* primary-id javascript ********************************
-router.get('/alt-routes-v7/post-one-login/primary-id', function (req, res) {
+router.get('/alt-routes-v8/post-one-login/primary-id', function (req, res) {
   // Set URl
-  res.render('alt-routes-v7/post-one-login/primary-id', {
+  res.render('alt-routes-v8/post-one-login/primary-id', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/alt-routes-v7/post-one-login/primary-id', function (req, res) {
+router.post('/alt-routes-v8/post-one-login/primary-id', function (req, res) {
   // Create empty array
   var errors = []
 
@@ -457,37 +457,37 @@ router.post('/alt-routes-v7/post-one-login/primary-id', function (req, res) {
     })
 
     // Re-show page with error value as true so errors will show
-    res.render('alt-routes-v7/post-one-login/primary-id', {
+    res.render('alt-routes-v8/post-one-login/primary-id', {
       errorPrimaryId: true,
       errorList: errors
     })
   } else {
-    res.redirect('/alt-routes-v7/post-one-login/primary-id-upload')
+    res.redirect('/alt-routes-v8/post-one-login/primary-id-upload')
   }
 })
 
 // ******* primary-id-upload javascript ********************************
-router.get('/alt-routes-v7/post-one-login/primary-id-upload', function (req, res) {
+router.get('/alt-routes-v8/post-one-login/primary-id-upload', function (req, res) {
   // Set URl
-  res.render('alt-routes-v7/post-one-login/primary-id-upload', {
+  res.render('alt-routes-v8/post-one-login/primary-id-upload', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/alt-routes-v7/post-one-login/primary-id-upload', function (req, res) {
-  res.redirect('/alt-routes-v7/post-one-login/secondary-id')
+router.post('/alt-routes-v8/post-one-login/primary-id-upload', function (req, res) {
+  res.redirect('/alt-routes-v8/post-one-login/secondary-id')
 })
 
 
 // ******* secondary-id javascript ********************************
-router.get('/alt-routes-v7/post-one-login/secondary-id', function (req, res) {
+router.get('/alt-routes-v8/post-one-login/secondary-id', function (req, res) {
   // Set URl
-  res.render('alt-routes-v7/post-one-login/secondary-id', {
+  res.render('alt-routes-v8/post-one-login/secondary-id', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/alt-routes-v7/post-one-login/secondary-id', function (req, res) {
+router.post('/alt-routes-v8/post-one-login/secondary-id', function (req, res) {
   // Create empty array
   var errors = []
 
@@ -500,51 +500,51 @@ router.post('/alt-routes-v7/post-one-login/secondary-id', function (req, res) {
     })
 
     // Re-show page with error value as true so errors will show
-    res.render('alt-routes-v7/post-one-login/secondary-id', {
+    res.render('alt-routes-v8/post-one-login/secondary-id', {
       errorSecondaryId: true,
       errorList: errors
     })
   } else {
-    res.redirect('/alt-routes-v7/post-one-login/secondary-id-upload')
+    res.redirect('/alt-routes-v8/post-one-login/secondary-id-upload')
   }
 })
 
 // ******* secondary-id-upload javascript ********************************
-router.get('/alt-routes-v7/post-one-login/secondary-id-upload', function (req, res) {
+router.get('/alt-routes-v8/post-one-login/secondary-id-upload', function (req, res) {
   // Set URl
-  res.render('alt-routes-v7/post-one-login/secondary-id-upload', {
+  res.render('alt-routes-v8/post-one-login/secondary-id-upload', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/alt-routes-v7/post-one-login/secondary-id-upload', function (req, res) {
-  res.redirect('/alt-routes-v7/post-one-login/upload-id-video')
+router.post('/alt-routes-v8/post-one-login/secondary-id-upload', function (req, res) {
+  res.redirect('/alt-routes-v8/post-one-login/upload-id-video')
 })
 
 
 
 // ******* upload-id-video javascript ********************************
-router.get('/alt-routes-v7/post-one-login/upload-id-video', function (req, res) {
+router.get('/alt-routes-v8/post-one-login/upload-id-video', function (req, res) {
   // Set URl
-  res.render('alt-routes-v7/post-one-login/upload-id-video', {
+  res.render('alt-routes-v8/post-one-login/upload-id-video', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/alt-routes-v7/post-one-login/upload-id-video', function (req, res) {
-  res.redirect('/alt-routes-v7/post-one-login/declaration')
+router.post('/alt-routes-v8/post-one-login/upload-id-video', function (req, res) {
+  res.redirect('/alt-routes-v8/post-one-login/declaration')
 })
 
 
 // ******* declaration javascript ********************************
-router.get('/alt-routes-v7/post-one-login/declaration', function (req, res) {
+router.get('/alt-routes-v8/post-one-login/declaration', function (req, res) {
   // Set URl
-  res.render('/alt-routes-v7/post-one-login/declaration', {
+  res.render('/alt-routes-v8/post-one-login/declaration', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/alt-routes-v7/post-one-login/declaration', function (req, res) {
+router.post('/alt-routes-v8/post-one-login/declaration', function (req, res) {
   // Create empty array
   var errors = []
 
@@ -556,25 +556,25 @@ router.post('/alt-routes-v7/post-one-login/declaration', function (req, res) {
     })
 
     // Re-show page with error value as true so errors will show
-    res.render('/alt-routes-v7/post-one-login/declaration', {
+    res.render('/alt-routes-v8/post-one-login/declaration', {
       errorDeclaration: true,
       errorList: errors
     })
   } else {
-      res.redirect('/alt-routes-v7/post-one-login/vouching-intro')
+      res.redirect('/alt-routes-v8/post-one-login/vouching-intro')
   }
 })
 
 
 // ******* applicant-details javascript ******************************
-router.get('/alt-routes-v7/post-one-login/voucher-details', function (req, res) {
+router.get('/alt-routes-v8/post-one-login/voucher-details', function (req, res) {
   // Set URl
-  res.render('alt-routes-v7/post-one-login/voucher-details', {
+  res.render('alt-routes-v8/post-one-login/voucher-details', {
     currentUrl: req.originalUrl
   })
 })
 
-router.post('/alt-routes-v7/post-one-login/voucher-details', function (req, res) {
+router.post('/alt-routes-v8/post-one-login/voucher-details', function (req, res) {
   // Create empty array and set error variables to false
   var errors = []
   var voucherNameError = false
@@ -618,7 +618,7 @@ router.post('/alt-routes-v7/post-one-login/voucher-details', function (req, res)
   // Check if eother filed not filled out
   if (detailsError) {
     // Re-show page with error value as true so errors will show
-    res.render('alt-routes-v7/post-one-login/voucher-details', {
+    res.render('alt-routes-v8/post-one-login/voucher-details', {
       errorVoucherName: voucherNameError,
       errorVoucherEmail: voucherEmailError,
       errorVoucherRole: voucherRoleError,
@@ -627,7 +627,7 @@ router.post('/alt-routes-v7/post-one-login/voucher-details', function (req, res)
     })
   } 
   else  
-  {res.redirect('/alt-routes-v7/post-one-login/check-details')}
+  {res.redirect('/alt-routes-v8/post-one-login/check-details')}
 })
 
 
